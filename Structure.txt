@@ -1,0 +1,48 @@
+
+file structure:
+API_Universal/
+	API_Universal.py
+	RiftWizardOverrides.py
+	GameOverrides.py
+	LevelOverrides.py
+	SpellOverrides.py
+	...
+	API_Boss/
+		API_Boss.py
+		...
+	API_MenuOptions/
+		API_MenuOptions.py
+		...
+	...
+
+
+
+API_Universal.py
+	import mods.API_Universal.RiftWizardOverrides as RiftWizardOverrides
+	import mods.API_Universal.GameOverrides as GameOverrides
+	import mods.API_Universal.LevelOverrides as LevelOverrides
+
+	RiftWizard.PyGameView.draw_level = RiftWizardOverrides.draw_level
+	...
+	
+	Game.awaiting_input = GameOverrides.awaiting_input
+	...
+
+	# expose some API functions
+	import mods.API_Universal.API_Boss.API_Boss as API_Boss
+
+	create_boss = API_Boss.create_boss
+	
+
+RiftWizardOverrides.py
+	import mods.API_Universal.API_Boss.API_Boss as API_Boss
+	
+	old_awaiting_input = RiftWizard.awaiting_input
+	def awaiting_input(self):
+		API_Boss.check_if_boss_blocks_input(self, old_awaiting_input)
+
+		... more stuff ...
+
+	old_other_method = ...
+	def other_method():
+		...
