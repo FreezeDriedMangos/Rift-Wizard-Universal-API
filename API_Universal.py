@@ -1,21 +1,12 @@
 
+import mods.API_Universal.RiftWizardOverrides
+import mods.API_Universal.LevelOverrides
+import mods.API_Universal.GameOverrides
 
-####################################################
-# Importing RiftWizard.py                          |
-# Credit to trung on discord                       |
-#                                                  |
-#----------------------------------------------    |
-import inspect #                                   |
-def get_RiftWizard(): #                            |
-    # Returns the RiftWizard.py module object      |
-    for f in inspect.stack()[::-1]: #              |
-        if "file 'RiftWizard.py'" in str(f): #     |
-            break #                                |
-	 #                                             |
-    return f #                                     |
-#                                                  |
-RiftWizard = get_RiftWizard() #                    |
-#                                                  |
-#                                                  |
-####################################################
+import mods.API_Universal.Modred
 
+
+#
+# Example usage: 
+# import mods.API_Universal.Modred as Modred
+# Modred.add_tag_tooltip(MyCustomTag)

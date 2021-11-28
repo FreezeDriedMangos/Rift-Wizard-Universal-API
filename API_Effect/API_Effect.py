@@ -31,15 +31,16 @@ tag_effects = {}
 #RiftWizard.PyGameView.load_effect_images = load_effect_images
 
 ## Patch get_effect 
-__get_effect_old = RiftWizard.PyGameView.get_effect
+# __get_effect_old = RiftWizard.PyGameView.get_effect
 
 def get_effect(self, effect, color=None, *args, **kvargs):
 	if(effect.color in tag_effects):
 		function = tag_effects[effect.color]
 		return function(effect, color)
-	return __get_effect_old(self, effect, color, *args, **kvargs)
+	# return __get_effect_old(self, effect, color, *args, **kvargs)
+	return None
 	
-RiftWizard.PyGameView.get_effect = get_effect
+# RiftWizard.PyGameView.get_effect = get_effect
 
 class ColorUnique(Level.Color):
 	def __init__(self):
