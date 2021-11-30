@@ -189,7 +189,10 @@ override_menu_transition = API_TitleMenus.override_menu_transition
 ### API_Music ###
 #################
 
-API_Music_Constants = object()
+class ConstantsPackage(object):
+    pass
+
+API_Music_Constants = ConstantsPackage()
 API_Music_Constants.PRIORITY_FALLBACK = API_Music.PRIORITY_FALLBACK
 API_Music_Constants.PRIORITY_NORMAL = API_Music.PRIORITY_NORMAL
 API_Music_Constants.PRIORITY_SPECIAL_TRACK = API_Music.PRIORITY_SPECIAL_TRACK
