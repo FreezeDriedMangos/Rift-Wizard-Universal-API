@@ -204,7 +204,14 @@ API_Music_Constants.TRACK_TYPE_GAMEOVER = API_Music.TRACK_TYPE_GAMEOVER
 API_Music_Constants.TRACK_TYPE_VICTORY = API_Music.TRACK_TYPE_VICTORY
 
 # Adds a track to play in-game. When a new track event occurs, tracks with equal priority whose condition_func retuns 'True' will be chosen from at random.
+# ex:
+# def level_has_shrine(pygameview):
+# 	shrines = [prop for prop in pygameview.game.cur_level.props if isinstance(prop, Level.ShrineShop)]
+# 	return len(shrines) > 0
 # 
+# Modred.add_track(Modred.API_Music_Constants.TRACK_TYPE_LEVEL, Modred.API_Music_Constants.PRIORITY_NORMAL, os.path.join('mods', 'ShougsMusic', 'shrine' + '.wav'), level_has_shrine) 
+#
+#
 # track_type - API_Music_Constants constant. the type of track this is
 # priority - API_Music_Constants constant. the priority this track takes over other tracks of the same type
 # path - string. the path to the mp3 file for this track
