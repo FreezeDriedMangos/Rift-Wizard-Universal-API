@@ -1,8 +1,4 @@
 
-
-# TODO: API_Disrupt
-
-
 import mods.API_Universal.API_Boss.API_Boss as API_Boss
 import mods.API_Universal.API_Effect.API_Effect as API_Effect
 import mods.API_Universal.API_Spells.API_Spells as API_Spells
@@ -13,6 +9,20 @@ import mods.API_Universal.API_Music.API_Music as API_Music
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
 
+
+
+########################
+### API_Translations ###
+########################
+
+# no exports
+
+
+###################
+### API_Disrupt ###
+###################
+
+# no exports
 
 
 ################
