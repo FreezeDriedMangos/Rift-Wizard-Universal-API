@@ -87,12 +87,6 @@ def try_initialize_options(self):
 				option.initialize_option(self)
 		options_have_been_initialized = True
 
-old_pygameview_init = RiftWizard.PyGameView.__init__
-def pygameview_init(self):
-	old_pygameview_init(self)
-	try_initialize_options(self)
-RiftWizard.PyGameView.__init__ = pygameview_init
-
 
 def draw_options_menu(self):
 	global options
@@ -111,7 +105,7 @@ def draw_options_menu(self):
 			option_string = "  " + option_string
 		self.draw_string(option_string, self.screen, int(cur_x), int(cur_y), mouse_content=option.mouse_content, content_width=rect_w)
 		cur_y += self.linesize
-RiftWizard.PyGameView.draw_options_menu = draw_options_menu
+# RiftWizard.PyGameView.draw_options_menu = draw_options_menu
 
 
 def option_change(self, valid_options, selected_option_index, delta):
@@ -221,7 +215,8 @@ def process_options_input(self):
 		if evt.button == pygame.BUTTON_RIGHT:
 			self.play_sound("menu_confirm")
 			option_change(self, valid_options, selected_option_index, -1)
-RiftWizard.PyGameView.process_options_input = process_options_input
+# RiftWizard.PyGameView.process_options_input = process_options_input
+
 
 
 def add_option(get_option_string, get_cur_value, possible_values, mouse_content, trigger_on_select=None, option_wraps=False, initialize_option=None):

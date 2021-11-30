@@ -1,11 +1,13 @@
 
 
-# TODO: API_Music, API_OptionsMenu
+# TODO: API_Music, API_Disrupt
 
 
 import mods.API_Universal.API_Boss.API_Boss as API_Boss
 import mods.API_Universal.API_Effect.API_Effect as API_Effect
 import mods.API_Universal.API_Spells.API_Spells as API_Spells
+import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
+import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
 
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
@@ -110,3 +112,72 @@ add_tag_keybind = API_Spells.add_tag_keybind
 #
 # def add_tag_tooltip(tag):
 add_tag_tooltip = API_Spells.add_tag_tooltip
+
+
+#######################
+### API_OptionsMenu ###
+#######################
+
+
+# Adds a blank line to the (current) bottom of the options menu.
+#
+# def add_blank_option_line():
+add_blank_option_line = API_OptionsMenu.add_blank_option_line
+
+# Adds a title line to the (current) bottom of the options menu.
+# 
+# title_string - the string to be rendered as the title
+#
+# def add_tile_option_line(title_string):
+add_tile_option_line = API_OptionsMenu.add_tile_option_line
+
+
+# Adds a new option to the (current) bottom of the options menu.
+# See API_Universal/API_OptionsMenu/API_OptionsMenu.py for an example (in comments at the top of the file).
+# 
+# get_option_string - a function that takes (pygameview, cur_value_of_option). Return None to hide this option.
+# get_cur_value - a function that takes (pygameview). Returns the current value of this option. You may wish to access pygameview.options['your_option_name'].
+# possible_values - a list of possible values for this option. values may be of any type, but strings or numbers are recommened.
+# mouse_content - a unique string or number for your option. A string like "my_option_name" is recommended to avoid conflicts between mods.
+# trigger_on_select - a function that takes (pygameview, new_value). Called whenever the option has its value updated or enter is pressed while the option is highlighted.
+# option_wraps - boolean. If True, when the user hits 'right' while the option is selected and the last value of possible_values is the current value, possible_values[0] will become the new value
+# initialize_option - a function that takes (pygameview). Called when the game is launched
+# 
+# def add_option(get_option_string, get_cur_value, possible_values, mouse_content, trigger_on_select=None, option_wraps=False, initialize_option=None):
+add_option = API_OptionsMenu.add_option
+
+
+######################
+### API_TitleMenus ###
+######################
+
+# Adds a new title menu. Returns the menu's id.
+# See API_Universal/API_OptionsMenu/API_OptionsMenu.py for an example.
+# 
+# draw_function - a function that takes (pygameview). called every frame when the menu is active
+# process_input_function - a function that takes (pygameview). called every frame when the menu is active
+# blocks_char_sheet_and_examine - boolean. If False, the character pane and examine pane will be drawn when this menu is active
+# 
+# def add_menu(draw_function, process_input_function, blocks_char_sheet_and_examine=True):
+add_menu = API_TitleMenus.add_menu
+
+# Overrides the draw_function and process_input_function of an existing menu. Typically used to patch menus from the base game.
+#
+# menu_id - the id of the menu to be overriden (eg RiftWizard.STATE_PICK_MODE)
+# draw_function - a function that takes (pygameview). called every frame when the menu is active
+# process_input_function - a function that takes (pygameview). called every frame when the menu is active
+#
+# def override_menu(menu_id, draw_function, process_input_function):
+override_menu = API_TitleMenus.override_menu
+
+# Redirects a transition between menus.
+# eg override_menu_transition(RiftWizard.STATE_PICK_MODE, RiftWizard.STATE_LEVEL, STATE_LOBBY_MENU, lambda pygameview: pygameview.in_online_multiplayer_mode))
+# 
+# menu_from - id of the menu the transition starts at
+# menu_to - id of the menu the transition ends at
+# override - id of the menu the transition will be redirected to
+# condition - a function that takes (pygameview). If this function returns False, the transition will not be overriden
+# 
+# def override_menu_transition(menu_from, menu_to, override, condition = (lambda pygameview: True)):
+override_menu_transition = API_TitleMenus.override_menu_transition
+
