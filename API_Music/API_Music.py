@@ -125,11 +125,3 @@ def play_music(self, track_name):
 	pygame.mixer.music.load(music_path)
 	self.adjust_volume(0, 'music')
 	pygame.mixer.music.play(-1)
-RiftWizard.PyGameView.play_music = play_music
-
-
-old_deploy = RiftWizard.PyGameView.deploy
-def deploy(self, p, p2=None):
-	old_deploy(p)
-	play_music('battle_2')
-RiftWizard.PyGameView.deploy = deploy

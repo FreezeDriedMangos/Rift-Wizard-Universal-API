@@ -24,6 +24,7 @@ import mods.API_Universal.API_Effect.API_Effect as API_Effect
 import mods.API_Universal.API_Translations.API_Translations as API_Translations
 import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
 import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
+import mods.API_Universal.API_Music.API_Music as API_Music
 
 
 __get_effect_old = RiftWizard.PyGameView.get_effect
@@ -61,6 +62,18 @@ API_TitleMenus.override_menu(RiftWizard.STATE_OPTIONS, API_OptionsMenu.draw_opti
 
 
 
+
+
+__deploy_old = RiftWizard.PyGameView.deploy
+def deploy(self, p):
+	__deploy_old(p)
+	API_Music.play_music('battle_2')
+RiftWizard.PyGameView.deploy = deploy
+
+
+def play_music(self, track_name):
+	API_Music.play_music(self, track_name)
+RiftWizard.PyGameView.play_music = play_music
 
 
 

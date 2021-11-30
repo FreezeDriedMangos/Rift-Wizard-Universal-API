@@ -1,6 +1,6 @@
 
 
-# TODO: API_Music, API_Disrupt
+# TODO: API_Disrupt
 
 
 import mods.API_Universal.API_Boss.API_Boss as API_Boss
@@ -8,6 +8,7 @@ import mods.API_Universal.API_Effect.API_Effect as API_Effect
 import mods.API_Universal.API_Spells.API_Spells as API_Spells
 import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
 import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
+import mods.API_Universal.API_Music.API_Music as API_Music
 
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
@@ -181,3 +182,30 @@ override_menu = API_TitleMenus.override_menu
 # def override_menu_transition(menu_from, menu_to, override, condition = (lambda pygameview: True)):
 override_menu_transition = API_TitleMenus.override_menu_transition
 
+
+
+
+#################
+### API_Music ###
+#################
+
+API_Music_Constants = object()
+API_Music_Constants.PRIORITY_FALLBACK = API_Music.PRIORITY_FALLBACK
+API_Music_Constants.PRIORITY_NORMAL = API_Music.PRIORITY_NORMAL
+API_Music_Constants.PRIORITY_SPECIAL_TRACK = API_Music.PRIORITY_SPECIAL_TRACK
+
+API_Music_Constants.TRACK_TYPE_BOSS = API_Music.TRACK_TYPE_BOSS
+API_Music_Constants.TRACK_TYPE_LEVEL = API_Music.TRACK_TYPE_LEVEL
+API_Music_Constants.TRACK_TYPE_TITLE = API_Music.TRACK_TYPE_TITLE
+API_Music_Constants.TRACK_TYPE_GAMEOVER = API_Music.TRACK_TYPE_GAMEOVER
+API_Music_Constants.TRACK_TYPE_VICTORY = API_Music.TRACK_TYPE_VICTORY
+
+# Adds a track to play in-game. When a new track event occurs, tracks with equal priority whose condition_func retuns 'True' will be chosen from at random.
+# 
+# track_type - API_Music_Constants constant. the type of track this is
+# priority - API_Music_Constants constant. the priority this track takes over other tracks of the same type
+# path - string. the path to the mp3 file for this track
+# condition_func - a function that takes (pygameview). Return True if this track is valid to play under the current conditions (eg a certain enemy is present in the current level)
+# 
+# def add_track(track_type, priority, path, condition_func):
+add_track = API_Music.add_track
