@@ -1,0 +1,3 @@
+OPTIONS	translated text "options"
+NEW GAME	more translation "new Game"
+ARCHMAGE TRIALS	I decided to add a translation for this too
