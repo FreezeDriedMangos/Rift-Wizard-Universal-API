@@ -88,8 +88,8 @@ API_TitleMenus.override_menu(RiftWizard.STATE_OPTIONS, API_OptionsMenu.draw_opti
 
 __deploy_old = RiftWizard.PyGameView.deploy
 def deploy(self, p):
-	__deploy_old(p)
-	API_Music.play_music('battle_2')
+	__deploy_old(self, p)
+	API_Music.play_music(self, 'battle_2')
 RiftWizard.PyGameView.deploy = deploy
 
 
@@ -238,7 +238,7 @@ def run(self):
 					self.play_music('victory_theme')
 
 			if self.game and self.game.deploying and not self.deploy_target:
-				self.deploy_target = Point(self.game.p1.x, self.game.p1.y)
+				self.deploy_target = Level.Point(self.game.p1.x, self.game.p1.y)
 				self.tab_targets = [t for t in self.game.next_level.iter_tiles() if isinstance(t.prop, Level.Portal)]
 
 			self.process_level_input()

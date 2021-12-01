@@ -16,7 +16,6 @@ def initialize():
 		if os.path.isdir(os.path.join('mods','API_Universal','translations', f)):
 			translations.append(f)
 		
-		
 
 initialize()
 
@@ -56,7 +55,6 @@ def load_translation(self):
 			font_filename = f
 
 
-	print(translation_filename)
 	if translation_filename == None:
 		translation = None
 		translation_font = None
@@ -101,6 +99,7 @@ def get_language_font(self):
 
 
 def initialize_translation_option(self):
+	print(self.options['translation'])
 	if not 'translation' in self.options:
 		self.options['translation'] = NO_TRANSLATION
 	load_translation(self)
