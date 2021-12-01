@@ -2,6 +2,7 @@
 
 import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
 import os
+import pygame
 
 NO_TRANSLATION = 'English (default)'
 
@@ -13,9 +14,9 @@ def initialize():
 
 	for f in os.listdir(os.path.join('mods','API_Universal','translations')):
 		if os.path.isdir(os.path.join('mods','API_Universal','translations', f)):
-			continue
+			translations.append(f)
 		
-		translations.append(f.split('.')[0])
+		
 
 initialize()
 
@@ -27,15 +28,42 @@ def translation_changed(self, cur_value):
 
 
 translation = None
+translation_font = None
 def load_translation(self):
-	if self.options['translation'] == NO_TRANSLATION:
-		return
 
 	global translation
+	global translation_font	
 	translation = dict()
-	translation_filename = self.options['translation'] + '.txt'
+	translation_folder = os.path.join('mods','API_Universal','translations',self.options['translation'])
+	translation_filename = None
+	font_filename = None
 
-	with open(os.path.join('mods','API_Universal','translations', translation_filename)) as f:
+	if self.options['translation'] == NO_TRANSLATION or not os.path.exists(translation_folder):
+		translation = None
+		translation_font = None
+		return
+	
+
+	for f in os.listdir(translation_folder):
+		if os.path.isdir(os.path.join('mods','API_Universal','translations', f)):
+			continue
+		
+		extension = f.split('.')[-1]
+
+		if extension == 'csv':
+			translation_filename = f
+		elif extension == 'ttf':
+			font_filename = f
+
+
+	print(translation_filename)
+	if translation_filename == None:
+		translation = None
+		translation_font = None
+		return
+
+
+	with open(os.path.join('mods','API_Universal','translations', self.options['translation'], translation_filename), 'r', encoding='utf-8') as f:
 		for line in f:
 			split_line = line.split('\t')
 			if len(split_line) <= 1:
@@ -43,6 +71,12 @@ def load_translation(self):
 				continue
 			(english, translated) = split_line
 			translation[english] = translated
+	
+	if font_filename != None:
+		font_path = os.path.join('mods','API_Universal','translations', self.options['translation'], font_filename)
+		translation_font = pygame.font.Font(font_path, 16)
+	else:
+		translation_font = None
 
 
 untranslated_strings = set()
@@ -60,6 +94,8 @@ def translate(string):
 	return translation[string]
 
 
+def get_language_font(self):
+	return translation_font
 
 
 

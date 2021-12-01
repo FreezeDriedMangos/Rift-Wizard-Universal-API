@@ -117,8 +117,11 @@ def option_change(self, valid_options, selected_option_index, delta):
 		return
 
 	cur_value = option.get_cur_value(self)
-	cur_value_index = option.possible_values.index(cur_value)
-	cur_value_index += delta
+	if cur_value in option.possible_values:
+		cur_value_index = option.possible_values.index(cur_value)
+		cur_value_index += delta
+	else:
+		cur_value_index = 0
 
 	if option.option_wraps:
 		cur_value_index += len(option.possible_values)

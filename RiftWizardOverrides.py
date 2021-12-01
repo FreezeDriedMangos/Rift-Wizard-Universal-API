@@ -20,6 +20,8 @@ RiftWizard = get_RiftWizard() #                    |
 #                                                  |
 ####################################################
 
+import Level
+
 import mods.API_Universal.API_Effect.API_Effect as API_Effect
 import mods.API_Universal.API_Translations.API_Translations as API_Translations
 import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
@@ -47,15 +49,26 @@ RiftWizard.PyGameView.get_effect = get_effect
 
 
 __draw_string_old = RiftWizard.PyGameView.draw_string
-def draw_string(self, string, *args, **kvargs):
+def draw_string(self, string, surface, x, y, color=(255, 255, 255), mouse_content=None, content_width=None, center=False, char_panel=False, font=None):
 	string = API_Translations.translate(string)
-	__draw_string_old(self, string, *args, **kvargs)
+	translation_font = API_Translations.get_language_font(self)
+	font = font if translation_font == None else translation_font
+
+	__draw_string_old(self, string, surface, x, y, color=color, mouse_content=mouse_content, content_width=content_width, center=center, char_panel=char_panel, font=font)
 RiftWizard.PyGameView.draw_string = draw_string
 
 __draw_wrapped_string_old = RiftWizard.PyGameView.draw_wrapped_string
-def draw_wrapped_string(self, string, *args, **kvargs):
+def draw_wrapped_string(self, string, surface, x, y, width, color=(255, 255, 255), center=False, indent=False, extra_space=False):
 	string = API_Translations.translate(string)
-	return __draw_wrapped_string_old(self, string, *args, **kvargs)
+	translation_font = API_Translations.get_language_font(self)
+	font = font if translation_font == None else translation_font
+
+	old_font = self.font
+	self.font = font # because draw_wrapped_string doesn't take a font argument :(
+	retval = __draw_wrapped_string_old(self, string, surface, x, y, width, color=color, center=center, indent=indent, extra_space=extra_space)
+	self.font = old_font
+
+	return retval
 RiftWizard.PyGameView.draw_wrapped_string = draw_wrapped_string
 
 
@@ -226,7 +239,7 @@ def run(self):
 
 			if self.game and self.game.deploying and not self.deploy_target:
 				self.deploy_target = Point(self.game.p1.x, self.game.p1.y)
-				self.tab_targets = [t for t in self.game.next_level.iter_tiles() if isinstance(t.prop, Portal)]
+				self.tab_targets = [t for t in self.game.next_level.iter_tiles() if isinstance(t.prop, Level.Portal)]
 
 			self.process_level_input()
 
