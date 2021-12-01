@@ -5,11 +5,31 @@ import mods.API_Universal.API_Spells.API_Spells as API_Spells
 import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
 import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.API_Music.API_Music as API_Music
+import mods.API_Universal.EventSystem as EventSystem
 
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
 
 
+###################
+### EventSystem ###
+###################
+
+# Adds an event listener to the event system. 
+# listener - a function that takes parameters according to the event name passed
+#
+# EVENT NAMES:
+# 'PyGameView.on_frame'
+#     called at the start of every frame after animation timers are updated - even on the title screen
+#     listener takes (pygameview)
+# 
+# 'PyGameView.on_exit'
+#     called when the game window is closed
+#     listener takes (pygameview)
+# 
+#  
+# def register_listener(event_name, listener):
+register_listener = EventSystem.register_listener
 
 ########################
 ### API_Translations ###
@@ -123,6 +143,14 @@ add_tag_keybind = API_Spells.add_tag_keybind
 #
 # def add_tag_tooltip(tag):
 add_tag_tooltip = API_Spells.add_tag_tooltip
+
+# Adds an attribute (eg 'construct') to the tooltip colors.
+#
+# attr - string. The name of the attribute
+# color - (int, int, int) color. The color of the attribute
+# 
+# def add_attr_color(attr, color):
+add_attr_color = API_Spells.add_attr_color
 
 
 #######################

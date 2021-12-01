@@ -10,19 +10,13 @@ RiftWizard = inspect.getmodule(frm[0])
 tag_keybinds = []
 tag_tooltips = []
 
-__pygameview_init_old = RiftWizard.PyGameView.__init__
-
-def pygameview_init(self, *args, **kwargs):
-	__pygameview_init_old(self, *args, **kwargs)
-	
+def pygameview_init(self):
 	for tag, keybind in tag_keybinds: #setup keybinds
 		self.tag_keys[keybind.lower()] = tag
 		self.reverse_tag_keys[tag] = keybind.upper()
 		
 	for tag in tag_tooltips: #setup tag tooltip colors
 		RiftWizard.tooltip_colors[tag.name.lower()] = tag.color
-	
-RiftWizard.PyGameView.__init__ = pygameview_init
 
 ###########################
 ### Multi-Target Spells ###
@@ -97,3 +91,10 @@ def add_tag_keybind(tag, keybind):
 # tag - The tag to add, the color will be taken from the tag
 def add_tag_tooltip(tag):
 	tag_tooltips.append(tag)
+
+# Adds an attribute (eg 'construct') to the tooltip colors.
+#
+# attr - string. The name of the attribute
+# color - (int, int, int) color. The color of the attribute
+def add_attr_color(attr, color):
+    RiftWizard.tooltip_colors[attr] = color

@@ -25,6 +25,14 @@ import mods.API_Universal.API_Translations.API_Translations as API_Translations
 import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
 import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.API_Music.API_Music as API_Music
+import mods.API_Universal.API_Spells.API_Spells as API_Spells
+import mods.API_Universal.EventSystem as EventSystem
+
+
+EventSystem.__add_event('PyGameView.on_frame')
+EventSystem.__add_event('PyGameView.on_exit')
+
+
 
 
 __get_effect_old = RiftWizard.PyGameView.get_effect
@@ -55,6 +63,7 @@ __pygameview_init_old = RiftWizard.PyGameView.__init__
 def pygameview_init(self, *args, **kwargs):
 	__pygameview_init_old(self, *args, **kwargs)
 	API_OptionsMenu.try_initialize_options(self)
+	API_Spells.pygameview_init(self)
 RiftWizard.PyGameView.__init__ = pygameview_init
 
 
@@ -114,8 +123,6 @@ def run(self):
 	gc.disable()
 	frame_time = 0
 	while self.running:
-		# Client.listen(multiplayer_socket_callback(self))
-
 		RiftWizard.cloud_frame_clock += 1
 		RiftWizard.cloud_frame_clock %= 100000 
 
@@ -125,9 +132,11 @@ def run(self):
 			RiftWizard.idle_frame += 1
 			# RiftWizard.idle_frame = RiftWizard.idle_frame % 100000 # changed this from 2 to 100000 so that idle animations can have up to 100000 frames in them
 			RiftWizard.idle_frame = RiftWizard.idle_frame % 2 # changed this from 2 to 100000 so that idle animations can have up to 100000 frames in them
-
-
+			
 		self.clock.tick(30)
+		
+		EventSystem.__trigger_listeners('PyGameView.on_frame', self)
+
 		self.events = pygame.event.get()
 
 		keys = pygame.key.get_pressed()
@@ -145,7 +154,7 @@ def run(self):
 				if self.game and (self.game.p1.is_alive() or self.game.p2.is_alive()):
 					self.game.save_game()
 				self.running = False
-				# Client.disconnect() 
+				EventSystem.__trigger_listeners('PyGameView.on_exit', self)
 
 			# Allow repeating of directional keys (but no other keys)
 			if event.type == pygame.KEYDOWN and event.key not in self.repeat_keys:
