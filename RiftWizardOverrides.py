@@ -61,7 +61,7 @@ __draw_wrapped_string_old = RiftWizard.PyGameView.draw_wrapped_string
 def draw_wrapped_string(self, string, surface, x, y, width, color=(255, 255, 255), center=False, indent=False, extra_space=False):
 	string = API_Translations.translate(string)
 	translation_font = API_Translations.get_language_font(self)
-	font = font if translation_font == None else translation_font
+	font = self.font if translation_font == None else translation_font
 
 	old_font = self.font
 	self.font = font # because draw_wrapped_string doesn't take a font argument :(

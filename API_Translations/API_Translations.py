@@ -99,7 +99,6 @@ def get_language_font(self):
 
 
 def initialize_translation_option(self):
-	print(self.options['translation'])
 	if not 'translation' in self.options:
 		self.options['translation'] = NO_TRANSLATION
 	load_translation(self)
