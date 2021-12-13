@@ -1,7 +1,45 @@
-NEW GAME	あたらしいぼうけん
+CONTINUE RUN	途中から続ける
+ABANDON RUN	冒険を破棄する
+NEW GAME	新しい冒険
 OPTIONS	オプション
 BESTIARY	まものずかん
 DISCORD	Discord
 QUIT	ゲームをやめる
 ARCHMAGE	アークメイジ
 Back to Title	タイトルへ戻る
+NORMAL GAME	ノーマルゲーム
+ARCHMAGE TRIALS	アークメイジトライアル
+WEEKLY RUN	ウィークリーラン
+Music Volume:	ＢＧＭ音量
+Menu (ESC)	メニュー(ESC)
+How to Play (H)	遊び方(H)
+Character Sheet (C)	キャラクターシート(C)
+Really abandon the current run?	本当にこの冒険を破棄する？
+Yes	はい
+No	いいえ
+(Defeat all enemies and destroy all gates to unlock)	(全ての敵を倒せばゲートが開かれる)
+Welcome to Rift Wizard.	ようこそRift wizardへ
+Press H for a full help screen and details on all the game's controls.	Hを押すことでヘルプがいつでも閲覧できます。
+Mouseover something for a detailed description of what it does.	大抵のものはマウスカーソルを合わせれば詳細が確認できます。
+Press S to purchase a spell.	SボタンでSpellを買う画面へすぐに飛べます。
+Welcome back Wizard, to the ruins of the universe.	ウィザードよ、三千世界の廃墟へようこそ。
+Aeons passed while you slumbered.	そなたが眠っている間に何世紀もの時が流れてしまった。
+You have sleptwalk across many worlds.	これまで多くの世界を渡ってきた見聞してきたな。
+The universe, once ordered and beautiful, lies in chaos and ruin.	かつてはあの秩序があり美しかった世界も、今では混沌とした廃墟となってしまった。
+And you as well:	そなたについても同じようなものだ。
+You were a great wizard once, but your magic and your memories have faded.	かつては偉大なウィザードだったが、その魔法も記憶も消えてしまった。
+Your purpose you remember.  Revenge.	ただ目的だけは覚えているだろう。復讐だ。
+The Dark Wizard Mordred is nearby.	闇のウィザード、モードレッドがすぐ近くにいる。
+Perhaps he is what woke you?	そなたが目覚めたのもあの男の存在故かもしれない。
+Regain your power, and slay Mordred.	力を取り戻せ、モードレッドを倒すのだ。
+Healing Potion	ヒーリングポーション
+Drinking this potion restores the drinker to full health	このポーションを飲んだものはHPが全回復する。
+Mana Potion	マナポーション
+Refresh charges for all of your spells	全ての魔法を満タンまでチャージする
+Teleporter	テレポーター
+Teleport anywhere on the map once	すきな場所へテレポートできる。使い切り
+Nature	[自然:Nature]
+Conjuration	[召喚術:Conjuration]
+Summon a wolf.	狼を召喚
+The wolf has [11_HP:minion_health].	狼は[11_HP:minion_health]を持ち、
+The wolf has a melee attack which deals [5_physical:physical] damage.	狼は[5_physical:physical]を与える。
