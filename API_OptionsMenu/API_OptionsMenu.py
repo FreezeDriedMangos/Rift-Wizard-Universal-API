@@ -262,15 +262,17 @@ def anim_speed_string(self, cur_value):
 		speed_fmt = "normal"
 	elif self.options['spell_speed'] == 1:
 		speed_fmt = "fast"
-	if self.options['spell_speed'] == 2:
+	elif self.options['spell_speed'] == 2:
 		speed_fmt = "turbo"
+	elif self.options['spell_speed'] == 3:
+		speed_fmt = "Xturbo"
 
 	return ("Anim Speed: %6s" % speed_fmt)
 def set_spell_speed(self, new_value):
 	self.options['spell_speed'] = new_value
 add_option(anim_speed_string, \
 		   lambda self: self.options['spell_speed'], \
-		   [0, 1, 2], \
+		   [0, 1, 2, 3], \
 		   RiftWizard.OPTION_SPELL_SPEED, \
 		   set_spell_speed, \
 		   option_wraps=True \

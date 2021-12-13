@@ -218,6 +218,9 @@ def run(self):
 			pygame.draw.rect(self.screen, (255, 0, 0), (0, 0, 5, 5))
 		self.draw_screen()
 
+		if self.state in [RiftWizard.STATE_LEVEL, RiftWizard.STATE_CHAR_SHEET, RiftWizard.STATE_SHOP]:
+			self.process_examine_panel_input()
+
 		advanced = False
 		if self.game and self.state == RiftWizard.STATE_LEVEL:
 			level = self.get_display_level()
@@ -260,6 +263,10 @@ def run(self):
 				# Continually spell advance on speed 2 until the top spell is finished
 				if self.options['spell_speed'] == 2:
 					while self.game.cur_level.active_spells and top_spell == self.game.cur_level.active_spells[0]:
+						self.game.advance()
+				# Continually advance everything in super turbo, attemptng to do full turn in 1 go
+				if self.options['spell_speed'] == 3:
+					while not self.game.is_awaiting_input():
 						self.game.advance()
 
 				# Check triggers
