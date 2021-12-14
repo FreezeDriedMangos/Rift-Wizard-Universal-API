@@ -30,12 +30,23 @@ import mods.API_Universal.API_Music.API_Music as API_Music
 import mods.API_Universal.API_Spells.API_Spells as API_Spells
 import mods.API_Universal.EventSystem as EventSystem
 
+# ----------------------------------------------------------------------------------------+
+# try to import API_Multiplayer from either the mods/ folder or the API_Univerasl/ folder |
+# -------------------------------                                                         |
+try:                                                 
+	import mods.API_Multiplayer.API_Multiplayer as API_Multiplayer
+except:
+	try:
+		import mods.API_Universal.API_Multiplayer.API_Multiplayer as API_Multiplayer
+	except:
+		API_Multiplayer = False
+		pass                                            
+#                                                                                         |
+#                                                                                         |
+# ----------------------------------------------------------------------------------------+
 
 EventSystem.__add_event('PyGameView.on_frame')
 EventSystem.__add_event('PyGameView.on_exit')
-
-
-
 
 __get_effect_old = RiftWizard.PyGameView.get_effect
 
@@ -48,14 +59,26 @@ def get_effect(self, effect, color=None, *args, **kvargs):
 RiftWizard.PyGameView.get_effect = get_effect
 
 
-__draw_string_old = RiftWizard.PyGameView.draw_string
-def draw_string(self, string, surface, x, y, color=(255, 255, 255), mouse_content=None, content_width=None, center=False, char_panel=False, font=None):
-	string = API_Translations.translate(string)
-	translation_font = API_Translations.get_language_font(self)
-	font = font if translation_font == None else translation_font
+# I'm lazy
+if API_Multiplayer:
+	def draw_string(self, string, surface, x, y, color=(255, 255, 255), mouse_content=None, content_width=None, center=False, char_panel=False, font=None, player=None):
+		string = API_Translations.translate(string)
+		translation_font = API_Translations.get_language_font(self)
+		font = font if translation_font == None else translation_font
 
-	__draw_string_old(self, string, surface, x, y, color=color, mouse_content=mouse_content, content_width=content_width, center=center, char_panel=char_panel, font=font)
-RiftWizard.PyGameView.draw_string = draw_string
+		API_Multiplayer.draw_string(self, string, surface, x, y, color=color, mouse_content=mouse_content, content_width=content_width, center=center, char_panel=char_panel, font=font, player=player)
+	RiftWizard.PyGameView.draw_string = draw_string
+else:
+	__draw_string_old = RiftWizard.PyGameView.draw_string
+	def draw_string(self, string, surface, x, y, color=(255, 255, 255), mouse_content=None, content_width=None, center=False, char_panel=False, font=None):
+		string = API_Translations.translate(string)
+		translation_font = API_Translations.get_language_font(self)
+		font = font if translation_font == None else translation_font
+
+		__draw_string_old(self, string, surface, x, y, color=color, mouse_content=mouse_content, content_width=content_width, center=center, char_panel=char_panel, font=font)
+	RiftWizard.PyGameView.draw_string = draw_string
+
+
 
 __draw_wrapped_string_old = RiftWizard.PyGameView.draw_wrapped_string
 def draw_wrapped_string(self, string, surface, x, y, width, color=(255, 255, 255), center=False, indent=False, extra_space=False):
@@ -88,7 +111,10 @@ API_TitleMenus.override_menu(RiftWizard.STATE_OPTIONS, API_OptionsMenu.draw_opti
 
 __deploy_old = RiftWizard.PyGameView.deploy
 def deploy(self, p):
-	__deploy_old(self, p)
+	if API_Multiplayer:
+		API_Multiplayer.deploy(self, p)
+	else:
+		__deploy_old(self, p)
 	API_Music.play_music(self, 'battle_2')
 RiftWizard.PyGameView.deploy = deploy
 
@@ -102,6 +128,9 @@ RiftWizard.PyGameView.play_music = play_music
 
 
 def get_repeatable_keys(self):
+	if API_Multiplayer:
+		return API_Multiplayer.get_repeatable_keys(self)
+
 	repeatable_keybinds = [
 		RiftWizard.KEY_BIND_UP,
 		RiftWizard.KEY_BIND_DOWN,
@@ -136,6 +165,9 @@ def run(self):
 	gc.disable()
 	frame_time = 0
 	while self.running:
+		if API_Multiplayer:
+			API_Multiplayer.on_run_frame_start
+
 		RiftWizard.cloud_frame_clock += 1
 		RiftWizard.cloud_frame_clock %= 100000 
 
@@ -144,7 +176,7 @@ def run(self):
 			RiftWizard.idle_subframe = 0
 			RiftWizard.idle_frame += 1
 			# RiftWizard.idle_frame = RiftWizard.idle_frame % 100000 # changed this from 2 to 100000 so that idle animations can have up to 100000 frames in them
-			RiftWizard.idle_frame = RiftWizard.idle_frame % 2 # changed this from 2 to 100000 so that idle animations can have up to 100000 frames in them
+			RiftWizard.idle_frame = RiftWizard.idle_frame % 2 
 			
 		self.clock.tick(30)
 		
@@ -271,7 +303,10 @@ def run(self):
 
 				# Check triggers
 				if level.cur_shop:
-					self.open_shop(RiftWizard.SHOP_TYPE_SHOP, player = self.game.p1 if level.cur_shop.x == self.game.p1.x and level.cur_shop.y == self.game.p1.y else self.game.p2)
+					if API_Multiplayer:
+						self.open_shop(RiftWizard.SHOP_TYPE_SHOP, player = self.game.p1 if level.cur_shop.x == self.game.p1.x and level.cur_shop.y == self.game.p1.y else self.game.p2)
+					else:
+						self.open_shop(RiftWizard.SHOP_TYPE_SHOP)
 
 
 		# here's wehre I add code for input for custom menus
@@ -297,3 +332,43 @@ def run(self):
 RiftWizard.PyGameView.run = run
 
 
+if API_Multiplayer:
+	RiftWizard.PyGameView.abort_buy = API_Multiplayer.abort_buy
+	RiftWizard.PyGameView.abort_cur_spell = API_Multiplayer.abort_cur_spell
+	RiftWizard.PyGameView.adjust_char_sheet_selection = API_Multiplayer.adjust_char_sheet_selection
+	RiftWizard.PyGameView.autopickup = API_Multiplayer.autopickup
+	RiftWizard.PyGameView.cast_cur_spell = API_Multiplayer.cast_cur_spell
+	RiftWizard.PyGameView.choose_spell = API_Multiplayer.choose_spell
+	RiftWizard.PyGameView.close_shop = API_Multiplayer.close_shop
+	RiftWizard.PyGameView.confirm_buy = API_Multiplayer.confirm_buy
+	RiftWizard.PyGameView.cycle_tab_targets = API_Multiplayer.cycle_tab_targets
+	# RiftWizard.PyGameView.deploy = API_Multiplayer.deploy                  
+	RiftWizard.PyGameView.draw_char_sheet = API_Multiplayer.draw_char_sheet  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.draw_character = API_Multiplayer.draw_character    # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.draw_key_rebind = API_Multiplayer.draw_key_rebind  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.draw_level = API_Multiplayer.draw_level            # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.draw_shop = API_Multiplayer.draw_shop              # TODO: integrate with API_Menus
+	# RiftWizard.PyGameView.draw_string = API_Multiplayer.draw_string        
+	RiftWizard.PyGameView.draw_title = API_Multiplayer.draw_title            # TODO: integrate with API_Menus
+	# RiftWizard.PyGameView.get_repeatable_keys = API_Multiplayer.get_repeatable_keys
+	RiftWizard.PyGameView.get_shop_options = API_Multiplayer.get_shop_options
+	RiftWizard.PyGameView.get_surface_pos = API_Multiplayer.get_surface_pos
+	RiftWizard.PyGameView.key_bind_select_option = API_Multiplayer.key_bind_select_option
+	RiftWizard.PyGameView.load_game = API_Multiplayer.load_game
+	RiftWizard.PyGameView.new_game = API_Multiplayer.new_game
+	RiftWizard.PyGameView.open_buy_prompt = API_Multiplayer.open_buy_prompt
+	RiftWizard.PyGameView.open_shop = API_Multiplayer.open_shop
+	RiftWizard.PyGameView.process_char_sheet_input = API_Multiplayer.process_char_sheet_input   # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_click_character = API_Multiplayer.process_click_character  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_combat_log_input = API_Multiplayer.process_combat_log_input  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_confirm_input = API_Multiplayer.process_confirm_input  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_key_rebind = API_Multiplayer.process_key_rebind  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_level_input = API_Multiplayer.process_level_input  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_shop_input = API_Multiplayer.process_shop_input  # TODO: integrate with API_Menus
+	RiftWizard.PyGameView.process_title_input = API_Multiplayer.process_title_input  # TODO: integrate with API_Menus
+	# RiftWizard.PyGameView.run = run
+	RiftWizard.PyGameView.try_buy_shop_selection = API_Multiplayer.try_buy_shop_selection
+	RiftWizard.PyGameView.try_move = API_Multiplayer.PyGameView_try_move
+
+
+	# TODO: move all API_TitleMenu calls from API_Multiplayer into a function I can call from here

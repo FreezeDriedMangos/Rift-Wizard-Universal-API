@@ -9,16 +9,17 @@ import RareMonsters
 import random
 
 #This part patches final boss killing
-__check_triggers_old = Game.Game.check_triggers
+# __check_triggers_old = Game.Game.check_triggers
 
 UNIT_FAKE_MORDRED = Monsters.Mordred()
 
 #Prevents victory with a pretend mordred in the last level only
 #Effectively changes the victory condition to last level + all is_final_boss units need to be killed
-def check_triggers(self):
+def check_triggers_pre(self):
 	if(self.level_num == Level.LAST_LEVEL):
 		self.cur_level.units.append(UNIT_FAKE_MORDRED)
-	__check_triggers_old(self)
+
+def check_triggers_post(self):
 	if(self.level_num == Level.LAST_LEVEL):
 		self.cur_level.units.pop()
 	
