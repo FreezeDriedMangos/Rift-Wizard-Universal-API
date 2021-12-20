@@ -1,10 +1,10 @@
 
-import mods.API_Universal.API_Boss.API_Boss as API_Boss
-import mods.API_Universal.API_Effect.API_Effect as API_Effect
-import mods.API_Universal.API_Spells.API_Spells as API_Spells
-import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
-import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
-import mods.API_Universal.API_Music.API_Music as API_Music
+import mods.API_Universal.APIs.API_Boss.API_Boss as API_Boss
+import mods.API_Universal.APIs.API_Effect.API_Effect as API_Effect
+import mods.API_Universal.APIs.API_Spells.API_Spells as API_Spells
+import mods.API_Universal.APIs.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
+import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
+import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.EventSystem as EventSystem
 
 # regex find: /def (.*)\(.*/
@@ -257,3 +257,10 @@ API_Music_Constants.TRACK_TYPE_VICTORY = API_Music.TRACK_TYPE_VICTORY
 # 
 # def add_track(track_type, priority, path, condition_func):
 add_track = API_Music.add_track
+
+
+# Forces a new music track to be selected from existing added tracks, tracks with equal priority whose condition_func retuns 'True' will be chosen from at random.
+# track_type - API_Music_Constants constant. the type of track this is
+# 
+# def play_music(track_type):
+play_music = API_Music.play_music

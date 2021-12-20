@@ -22,12 +22,12 @@ RiftWizard = get_RiftWizard() #                    |
 
 import Level
 
-import mods.API_Universal.API_Effect.API_Effect as API_Effect
-import mods.API_Universal.API_Translations.API_Translations as API_Translations
-import mods.API_Universal.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
-import mods.API_Universal.API_TitleMenus.API_TitleMenus as API_TitleMenus
-import mods.API_Universal.API_Music.API_Music as API_Music
-import mods.API_Universal.API_Spells.API_Spells as API_Spells
+import mods.API_Universal.APIs.API_Effect.API_Effect as API_Effect
+import mods.API_Universal.APIs.API_Translations.API_Translations as API_Translations
+import mods.API_Universal.APIs.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
+import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
+import mods.API_Universal.APIs.API_Music.API_Music as API_Music
+import mods.API_Universal.APIs.API_Spells.API_Spells as API_Spells
 import mods.API_Universal.EventSystem as EventSystem
 
 # ----------------------------------------------------------------------------------------+
@@ -166,7 +166,7 @@ def run(self):
 	frame_time = 0
 	while self.running:
 		if API_Multiplayer:
-			API_Multiplayer.on_run_frame_start
+			API_Multiplayer.on_run_frame_start(self)
 
 		RiftWizard.cloud_frame_clock += 1
 		RiftWizard.cloud_frame_clock %= 100000 

@@ -1,5 +1,5 @@
 import Game
-import mods.API_Universal.API_Boss.API_Boss as API_Boss
+import mods.API_Universal.APIs.API_Boss.API_Boss as API_Boss
 
 
 # ----------------------------------------------------------------------------------------+
