@@ -7,6 +7,8 @@ import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.EventSystem as EventSystem
 
+import mods.API_Universal.Libraries.Library_TextInput.Library_TextInput as Library_TextInput
+
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
 
@@ -264,3 +266,13 @@ add_track = API_Music.add_track
 # 
 # def play_music(track_type):
 play_music = API_Music.play_music
+
+
+
+
+
+#########################
+### Library_TextInput ###
+#########################
+
+TextInput = Library_TextInput.TextInput
