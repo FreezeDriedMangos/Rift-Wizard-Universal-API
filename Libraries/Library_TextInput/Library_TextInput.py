@@ -4,28 +4,43 @@ import math
 class TextInput():
 	def __init__(self):
 		self.font = None
+		self.linesize = None
+
 		self.text = ""
 		self.has_focus = False
 		self.confirmed = False
 
-		self.comfirm_callback = None
+		self.confirm_callback = None
 		self.abort_callback = None
 
-		self.blink_count = 0
-		self.blink_freq = 10
+		self.blink_count = 15
+		self.blink_freq = 15
 
 		self.selection_highlight_width = 30
 
 	def draw(self, pygameview, x, y, draw_panel, center=False):
 		if self.font == None:
 			self.font = pygameview.font
+		if self.linesize == None:
+			self.linesize = pygameview.linesize
+	
+		if self.has_focus:
+			text = ' '+self.text +'|' if self.blink_count//self.blink_freq == 1 else ' '+self.text+' '
+		else:
+			text = self.text
 
 		if center:
-			x -= self.font.size(self.text)[0]//2
-	
-		text = self.text +'|' if self.blink_count//2 == 1 and self.has_focus else self.text
-		text = " "*math.floor(self.selection_highlight_width/2) + self.text + " "*math.ceil(self.selection_highlight_width/2) if center else self.text + " "*self.selection_highlight_width
-		self.draw_string(text, draw_panel, x, y, font=self.font, mouse_content=self)
+			text = " "*math.floor(self.selection_highlight_width/2) + text + " "*math.ceil(self.selection_highlight_width/2)
+		else:
+			text = text + " "*self.selection_highlight_width
+		
+		if center:
+			x -= self.font.size(text)[0]//2
+
+		old_linesize = pygameview.linesize
+		pygameview.linesize = self.linesize # :(
+		pygameview.draw_string(text, draw_panel, x, y, font=self.font, mouse_content=self)
+		pygameview.linesize = old_linesize
 
 		self.blink_count += 1
 		self.blink_count %= self.blink_freq*2
@@ -45,13 +60,15 @@ class TextInput():
 			if not self.has_focus:
 				return
 
-			if evt.key in pygame.key_binds[KEY_BIND_CONFIRM]:
+			if evt.key in pygameview.key_binds[KEY_BIND_CONFIRM]:
 				self.remove_focus()
 				self.confirmed = True
-				if self.confirm_callback:
+				pygameview.play_sound('menu_confirm')
+				if hasattr(self, 'confirm_callback') and self.confirm_callback:
 					self.confirm_callback(self.text)
-			elif evt.key in self.key_binds[KEY_BIND_ABORT]:
+			elif evt.key in pygameview.key_binds[KEY_BIND_ABORT]:
 				self.remove_focus()
+				pygameview.play_sound('menu_abort')
 				if self.abort_callback:
 					self.abort_callback(self.text)
 			elif evt.key == pygame.K_BACKSPACE:
