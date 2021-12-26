@@ -1,0 +1,4889 @@
+
+Base Game Settings:
+  How to Play
+  Sound Volume:   50
+  Music Volume:   38
+  Anim Speed:  turbo
+  Rebind Controls
+
+Back to Title
+NEW GAME
+CONTINUE RUN
+ABANDON RUN
+OPTIONS
+BESTIARY
+DISCORD
+QUIT
+<<<   1/17   >>>
+NORMAL GAME
+*
+ARCHMAGE TRIALS
+WEEKLY RUN
+Limited Spellbook
+Improviser
+Menagerie
+Trollpath
+Sorcerer Ascetic
+Thrifty Wizard
+Wizard Warlords
+Humble Horde
+Giantslayer
+Danger Brigade
+Flamefest
+Wolfer
+Vampire Hunter
+Creative Mode
+Zelkyr's Test
+A random 85% of the spellbook is removed
+A random 70% of the skillbook is removed
+Each level has 6 extra random high level monsters
+All levels contain 1 rifts
+All enemy units have Troll Regeneration
+Each spell has 50% max charges
+Only Sorcery spells
+A maximum of 1 of each consumable can be held at any one time
+A random 90% of the spellbook is removed
+Each level beyond the first contains an extra enemy wizard
+Levels contain 2x Monster Spawners
+Levels contain only 2 SP orbs
+Only Conjuration spells
+All enemy units have 300% HP
+All enemy units have Poison Aura
+All enemy units have 2 extra SH
+All enemy units have 200% HP
+Only Fire spells
+The only available spell is Wolf
+All enemy units have Respawn As Vampire Bat
+Only Holy spells
+Start with 8SP and 1 of every shrine
+Archmage Zelkyr has sealed off the upper levels of the academy,
+leaving you with only low level knowledge.
+He left behind four golems as a test to reopen the upper floors,
+but is it really a test… or a trap?
+NEW GAME WITH TRIAL None
+Welcome back Wizard, to the ruins of the universe.
+Aeons passed while you slumbered.
+You have sleptwalk across many worlds.
+The universe, once ordered and beautiful, lies in chaos and ruin.
+And you as well:
+You were a great wizard once, but your magic and your memories have faded.
+Your purpose you remember.  Revenge.
+The Dark Wizard Mordred is nearby.
+Perhaps he is what woke you?
+Regain your power, and slay Mordred.
+HP 50/50
+HP
+SH 0
+SH
+SP 1
+Realm 1
+Spells:
+Items:
+ 1  Healing Potion    1
+ 2  Mana Potion       1
+ 3  Teleporter        1
+Menu (escape)
+How to Play (h)
+Character Sheet (`)
+WELCOME
+Welcome to Rift Wizard.
+Press H for a full help screen and details on all the game's controls.
+Mouseover something for a detailed description of what it does.
+Press S to purchase a spell.
+WELCOME
+Welcome
+to
+Rift
+Press
+H
+for
+a
+full
+help
+screen
+and
+details
+on
+all
+the
+game's
+controls
+Mouseover
+something
+detailed
+description
+of
+what
+it
+does
+S
+purchase
+spell
+Learn new spells and abilities
+Learn
+new
+spells
+abilities
+Learn how to play
+how
+play
+Adjust options
+Adjust
+options
+Teleporter
+Teleport anywhere on the map once
+Teleport
+anywhere
+map
+once
+Mana Potion
+Mana
+Potion
+Refresh charges for all of your spells
+Refresh
+charges
+your
+Healing Potion
+Healing
+Drinking this potion restores the drinker to full health
+Drinking
+this
+potion
+restores
+drinker
+health
+Bat
+HP 4/4
+Living
+Dark
+Melee
+ 2 Physical damage
+Flying
+Goblin Gate
+Goblin
+Gate
+HP 27/27
+Immobile
+100% Resist Poison
+Spawns a Goblin every 7 to 10 turns.
+
+Next spawn: 10 turns
+Spawns
+every
+7
+10
+turns
+Next
+spawn:
+Memory Orb
+Memory
+Orb
+Grants 1 SP
+Grants
+1
+SP
+(Defeat all enemies and destroy all gates to unlock)
+(
+Defeat
+enemies
+destroy
+gates
+unlock
+)
+Contents:
+Goblin Siege Mecha..
+Sorcery Circle
+Sorcery spells, spell upgrades, and passive skills are 1SP cheaper here
+Sorcery
+,
+upgrades
+passive
+skills
+are
+1SP
+cheaper
+here
+Elixir of Youth
+Spriggan
+Ruby Heart
+Increase max hp by 25
+Increase
+max
+hp
+by
+25
+Portal Disruptor
+Vampire
+Arcane Circle
+Arcane spells, spell upgrades, and passive skills are 1SP cheaper here
+Arcane
+Energy Shield
+Return to Game
+Save and Exit
+STATUS EFFECTS
+Stunned: Cannot act.
+Poisoned: Take 1 poison damage per turn.
+Petrified: Cannot act, gain 100 ice and lightning resist, gain 75 physical and fire resist.
+Glassified: Cannot act, gain 100 ice and lightning resist, 75 fire resist, lose 100 physical resist.
+Frozen: Cannot act.  Ends upon taking fire or physical damage.  Cannot effect units with 100 ice resist.
+Berserked: Become hostile to all other units.  Will attack and be attacked by allies.
+Blind: All spell ranges reduced to 1.
+Channeling: Will continue to cast previous spell with same target if no other action is taken.
+Shield (SH): If a unit with SH would be dealt damage, it loses 1 SH instead.
+Spells
+Learn New Spell (S)
+<<<   Page 1/2   >>>
+Learn a new spell
+Skills
+Learn New Skill (K)
+<<<   Page 2/2   >>>
+Learn Spell:
+Type
+Death Bolt
+D
+C
+Fireball
+F
+Icicle
+I
+Inferno Fireball
+Instakill
+A
+Lightning Bolt
+L
+Magic Missile
+Pentagram Ritual
+Poison Sting
+N
+Summon Eldrich Thing
+Test Ritual
+Test Ritual 2
+Thundering Hail
+Wolf
+Annihilate
+2
+O
+Blazerip
+Boiling Blood
+E
+Chain Lightning
+Chaos Barrage
+Disperse
+T
+Fan of Flames
+Freeze
+Healing Light
+Heart Swap
+U
+Heavenly Blast
+Hollow Flesh
+Hungry Maw
+Invoke Savagery
+Magnetize
+M
+Melt
+Mercurize
+Pain Split
+Petrify
+Regeneration Aura
+Soul Swap
+Thunder Strike
+Toxic Spores
+Toxin Burst
+Aether Swap
+3
+Amplify Venom
+Basilisk Armor
+Blinding Light
+Blink
+Choir of Angels
+Filter:
+Fire
+Lightning
+Ice
+Nature
+Holy
+Conjuration
+Enchantment
+Word
+W
+b
+Dragon
+r
+Translocation
+Metallic
+Eye
+y
+Chaos
+o
+Multiplayer
+u
+<<<<
+Page 1/4
+>>>>
+Level 1
+Range 8
+Charges: 18/18
+Deals [9_dark:dark] damage to one target.
+Slain living units are raised as skeletons.
+Raised skeletons have max HP equal to that of the slain unit, and deal [5_physical:physical] damage in melee.
+Skeletons of flying units can fly.
+Deals
+9 dark
+damage
+one
+target
+Slain
+living
+units
+raised
+as
+skeletons
+Raised
+have
+equal
+that
+slain
+unit
+deal
+5 physical
+in
+melee
+Skeletons
+flying
+can
+fly
+Upgrades:
+3 - Damage
+2 - Max Charges
+3 - Minion Damage
+2 - Withering
+7 - Soul Battery
+Deals [9:damage] [fire] damage to units in a [2_tile:radius] burst.
+9
+fire
+2 tile
+burst
+3 - Radius
+2 - Damage
+1 - Range
+3 - Chaos Ball
+4 - Energy Ball
+5 - Ash Ball
+Range 9
+Charges: 22/22
+Deal [6_physical:physical] damage to the target.
+Then, deal [6_ice:ice] to the target and a [1_tile:radius] area around it.
+Deal
+6 physical
+Then
+6 ice
+1 tile
+area
+around
+2 - Freezing
+2 - Radius
+3 - Icicle Harvest
+Range 15
+Charges: 10/10
+Charge up and cast a fireball.
+Each turn spent charging increases the radius by 1.
+The fireball deals [10_fire:fire] damage and has a base radius of 3.
+The fireball can be charged for up to 4 turns.
+Channel the spell to charge it, and recast it before the charge limit is reached to cast the fireball.
+Charge
+up
+cast
+fireball
+Each
+turn
+spent
+charging
+increases
+radius
+deals
+10 fire
+base
+be
+charged
+4
+Channel
+charge
+recast
+before
+limit
+is
+reached
+1 - Bound Fireball
+1 - Charge Damage
+Charges: 3/3
+Spend 4 turns charging to prepare this spell.
+Channel the spell to charge it. Once prepared, it remains prepared until it's used again.
+Deals [999_arcane:arcane] damage to a target when used after being prepared.
+Spend
+prepare
+Once
+prepared
+remains
+until
+it's
+used
+again
+999 arcane
+when
+after
+being
+Range 10
+Deals [12_lightning:lightning] damage in a beam.
+12 lightning
+beam
+2 - Range
+3 - Channeling
+6 - Judgement Bolt
+6 - Energy Bolt
+Range 12
+Charges: 20/20
+Deal [11_arcane:arcane] damage to the target.
+11 arcane
+1 - Shield Burn
+4 - Slaughter Bolt
+4 - Holy Bolt
+6 - Disruption Bolt
+Range 20 (Ignores LOS)
+Charges: 12/12
+A test spell
+test
+Deal [9_physical:physical] damage to target unit.
+That unit is [poisoned] for [30_turns:duration].
+[Poisoned] units take 1 [poison] damage each turn.
+9 physical
+That
+poisoned
+30 turns
+Poisoned
+take
+poison
+each
+4 - Range
+3 - Max Charges
+2 - Duration
+2 - Acidity
+Range 4
+Summon an eldrich thing after 5 turns spent charging (channel the spell to charge it).
+The thing has [50_HP:minion_health].
+Eldrich things have a melee attack which deals [15_physical:physical] damage.
+Summon
+an
+eldrich
+thing
+5
+channel
+50 HP
+Eldrich
+things
+attack
+which
+15 physical
+A test ritual
+ritual
+Charges: 4/4
+Cast a chargeable gravity well that reverses direction at the end of charging.
+Each turn spent charging increases the radius and damage of the final effect by 1.
+The final effect deals 11 Arcane and 11 Physical damage.
+Each turn spent charging, units are pulled towards the center.
+Channel the spell to charge it, and recast it before the charge limit is reached to cast the final effect.
+Cast
+chargeable
+gravity
+well
+reverses
+direction
+at
+end
+final
+effect
+11
+Physical
+pulled
+towards
+center
+Range 5
+Summon a wolf.
+The wolf has [11_HP:minion_health].
+The wolf has a melee attack which deals [5_physical:physical] damage.
+wolf
+11 HP
+3 - Pounce
+1 - Minion Damage
+3 - Minion Health
+3 - Blood Hound
+3 - Ice Hound
+6 - Clay Hound
+8 - Wolf Pack
+Level 2
+Range 6
+Charges: 8/8
+Deals [16_fire:fire] damage, [16_lightning:lightning] damage, and [16_physical:physical] damage to the target.
+16 fire
+16 lightning
+16 physical
+3 - Cascade
+1 - Dark Annihilation
+1 - Arcane Annihilation
+Range 6 (Ignores LOS)
+Deals [12_arcane:arcane] and [12_fire:fire] damage in a [7_tile:radius] line perpendicular to the caster.
+Melts walls in the affected area.
+12 arcane
+12 fire
+7 tile
+line
+perpendicular
+caster
+Melts
+walls
+affected
+Charges: 9/9
+All allied units gain stacking [6_damage:damage] bonus to their fire and physical abilities.
+Lasts [7_turns:duration].
+All
+allied
+gain
+stacking
+6 damage
+bonus
+their
+physical
+Lasts
+7 turns
+3 - Extra Damage
+3 - Holy Fury
+3 - Dark Fury
+Charges: 6/6
+Fire an arcing bolt of electricity dealing [8_lightning:lightning] damage.
+The bolt repeatably arcs to new targets within the cascade range.
+Each arc deals damage to all units along a beam.
+The bolt can arc up to [4_tiles:radius], and cannot pass through walls.
+The bolt terminates when it cannot arc to any new targets.
+arcing
+bolt
+electricity
+dealing
+8 lightning
+repeatably
+arcs
+targets
+within
+cascade
+range
+arc
+along
+4 tiles
+cannot
+pass
+through
+terminates
+any
+4 - Cascade Range
+3 - Cloud Conductance
+6 - Lightning Shield
+Range 7
+Fire [8_bolts:num_targets] of chaotic energy at random units in a cone.
+Each bolt randomly deals [9_fire:fire], [9_lightning:lightning], or [9_physical:physical] damage.
+8 bolts
+chaotic
+energy
+random
+cone
+randomly
+9 fire
+9 lightning
+or
+1 - Max Charges
+5 - Damage
+4 - Extra Bolts
+Charges: 15/15
+Teleport all units in a [3_tile:radius] radius to random locations
+The caster is unaffected.
+3 tile
+locations
+unaffected
+Range 5 (Ignores LOS)
+Deal [9_fire:fire] damage to all units in a cone.
+This spell can be channeled for up to [10_turns:duration].  The effect is repeated each turn the spell is channeled.
+This
+channeled
+10 turns
+repeated
+3 - Range
+Target unit is [frozen] for [5_turns:duration].
+[Frozen] units cannot act. Frozen units unfreeze upon taking [fire] or [physical] damage.
+Target
+frozen
+5 turns
+Frozen
+act
+unfreeze
+upon
+taking
+3 - Duration
+Heal all allies in line of sight for [25_health:heal].
+Heal
+allies
+sight
+25 health
+1 - Heal
+2 - Shielding Light
+For the next 10 turns, swap the last spell you and your ally used.
+This spell fails if your ally is not alive.
+For
+next
+swap
+last
+you
+ally
+fails
+if
+not
+alive
+Charges: 14/14
+Deal [7_holy:holy] damage to enemies and heal allies for [7_hp:heal] along a beam and in a [1_tile:radius] burst.
+7 holy
+heal
+7 hp
+6 - Spirit Bind
+3 - Shield
+4 - Echo Heal
+Curse a group of units with the essence of undeath.
+Affected units become [undead] and lose [living].
+Affected units lose [25%:damage] of their max HP.
+Affected units lose [100_holy:holy] resist.
+Affected units gain [100_dark:dark] resist.
+Affected units cannot be healed.
+Curse
+group
+with
+essence
+undeath
+Affected
+become
+undead
+lose
+25%
+100 holy
+resist
+100 dark
+healed
+2 - Max Health Loss
+2 - Fire Vulnerability
+Summons a hungry maw.
+The maw has [8_HP:minion_health], [1_SH:shields], floats, and is stationary.
+The maw has a [9_physical:physical] damage attack, which pulls enemies towards it, with a range of [7_tiles:minion_range].
+The maw vanishes after [15_turns:minion_duration].
+Summons
+hungry
+maw
+8 HP
+1 SH
+floats
+stationary
+pulls
+7 tiles
+vanishes
+15 turns
+3 - Shields
+2 - Minion Range
+5 - Minion Damage
+Charges: 11/11
+Each living ally attacks a random enemy unit in melee range.
+The attack deals [14_physical:physical] damage and inflicts [2_turns:duration] of [stun].
+attacks
+enemy
+14 physical
+inflicts
+2 turns
+stun
+Range 9 (Ignores LOS)
+Magnetize target metallic unit.
+Enemy units within a [4_tile:radius] radius of the magnetized unit are pulled [1_tiles:range] towards the unit each turn.
+Afterwards, adjecent enemy units are stunned for 1 turn.
+Lasts [5_turns:duration].
+metallic
+Enemy
+4 tile
+magnetized
+1 tiles
+Afterwards
+adjecent
+stunned
+3 - Pull Distance
+4 - Universal Magnetism
+Target unit takes [22_fire:fire] damage and loses [100_physical:physical] resist.
+takes
+22 fire
+loses
+100 physical
+3 - Ice Penetration
+Afflict the target with Mercurize.  The target takes [2_poison:poison] and [2_physical:physical] damage each turn for [6_turns:duration].
+If the target dies while cursed, it is raised as a Quicksilver Geist.
+Geists are flying undead metallic units with many resistances and immunities.
+The Geist has max HP equal to the cursed unit, and a trample attack dealing [10_physical:physical] damage.
+
+Afflict
+2 poison
+2 physical
+6 turns
+If
+dies
+while
+cursed
+Quicksilver
+Geist
+Geists
+many
+resistances
+immunities
+trample
+10 physical
+4 - Damage
+2 - Morbidity
+2 - Corrosion
+5 - Toxic Fumes
+5 - Mercurial Vengeance
+Pool your hp with your ally; you each recieve half of the total.
+This spell fails if your ally is not alive.
+Pool
+;
+recieve
+half
+total
+Inflict [petrify] on the target for [10_turns:duration].
+[Petrified] units cannot act.
+[Petrified] units gain [100_ice:ice] resist.
+[Petrified] units gain [100_lightning:lightning] resist.
+[Petrified] units gain [75_physical:physical] resist.
+[Petrified] units gain [75_fire:fire] resist.
+Inflict
+petrify
+Petrified
+100 ice
+100 lightning
+75 physical
+75 fire
+3 - Glassify
+Each turn for [8_turns:duration], all allied units in a [10_tile:radius] radius are healed for [4_HP:heal].
+8 turns
+10 tile
+4 HP
+2 - Heal
+1 - Duration
+4 - Global
+Range 50 (Ignores LOS)
+Swap places with a friendly [undead] unit.
+Swap
+places
+friendly
+2 - Forced Transfer
+Deal [24_lightning:lightning] damage to the target.
+Stun all enemies in a [2_tile:radius] burst around the target.
+24 lightning
+Stun
+3 - Blindcasting
+2 - Storm Power
+4 - Heaven Strike
+Charges: 16/16
+Summons [2:num_summons] Mushbooms.
+Mushbooms have [11_HP:minion_health].
+Mushbooms have a ranged attack dealing [1_poison:poison] damage and inflicting [4_turns:duration] of [poison].
+Mushbooms inflict [12_turns:duration] of [poison] on units in melee range when they die.
+Mushbooms
+ranged
+1 poison
+inflicting
+4 turns
+inflict
+12 turns
+they
+die
+3 - Num Summons
+2 - Grey Mushbooms
+5 - Red Mushbooms
+6 - Glass Mushbooms
+Range 12 (Ignores LOS)
+Deal [1_poison:poison] damage and inflict [poison] on all units in a [4_tile:radius] radius for [20_turns:duration].
+[Poisoned] units take 1 [poison] damage each turn.
+20 turns
+Level 3
+Swap places with target unit.
+That unit takes [16_arcane:arcane] damage.
+Cannot target [arcane] immune units.
+16 arcane
+Cannot
+arcane
+immune
+2 - Blindcasting
+All [poisoned] enemies lose [100_poison:poison] resist for [10_turns:duration].
+100 poison
+3 - Resistance Debuff
+2 - Spread Poison
+Whenever an enemy unit targets you with a spell or attack, that unit is [petrified] for [2:duration] turns.
+Lasts [10_turns:duration].
+Whenever
+petrified
+[Blind] all units in line of sight of the caster for [4_turns:duration].
+[Blind] units have all their spell ranges reduced to 1.Deals [5_holy:holy] damage to affected undead and demon units.
+Blind
+ranges
+reduced
+5 holy
+demon
+2 - Dark Units
+Teleport to target tile
+tile
+4 - Lightning Blink
+4 - Dark Blink
+Charges: 5/5
+Summons a choir of [3:num_summons] angelic singers.
+The singers have [10_HP:minion_health], [1_SH:shields], 50% resistance to [fire] and [holy] damage, and 100% resistance to [dark] damage.
+The angels can sing, dealing [2_fire:fire] and [2_holy:holy] damage to all [undead], [demon], and [dark] units in a [5_tile:radius] radius. [Living] and [holy] units in the song's radius are healed for [1_HP:heal].
+The angels vanish after [10:minion_duration] turns.
+choir
+angelic
+singers
+10 HP
+50%
+resistance
+holy
+100%
+dark
+angels
+sing
+2 fire
+2 holy
+5 tile
+song's
+1 HP
+vanish
+2 - Shields
+4 - Num Summons
+2 - Minion Duration
+3 - Heal
+Combust Poison
+Darkness
+Death Chill
+Devour Mind
+Dominate
+Earthen Sentinel
+Earthquake
+Eye of Fire
+Y
+Eye of Ice
+Eye of Lightning
+Eye of Rage
+Flame Burst
+Flame Gate
+Frostfire Hydra
+R
+Ghostball
+Giant Bear
+Glass Orb
+B
+Holy Armor
+Holy Fire
+Iceball
+Ironize
+Lightning Halo
+Lightning Spire
+Mystic Power
+Mystic Vision
+Nightmare Aura
+Pain Mirror
+Plague of Filth
+Prison of Thorns
+Seal Fate
+Shrapnel Blast
+Silver Spear
+Suspend Mortality
+Touch of Death
+Underworld Passage
+Void Orb
+Arc Lightning
+Blizzard
+Bone Barrage
+Call Archon
+Call Seraph
+Chimera Familiar
+Conductance
+Conjure Memories
+Page 2/4
+Level 4
+Charges: 1/1
+Regain a charge of each of your conjuration spells
+Regain
+conjuration
+2 - Charges Regained
+Curse an enemy with the essence of conductivity.
+That enemy loses [50_lightning:lightning] resist.
+Whenever you cast a [lightning] spell targeting that enemy, copy that spell.
+Lasts [10_turns:duration].
+conductivity
+50 lightning
+lightning
+targeting
+copy
+2 - Multicopy
+2 - Resistance Debuff
+Charges: 2/2
+Summon a Chimera Familiar.
+The chimera has [6_fire:fire] damage and [6_lightning:lightning] damage attacks with a range of [4_tiles:minion_range].
+The chimera mimics your casts of [fire] or [lightning] or [chaos] [sorcery] spells if the target is in range and line of sight.
+Chimera
+Familiar
+chimera
+6 fire
+6 lightning
+mimics
+casts
+chaos
+sorcery
+2 - Minion Resists
+1 - Nature Mimicry
+1 - Dark Mimicry
+1 - Arcane Mimicry
+Summon a seraph.
+Seraphim have [33_HP:minion_health], [3_SH:shields], and can fly.
+Seraphim have a cleaving melee attack which deals [14_fire:fire] and [14_holy:holy] damage.
+The seraph vanishes after [14_turns:minion_duration].
+seraph
+Seraphim
+33 HP
+3 SH
+cleaving
+14 fire
+14 holy
+14 turns
+4 - Minion Damage
+3 - Moonblade
+5 - Essence Aura
+2 - Heal Aura
+5 - Holy Fire Aura
+Summon an Archon.
+Archons have [77_HP:minion_health], [3_SH:shields], and can fly.
+Archons have beam attacks which deal [14_lightning:lightning] damage to enemies and shield allies.
+The Archon vanishes after [14_turns:minion_duration].
+Archon
+Archons
+77 HP
+14 lightning
+shield
+3 - Minion Range
+Range 14
+Charges: 7/7
+Your summoned allies in line of sight of the target take [physical] damage equal to half their health.
+Each affected ally deals that much [physical] damage to the target.
+Your
+summoned
+much
+6 - Bone Spears
+5 - Cursed Bones
+Create a blizzard with a [4_tile:radius] radius.
+Each turn, units in the blizzard take [5_ice:ice] damage, and have a 50% chance to be [frozen].
+[Frozen] units cannot act. Frozen units unfreeze upon taking [fire] or [physical] damage.The blizzard lasts [5_turns:duration].
+Create
+blizzard
+5 ice
+chance
+lasts
+Lightning arcs to [3_enemies:num_targets] visible from the target tile.
+Each arc deals [16_lightning:lightning] damage to units in a beam.
+3 enemies
+visible
+from
+4 - Num Targets
+5 - Echo Flash
+Summon a void orb next to the caster.
+The orb melts through walls along the way, and deals [9_arcane:arcane] damage each turn to all adjacent units.
+The orb has no will of its own, each turn it will float one tile towards the target.
+The orb can be destroyed by arcane damage.
+void
+orb
+melts
+way
+9 arcane
+adjacent
+will
+its
+own
+float
+destroyed
+5 - Red Dwarf
+2 - Void Walk
+Range 99 (Ignores LOS)
+Teleport to any tile adjacent to a chasm.
+Can only be cast while adjacent to a chasm.
+chasm
+Can
+only
+Melee Range
+Deal [200_dark:dark] damage to one unit in melee range.
+200 dark
+1 - Arcane Damage
+1 - Fire Damage
+1 - Physical Damage
+2 - Touch of the Raven
+4 - Touch of the Vampire
+6 - Touch of the Reaper
+Range 8 (Ignores LOS)
+Target allied unit gains the ability to reincarnate on death for [40_turns:duration].
+gains
+ability
+reincarnate
+death
+40 turns
+2 - Lives
+Range 11
+Charges: 25/25
+Deals [27_physical:physical] damage to the target.
+Deals [27_holy:holy] damage to [dark] and [arcane] units within a [1_tile:radius] away from the projectiles path.
+27 physical
+27 holy
+away
+projectiles
+path
+4 - Radius
+Range 7 (Ignores LOS)
+Detonate target wall tile.
+Enemies adjacent to the wall tile take [12_fire:fire] damage.
+The explosion fires [16_shards:num_targets] at random tiles in a [4_tile:radius] burst.
+Each shard deals [12_physical:physical] damage.
+Detonate
+wall
+Enemies
+explosion
+fires
+16 shards
+tiles
+shard
+12 physical
+3 - More Shrapnel
+2 - Puncturing Blast
+7 - Magnetized Shards
+Charges: 13/13
+After [4_turns:duration], deal [160_dark:dark] damage to target unit.
+After
+160 dark
+2 - Spreading Curse
+Surround a group of enemies with carnivorous plants.
+The plants have [7_HP:minion_health] and cannot move.
+The plants have a melee attack which deals [3_physical:physical] damage.
+The plants vanish after [15_turns:minion_duration].
+Surround
+carnivorous
+plants
+7 HP
+move
+3 physical
+2 - Minion Damage
+2 - Minion Health
+5 - Iron Prison
+6 - Icy Prison
+Summon a group of [2:num_summons] toads and fly swarms.
+Toads have [12_HP:minion_health].
+Toads have a ranged tongue attack which deals [2_physical:physical] damage and pulls enemies towards it.
+Toads can hop up to [4_tiles:range] away.
+Fly swarms have [6_HP:minion_health], [75_dark:dark] resist, [75_physical:physical] resist, [-50_ice:ice] resist, and can fly.
+Fly swarms have a melee attack which deals [1_physical:physical] damage.
+The summons vanish after [7_turns:minion_duration].
+This spell can be channeled for up to [15_turns:duration].
+toads
+swarms
+Toads
+12 HP
+tongue
+hop
+Fly
+6 HP
+75 dark
+-50 ice
+1 physical
+summons
+3 - Minion Duration
+1 - Max Channel
+2 - Serpent Plague
+Whenever you take damage, deal that much [dark] damage to all enemies in line of sight.
+Lasts [10_turns:duration].
+Each turn, randomly deals [2_arcane:arcane] or [2_dark:dark] damage to each enemy in a [7_tile:radius] radius.
+This damage is fixed, and cannot be increased using shrines, skills, or buffs.
+Lasts [30_turns:duration].
+2 arcane
+2 dark
+fixed
+increased
+using
+shrines
+buffs
+5 - Dark Dream
+5 - Electric Dream
+5 - Fever Dream
+All other spells gain [5_range:range].
+Lasts [8_turns:duration].
+other
+5 range
+4 - Bonus
+5 - Vision Aura
+All other spells gain [7_damage:damage].
+Lasts [8_turns:duration].
+7 damage
+4 - Damage Bonus
+4 - Intensity
+Summon a Lightning Spire.
+Lightning Spires are stationary [metallic] constructs with [25:minion_health] max hp.
+Each turn, the spire will zap up to [4:num_targets] enemy units up to [4:minion_range] tiles away, dealing [6_lightning:lightning] damage.
+Spire
+Spires
+constructs
+spire
+zap
+2 - Num Targets
+5 - Wall Penetration
+5 - Resistance Penetration
+Deal [15_lightning:lightning] damage to all units in a [3_tile:radius] ring each turn.
+Lasts [9_turns:duration].
+15 lightning
+ring
+9 turns
+1 - Radius
+All allied units gain [50_physical:physical] resist, [50_fire:fire] resist, and [50_lightning:lightning] resist and become metallic.
+Lasts [10_turns:duration].
+50 physical
+50 fire
+2 - Resist
+2 - Arcane Insulation
+Deals [14_ice:ice] damage in a [2_tile:radius] burst.
+Damaged units are [frozen] for [3_turns:duration].
+14 ice
+Damaged
+3 turns
+6 - Ice Crush
+Deal [22_fire:fire] damage in a vertical line and [22_holy:holy] damage in a horizontal line.
+[Stun] [demon] and [undead] units in the affected area.
+vertical
+22 holy
+horizontal
+Gain [50_physical:physical] resist.
+Gain [50_fire:fire] resist.
+Gain [50_lightning:lightning] resist.
+Gain [50_dark:dark] resist.
+Lasts [9_turns:duration].
+Gain
+50 dark
+1 - Resist
+Summon a glass orb next to the caster.
+Each turn the orb inflicts [glassify] on enemy units in a [3_tile:radius] area.
+[Glassified] units cannot act.
+[Glassified] units gain [-100_physical:physical] resist.
+[Glassified] units gain [100_ice:ice] resist.
+[Glassified] units gain [100_lightning:lightning] resist.
+[Glassified] units gain [75_fire:fire] resist.
+The orb has no will of its own, each turn it will float one tile towards the target.
+The orb can be destroyed by physical damage.
+glass
+glassify
+Glassified
+-100 physical
+1 - Shielding
+Summon a giant bear.
+The bear has [65_HP:minion_health].
+The bear has a melee attack which deals [10_physical:physical] damage.
+giant
+bear
+65 HP
+3 - Minion Attacks
+3 - Armored Bear
+4 - Venom Bear
+5 - Blood Bear
+Deal [11_dark:dark] damage to enemy units in a [1_tile:radius] radius.
+Summon ghosts at empty tiles in the radius.
+Ghosts have [4_HP:minion_health], fly, [100_physical:physical] resist, [50_dark:dark] resist, and passively blink.
+Ghosts have a melee attack which deals [1_dark:dark] damage.
+The ghosts vanish after [14_turns:minion_duration].
+11 dark
+ghosts
+empty
+Ghosts
+passively
+blink
+1 dark
+5 - Ghost King
+4 - Ghost Mass
+Summon a frostfire hydra.
+The hydra has [16_HP:minion_health], and is stationary.
+The hydra has a beam attack which deals [7_fire:fire] damage with a [9_tile:minion_range] range.
+The hydra has a beam attack which deals [7_ice:ice] damage with a [9_tile:minion_range] range.
+The hydra vanishes after [15_turns:minion_duration].
+frostfire
+hydra
+16 HP
+7 fire
+9 tile
+7 ice
+Whenever you cast a [fire] spell, summon a fire elemental at the target of that spell.
+Fire elementals have [22_HP:minion_health], [100_fire:fire] resist, [50_physical:physical] resist, and [-50_ice:ice] resist.
+Fire elementals have an attack which deals [7_fire:fire] damage with a [4_tile:minion_range] range.
+Fire elementals vanish after [9_turns:minion_duration].
+This effect lasts until you fail to cast a fire spell.
+summon
+elemental
+elementals
+22 HP
+100 fire
+fail
+Deal [35_fire:fire] damage in a [6_tile:radius] burst around the caster.
+35 fire
+6 tile
+4 - Melting Flame
+5 - Bright Flame
+7 - Spreading Flame
+Every [3_turns:shot_cooldown], inflict [berserk] on a random enemy unit in line of sight for [2_turns:berserk].
+Lasts [20_turns:duration].
+Every
+berserk
+1 - Shot Cooldown
+1 - Berserk Duration
+5 - Lycanthropy
+Every [3_turns:shot_cooldown], deals [15_lightning:lightning] damage to a random enemy unit in line of sight.
+Lasts [30_turns:duration].
+Every [3_turns:shot_cooldown], deals [15_ice:ice] damage to a random enemy unit in line of sight.
+Lasts [30_turns:duration].
+15 ice
+Every [3_turns:shot_cooldown], deals [15_fire:fire] damage to a random enemy unit in line of sight.
+Lasts [30_turns:duration].
+15 fire
+Invoke an earthquake with a [7_tile:radius] radius.
+Each tile in the area has a 50% chance to be affected.
+Units on affected tiles take [21_physical:physical] physical damage.
+Walls on affected tiles are destroyed.
+Invoke
+earthquake
+Units
+21 physical
+Walls
+2 - Safety
+Summon an Earth Elemental.
+Earth elementals have [120_HP:minion_health], [50_physical:physical] resist, [50_fire:fire] resist, [50_lightning:lightning] resist, and cannot move.
+Earth elementals have a melee attack which deals [20_physical:physical].The elemental vanishes after [15_turns:minion_duration].
+Earth
+Elemental
+120 HP
+20 physical
+6 - Earthquake Totem
+5 - Stinging Totem
+7 - Holy Totem
+Target enemy unit with [40_HP:heal] or lower becomes your minion.
+40 HP
+lower
+becomes
+minion
+3 - HP Threshold
+4 - Brute Force
+Range 4 (Ignores LOS)
+Deal [25_arcane:arcane] to an enemy unit.
+Then, if the target is under 50%% HP, deal it an additional [25_dark:dark] damage.
+Can only target [living] units.
+25 arcane
+under
+50%%
+additional
+25 dark
+4 - Spirit Eater
+2 - Gluttony
+Deal [11_dark:dark] damage to the target each turn for [5_turns:duration].
+If the target dies during this time, deals [11_ice:ice] damage and inflicts [frozen] for [5_turns:duration] on all enemies within a [3_tiles:radius] radius.
+[Frozen] units cannot act. Frozen units unfreeze upon taking [fire] or [physical] damage.
+during
+time
+11 ice
+3 tiles
+Each turn, [blind] all units for [1_turn:duration].
+[Blind] units have all their spell ranges reduced to 1.
+[Demon] and [undead] units are unaffected.
+Lasts [5_turns:duration]
+blind
+1 turn
+Demon
+Consume all [poison] on enemy units.
+Deal [fire] damage in an [2_tile:radius] burst around each affected enemy equal to [1x:damage] the amount of poison consumed.
+Consume
+1x
+amount
+consumed
+4 - Multiplier
+Death Gaze
+Death Shock
+Dispersion Field
+Fiery Tormentor
+Fire Drake
+Floating Eye
+Ice Drake
+Ice Orb
+Ice Vortex
+Lightning Form
+Lightning Storm
+Orb Control
+Permanence
+Petrification Aura
+Purity
+Pyrostatic Pulse
+Searing Seal
+Siege Golems
+Sight of Blood
+Siphon Shields
+Storm Burst
+Storm Drake
+The Restless Dead
+True Allies
+Void Beam
+Void Drake
+Volcanic Eruption
+Wall of Ice
+Watcher Form
+Wheel of Death
+Ally's Cantrip Cascade
+Ball Lightning
+Blue Lion
+Cantrip Cascade
+Chill Wind
+Death Cleave
+Fae Court
+Flock of Eagles
+Heavenly Idol
+Ice Phoenix
+Mega Annihilate
+Pillar of Fire
+Pyrostatic Curse
+Ring of Spiders
+Page 3/4
+Each allied unit deals [4_dark:dark] damage to a random enemy in its line of sight.
+4 dark
+4 - Vampiric Gaze
+Deal [17_lightning:lightning] damage and [17_dark:dark] damage to the target.
+If the target is slain, this effect bounces to a random enemy in line of sight up to [4_tiles:range] away.
+Can hit up to [3_targets:num_targets].
+17 lightning
+17 dark
+bounces
+hit
+3 targets
+2 - Cascade Range
+4 - Infinite Cascades
+Each turn, teleport [3_enemies:num_targets] in a [6_tile:radius] radius to random locations on the map.
+Lasts [7_turns:duration].
+teleport
+4 - Max Charges
+Summon a fiery tormentor.
+The tormentor has [34_HP:minion_health].
+The tormentor has a burst attack dealing [7_fire:fire] damage with a [4_tile:radius] radius.
+The tormentor has a lifesteal attack dealing [2_dark:dark] damage with a [2_tile:minion_range] range.
+The tormentor vanishes after [50_turns:minion_duration].
+fiery
+tormentor
+34 HP
+lifesteal
+50 turns
+3 - Frostfire Tormentor
+3 - Ghostfire Tormentor
+Summon a Fire Drake at target square.
+Fire Drakes have [45_HP:minion_health], fly, and have [100_fire:fire] resist.
+Fire Drakes have a breath weapon which deals [9_fire:fire] damage.
+Fire Drakes have a melee attack which deals [8_physical:physical] damage.
+Drake
+square
+Drakes
+45 HP
+breath
+weapon
+8 physical
+2 - Breath Damage
+6 - Dragon Mage
+Summon a floating eye.
+Floating eyes have [1_HP:minion_health], [4_SH:shields], float in place, and passively blink.
+Floating eyes have no attacks of their own, but will cast any other [eye] spells you know upon being summoned.
+Floating eyes vanish after [16_turns:minion_duration].
+floating
+eye
+Floating
+eyes
+4 SH
+place
+but
+know
+16 turns
+Summon an Ice Drake at target square.
+Ice Drakes have [45_HP:minion_health], fly, and have [100_ice:ice] resist.
+Ice Drakes have a breath weapon which deals [8_ice:ice] damage and [freezes] units.
+Ice Drakes have a melee attack which deals [8_physical:physical] damage.
+8 ice
+freezes
+2 - Freeze Duration
+5 - Dragon Mage
+Summon an ice orb next to the caster.
+Each turn the orb deals [7_ice:ice] damage to enemy units in a [3_tile:radius] radius.
+[Frozen] units cannot act. Frozen units unfreeze upon taking [fire] or [physical] damage.The orb has no will of its own, each turn it will float one tile towards the target.
+The orb can be destroyed by fire damage.
+ice
+3 - Freeze Chance
+Range 10 (Ignores LOS)
+Must target a frozen unit.
+All enemy units in a [5_tile:radius] radius are pulled towards that unit, [frozen] for [2_turns:duration], and dealt [11_arcane:arcane] and [11_ice:ice] damage.
+Must
+dealt
+Whenever you cast a [lightning] spell, teleport to that spell's target.
+Gain [100_lightning:lightning] resistance.
+Gain [100_physical:physical] resistance.
+This effect ends the first turn that you fail to cast a [lightning] spell.
+spell's
+ends
+first
+Create a thunderstorm with a [4_tile:radius] radius.
+Each turn, each tile in the storm has a [50%_chance:strikechance] of taking [12_lightning:lightning] damage.
+The storm lasts for [10_turns:duration].
+thunderstorm
+storm
+50% chance
+2 - Strikechance
+1 - Damage
+Retarget all allied [orbs:orb] to target tile.
+Retarget
+orbs
+Your spells and temporary summons last an extra [5_turns:duration].
+This effect lasts [20_turns:duration].
+temporary
+extra
+Each turn, inflict [petrify] on up to [3:num_targets] unpetrified enemy units in a [7_tile:radius] radius each turn.
+[Petrified] units cannot act.
+[Petrified] units gain [100_ice:ice] resist.
+[Petrified] units gain [100_lightning:lightning] resist.
+[Petrified] units gain [75_physical:physical] resist.
+[Petrified] units gain [75_fire:fire] resist.
+Lasts [7_turns:duration].
+unpetrified
+3 - Petrify Duration
+6 - Glassify
+Lose all debuffs.
+You cannot gain new debuffs.
+Lasts [6_turns:duration].
+Lose
+debuffs
+You
+Deal [16_fire:fire] damage in a beam.
+Deal [16_lightning:lightning] damage to tiles adjacent to the beam.
+Gain Seal of Searing.
+Whenever an enemy takes [fire] damage, the seal gains that many charges.
+When the seal expires, it deals [1_fire:fire] damage to all enemies in line of sight for every 4 charges it has.
+The seal lasts [6_turns:duration].
+Recasting the spell will expire the current seal and create a new one.
+Seal
+Searing
+seal
+When
+expires
+1 fire
+Recasting
+expire
+current
+create
+Summons a crew of [3:num_summons] siege golems.
+The siege golems will assemble an inferno cannon, or operate one if it is within [3_tiles:range].
+The inferno cannon deals [30_fire:fire] damage to units in a [3_tile:radius] radius.
+The cannon will explode when destroyed, dealing [30_fire:fire] damage equal to one quarter its maximum hp to units in a [3_tile:radius].
+
+crew
+siege
+golems
+assemble
+inferno
+cannon
+operate
+30 fire
+explode
+quarter
+maximum
+Must target a damaged [living] unit.
+The target is [stunned] for [4_turns:duration].
+[Stunned] units cannot act.
+All [living] units in line of sight of the target go [berserk] for [4_turns:duration].
+[Berserk] units are hostile to all other units, they will attack and be attacked by their allies.
+damaged
+Stunned
+go
+Berserk
+hostile
+attacked
+2 - Demon Frenzy
+Steal up to [1_SH:shields] from all units in line of sight.
+Steal
+2 - Shield Burn
+1 - Shield Steal
+Unleashes a [5_tile:radius] burst of storm energy.
+Each tile in the burst takes either [21_ice:ice] damage or [21_lightning:lightning] damage.
+Units dealt ice damage are [frozen] for [3_turns:duration].
+Units dealt lightning damage are [stunned] for [3_turns:duration].
+Unleashes
+either
+21 ice
+21 lightning
+2 - Cloud Nova
+Summon a storm drake at target square.
+Storm drakes have [45_HP:minion_health], fly, and have [100_lightning:lightning] resist.
+Storm drakes have a breath weapon which creates storm clouds that deal [10_lightning:lightning] damage.
+Storm drakes have a melee attack which deals [8_physical:physical] damage.
+drake
+Storm
+drakes
+creates
+clouds
+10 lightning
+3 - Cloudform
+2 - Drake Swap
+Whenever a living enemy dies, raise it as a skeleton.
+Raised skeletons have max HP equal to that of the slain unit, and deal [5_physical:physical] damage in melee.
+Skeletons of flying units can fly.
+This effect lasts [15_turns:duration].
+raise
+skeleton
+3 - Junk Golems
+5 - Elemental Spirits
+Gain your ally's resists and weaknessess for 10 turns.
+This spell fails if your ally is not alive.
+ally's
+resists
+weaknessess
+Range 15 (Ignores LOS)
+Deal [25_arcane:arcane] damage and destroy walls in a beam.
+Summon a Void Drake at target square.
+Void Drakes have [45_HP:minion_health], fly, and have [100_arcane:arcane] resist.
+Void Drakes have a breath weapon which deals [8_arcane:arcane] damage and melts walls.
+Void Drakes have a melee attack which deals [8_physical:physical] damage.
+Void
+100 arcane
+8 arcane
+4 - Essence Drake
+Create a [6_tile:radius] burst of lava in a chasm.
+The burst flows up to [3_tiles:radius] out of the chasm.
+The lava deals [46_fire:fire] damage
+lava
+flows
+out
+46 fire
+3 - Flow Range
+4 - Wallcano
+Summons a line of ice elementals with a length of [3_tiles:num_summons].
+Ice elementals have [36_HP:minion_health], [50_physical:physical] resist, [100_ice:ice] resist, [-100_fire:fire] resist, and cannot move.
+Ice elementals have a ranged attack which deals [5_ice:ice] damage at a range of up to [3_tiles:minion_range].
+The elementals vanish after [15_turns:minion_duration].
+length
+36 HP
+-100 fire
+Each turn, fire a lightning bolt at the farthest enemy in line of sight dealing [40_lightning:lightning] damage in a beam.
+You cannot move or cast spells.
+Gain 100 [physical] resist.
+Gain 100 [fire] resist.
+Gain 100 [lightning] resist.
+Gain 100 [poison] resist.
+Lasts [5_turns:duration]
+farthest
+40 lightning
+100
+Deal [200_dark:dark] damage to a random enemy unit.
+7 - Death Roulette
+Level 5
+Cast each of your ally's level 1 sorcery spells on each enemy in a cone.
+level
+Summon a lighting orb next to the caster.
+Each turn the orb fires [3_beams:num_targets] of electricity at random enemy units in line of sight. The beams deal [6_lightning:lightning] damage.
+The orb has no will of its own, each turn it will float one tile towards the target.
+The orb can be destroyed by lightning damage.
+lighting
+3 beams
+beams
+3 - Num Targets
+1 - Magnetic Pulse
+Summon a blue lion.
+Blue lions have [28_HP:minion_health], fly, have [50_arcane:arcane] resist and [50_physical:physical] resist.
+Blue lions have a spell that grants [1_SH:shield] to themselves and allies in their line of sight, up to a maximum of [2_SH:shield] with a cooldown of [3_turns:duration].
+Blue lions also have a melee attack which deals [7_physical:physical] damage.
+blue
+lion
+Blue
+lions
+28 HP
+50 arcane
+grants
+themselves
+2 SH
+cooldown
+also
+7 physical
+4 - Shield Max
+2 - Shield Cooldown
+Cast each of your level 1 sorcery spells on each enemy in a cone.
+Deals [21_ice:ice] damage and inflicts [6_turns:duration] of [frozen] on units in a [3_tile:radius] wide line perpendicular to the caster.
+wide
+Whenever a spell you cast kills its primary target, that spell is recast on a randomly selected nearby valid enemy target up to [4_tiles:range] away.
+This process repeats until the target survives the spell, or there are no nearby valid targets.
+Lasts [2_turns:duration].
+kills
+primary
+selected
+nearby
+valid
+process
+repeats
+survives
+there
+3 - Cascade Range
+Summons a group of [5:num_summons] faeries near the caster.
+The faeries fly, and have [9_HP:minion_health], [1_SH:shields], [75_arcane:arcane] resistance, and a passive blink.
+The faeries can heal allies for [5_HP:heal], with a range of [4_tiles:minion_range].
+The faeries have a [4_arcane:arcane] damage attack, with a range of [4_tiles:minion_range].
+The faeries vanish after [15_turns:minion_duration].
+faeries
+near
+9 HP
+75 arcane
+5 HP
+4 arcane
+7 - Summon Queen
+9 - Glass Faery
+Summons [4_eagles:num_summons] near the caster.
+Eagles have [18_HP:minion_health] and can fly.
+Eagles have a melee attack which deals [6_physical:physical] damage.
+4 eagles
+Eagles
+18 HP
+4 - Dive Attack
+4 - Shields
+4 - Thunderbirds
+Summon an Idol of Beauty.
+The idol has [35_HP:minion_health], [2_SH:shields], and is stationary.
+The idol has  a passive aura which affects all units in line of sight of the idol.Affected allies are healed for for [1_HP:heal].
+Affected enemies take [1_holy:holy] damage.
+Affected [undead] and [demon] units take an additional [1_lightning:lightning] damage.
+The idol vanishes after [15_turns:minion_duration].
+Idol
+Beauty
+idol
+35 HP
+aura
+affects
+1 holy
+1 lightning
+4 - Fire Gaze
+1 - Minion Duration
+Summon an ice phoenix.
+The phoenix has [74_HP:minion_health], flies, and reincarnates once upon death.
+The phoenix has a ranged attack which deals [9_ice:ice] damage with a [4_tile:minion_range] range.
+When the phoenix dies, it explodes in a [6_tile:radius] burst, dealing [25_ice:ice] damage to enemies and granting [2_SH:shields] to allies.
+phoenix
+74 HP
+flies
+reincarnates
+9 ice
+explodes
+25 ice
+granting
+3 - Reincarnations
+Deals [99_fire:fire] damage, [99_lightning:lightning] damage, and [99_physical:physical] damage to the target.
+99 fire
+99 lightning
+99 physical
+2 - Dark Annihilation
+2 - Arcane Annihilation
+Deal [50_fire:fire] in a [1_tile:radius] burst.
+Deal double damage to the center tile.
+double
+Curses targets in a [4_tile:radius] radius for [4_turns:duration].
+Whenever a cursed target takes fire damage, 2 random enemy units in line of sight of that unit are dealt half that much [lightning] damage.
+
+Curses
+5 - Linear Conductance
+Summons a ring of giant spiders at the target, surrounded by a ring of webs.
+Units blocking the spider ring are [poisoned] for [10_turns:duration], creatures blocking the web ring are [stunned] for [1_turn:duration].
+Giant spiders have [14_HP:minion_health] and spin webs.
+Giant spiders have a melee attack which deals [2_physical:physical] and inflicts [5_turns:duration] of [poison].
+Webs [stun] non spider units which step on them for [1_turn:duration].
+[Poisoned] units take 1 [poison] damage each turn.[Stunned] units cannot act.
+spiders
+surrounded
+webs
+blocking
+spider
+creatures
+web
+Giant
+14 HP
+spin
+Webs
+non
+step
+them
+6 - Aether Spiders
+Slime Form
+Soul Tax
+Spider Queen
+Dragon Roar
+6
+Gold Drake
+Heaven's Wrath
+Imp Swarm
+Mystic Memory
+Searing Orb
+Twilight Gaze
+Knightly Oath
+Meteor Shower
+Multicast
+Spikeball Factory
+Word of Beauty
+Word of Chaos
+Word of Ice
+Word of Madness
+Word of Ressurection
+Word of Undeath
+Page 4/4
+Assume slime form for [8_turns:duration].
+Gain [50_physical:physical] resist while in slime form.
+Gain [100_poison:poison] resist while in slime form.
+Summon a friendly slime each turn while in slime form.
+Slimes have [10_HP:minion_health], have a 50% chance each turn to gain 1 max HP, and split into two slimes upon reaching twice their starting HP.
+Slimes have a melee attack which deals [3_poison:poison] damage.
+Assume
+slime
+form
+Slimes
+split
+into
+two
+slimes
+reaching
+twice
+starting
+3 poison
+1 - Fire Slime
+2 - Ice Slime
+3 - Void Slime
+4 - Duration
+Deal damage to target unit equal to one third of its health as [holy] damage, and then one third of its remaining health as [dark] damage.
+Heal the caster for the total amount of damage dealt.
+third
+then
+remaining
+2 - Arcane Taxation
+Summon a spider queen.
+The spider queen has [96_HP:minion_health].
+The spider queen hatches [4:num_summons] baby spiders every [12_turns:duration].
+Baby spiders have [3_HP:minion_health] and prefer to flee than attack, but they mature into giant spiders after [8_turns:duration] which have [14_HP:minion_health].
+Giant spiders and the spider queen have melee attacks which deal [2_physical:physical] physical damage and inflicts 10 turns of [poison].
+queen
+96 HP
+hatches
+baby
+Baby
+3 HP
+prefer
+flee
+than
+mature
+3 - Aether Queen
+3 - Steel Queen
+5 - Void Teleport
+Level 6
+All allied dragons gain [25_max_HP:minion_health], [12:damage] attack damage, and [1_turn:duration] cooldown reduction.
+Lasts [25_turns:duration].
+dragons
+25 max HP
+12
+reduction
+25 turns
+3 - Hp Bonus
+Summon a Gold Drake.
+Gold drakes have [45_HP:minion_health], [100_holy:holy] resist, and can fly.
+Gold drakes have a breath weapon which deals [9_holy:holy] damage to enemies and heals allies for [9_HP:heal].
+Gold drakes have a melee attack which deals [8_physical:physical] damage
+Gold
+9 holy
+heals
+4 - Breath Damage
+4 - Dragon Mage
+2 - Golden Crusade
+For the next 10 turns, take the damage meant for your ally.
+This spell fails if your ally is not alive.
+meant
+Deal [22_lightning:lightning] damage and [22_holy:holy] damage to [3_units:num_targets] with the highest current HP.
+Does not target friendly units or gates.
+22 lightning
+3 units
+highest
+Does
+3 - Culling
+3 - Stun Duration
+Each turn, summon [2_imps:num_summons] near the caster.
+Imps have [5_HP:minion_health] and can fly.
+Imps have a ranged attack dealing [4_damage:minion_damage] with a [3_tile:minion_range] range.
+Each imp is either a [fire], [iron:physical], or [spark:lightning] imp.
+The imps each last [11_turns:minion_duration], and this effect lasts [5_turns:duration].
+2 imps
+Imps
+4 damage
+imp
+iron
+spark
+imps
+11 turns
+2 - Num Summons
+6 - Metal Swarm
+5 - Dark Swarm
+7 - Mega Swarm
+Regain all charges of a random other spell which currently has no remaining charges.
+currently
+Summon a searing orb next to the caster.
+The orb deals [3_fire:fire] damage each turn to all units in line of sight.
+The caster is immune to this damage.
+The orb has no will of its own, each turn it will float one tile towards the target.
+The orb can be destroyed by ice damage.
+searing
+3 fire
+4 - Matter Melting
+All enemies in line of sight lose [50_dark:dark] resist and [50_holy:holy] resist.
+Lasts [10_turns:duration].
+50 holy
+3 - Arcane Gaze
+Level 7
+Summon a void knight, a chaos knight, and a storm knight.
+Each knight has [90_HP:minion_health], various resistances, and an arsenal of unique magical abilities.
+The caster takes [40_holy:holy] damage whenever a knight dies.
+knight
+90 HP
+various
+arsenal
+unique
+magical
+40 holy
+whenever
+5 - Void Court
+5 - Storm Court
+5 - Chaos Court
+Rains [7_meteors:num_targets] down on random tiles in a [7_tile:radius] radius each turn.
+Meteors deal [23_physical:physical] damage, destroy walls, and inflict stun for [2_turns:duration].
+Meteors also deal [23_fire:fire] damage in a [2_tile:radius] radius.
+This spell can be channeled for up to [5_turns:duration].  The effect is repeated each turn the spell is channeled.
+Rains
+7 meteors
+down
+Meteors
+23 physical
+23 fire
+2 - Stun Duration
+2 - Meteor Size
+2 - Max Channel
+Whenever you cast a [sorcery] spell, copy it.
+Lasts [3_turns:duration]
+4 - Copies
+Surrounds the caster with spikeball gates, which will spawn spikeballs.
+Surrounds
+spikeball
+spawn
+spikeballs
+6 - Manufactory
+7 - Copper Spikeballs
+Heal yourself and all living units fully.
+Deal [25_lightning:lightning] damage to [demon] and [undead] units.
+[Stun] all [arcane] units for [7_turns:duration].
+yourself
+fully
+25 lightning
+[Stun] each enemy for [6_turns:duration] and teleport them to random tiles.
+Deal [45_lightning:lightning] damage to all [fire] enemies.
+Deal [45_fire:fire] damage to all [lightning] enemies.
+Each enemy construct loses all [physical] resist and takes [45_physical:physical] damage.
+45 lightning
+45 fire
+construct
+45 physical
+All non [ice] immune enemies under 50 HP are [frozen] for [5_turns:duration].
+Deals [50_ice:ice] damage to all fire units.
+50
+50 ice
+[Berserk] all units except the caster for [5_turns:duration].
+Deal [dark] damage to all [construct] units equal to half their current HP.
+Fully heal all [demon] units.
+except
+Fully
+5 - Duration
+Ressurrects your ally if they have no hp.
+Fails if your ally is currently alive.
+Unlearns itself after use.
+Ressurrects
+Fails
+Unlearns
+itself
+use
+All undead units have their current and maximum HP doubled.
+All other units except the caster lose half their current and maximum HP.
+doubled
+Learn Skill:
+Arcane Accounting
+Arcane Combustion
+Arcane Shield
+Chaos Buddies
+Chastisement
+Crystal Power
+Faestone
+Ghostfire
+Hibernation
+Hungry Dead
+Minion Regeneration
+Natural Vigour
+Paralyzing Venom
+Radiant Chill
+Shatter Shards
+Shielded Minions
+Spider Spawning
+Unholy Alliance
+Venom Spit
+White Flame
+Chaos Casting
+Collected Agony
+Frozen Fragility
+Glittering Dance
+Holy Water
+Horror
+Houndlord
+Hypocrisy
+Last Word
+Lightning Frenzy
+Melting Armor
+Necrostatics
+Prince of Ruin
+Purestrike
+Pyrophilia
+Righteous March
+Searing Heat
+Silkshifter
+Storm Caller
+Telepathic Link
+Thorn Garden
+Bone Guard
+Cracklevoid
+Fiery Judgement
+Page 1/2
+Accounting
+level 4
+Whenever you cast the last charge of an [arcane] spell, your next non arcane spell is free for 1 turn.
+free
+Combustion
+Whenever a unit is killed by arcane damage, that unit explodes for [12_arcane:arcane] damage in a [3_tile:radius] square, melting walls on effected tiles.
+killed
+melting
+effected
+Shield
+Whenever you cast an [arcane] spell, if you have no shields, gain [1_SH:shields].
+shields
+Buddies
+Whenever an enemy takes [fire], [lightning], and [physical] damage in the same turn, summon an iron imp, a spark imp, and a fire imp near that enemy.
+Imps have [5_HP:minion_health] and can fly.
+Imps have a ranged attack dealing [4_damage:minion_damage] with a [3_tile:minion_range] range.
+The imps each last [7_turns:minion_duration].
+
+same
+Whenever an enemy takes [holy] damage, it has a 50% chance to be [stunned] for [1_turn:duration].
+Crystal
+Power
+Your [sorcery] spells gain [2_damage:damage] for each [frozen] or [glassified] enemy.
+2 damage
+glassified
+Whenever you enter a new level, summon a Fae Stone nearby.
+The Fae Stone has [120_HP:minion_health], and is stationary.
+Whenever you cast a [nature] spell, the Fae Stone heals for [10_HP:heal].
+Whenever you cast an [arcane] spell, the Fae Stone teleports near the target and gains [1_SH:shields].
+enter
+Fae
+Stone
+nature
+teleports
+Whenever an enemy takes [dark] damage and [fire] damage in the same turn, summon a burning ghost near that enemy.
+Burning ghosts fly, have [100_fire:fire] resist and [100_dark:dark] resist, and passively blink.
+Burning ghosts have a ranged attack which deals [7_fire:fire] damage with a [5_tile:minion_range] range.
+The ghosts vanish after [10_turns:minion_duration].
+burning
+ghost
+Burning
+Your living minions gain [75_ice:ice] resist.
+Your living minions freeze for [3_turns:duration] upon taking ice damage.
+Your living minions heal for [15_HP:heal] each turn while [frozen].
+
+minions
+75 ice
+freeze
+15 HP
+Hungry
+Dead
+Your summoned [undead] units gain Hunger.
+Hunger deals [5_dark:dark] damage to a target up to [2_tiles:range] away, healing the caster for all damage dealt, and has a [3_turn:cooldown] cooldown.
+
+Hunger
+5 dark
+2 tiles
+healing
+3 turn
+Minion
+Regeneration
+Each turn, heal each of your minions for [2_HP:heal]
+2 HP
+Natural
+Vigour
+Your summoned units gain [25_physical:physical] resist, [25_lightning:lightning] resist, [25_ice:ice] resist and [25_fire:fire] resist.
+25 physical
+25 fire
+Paralyzing
+Venom
+Whenever an enemy takes [poison] damage, it has a 25% chance to be [stunned] for [1_turn:duration].
+Radiant
+Chill
+Whenever you cast an [ice] spell, [freeze] the nearest unfrozen enemy to that spell's target for [3_turns:duration].
+nearest
+unfrozen
+Shatter
+Shards
+Whenever a unit is unfrozen or a [frozen] unit is killed, up to [3_enemies:num_targets] in a [6_tile:radius] burst take [9_ice:ice] and [9_physical:physical] damage.
+Shielded
+Minions
+Arcane minions you summon gain [3_SH:shields].  Other minions you summon gain [1_SH:shields].
+Other
+Spider
+Spawning
+Whenever an enemy dies to [poison] damage, summon a friendly spider nearby.
+Giant spiders have [14_HP:minion_health] and spin webs.
+Giant spiders have a melee attack which deals [2_physical:physical] and inflicts [5_turns:duration] of [poison].
+Webs [stun] non spider units which step on them for [1_turn:duration].
+[Poisoned] units take 1 [poison] damage each turn.[Stunned] units cannot act.
+Unholy
+Alliance
+Whenever you summon an [undead] or [demon], if you control a holy unit, the newly summoned unit gains [7_damage:damage].
+Whenever you summon a [holy] creature, if you control an [undead] or [demon], the newly summoned unit gains [7_damage:damage].
+
+control
+newly
+creature
+Spit
+Your summoned [nature] units gain Venom Spit.
+Venom spit is a ranged attack which deals [4_poison:poison] damage and inflicts [poison] for [10_turns:duration].
+Venom spit has a [6_tile:range] range, and a [4_turn:cooldown] cooldown.
+spit
+4 poison
+4 turn
+White
+Flame
+Whenever you cast a [fire] spell with range greater than zero, deal [18_fire:fire] damage to the targeted point.
+greater
+zero
+18 fire
+targeted
+point
+Casting
+level 5
+Whenever you cast a [chaos] spell, you have a 25% chance of regaining a charge of another random [chaos] spell
+regaining
+another
+Collected
+Agony
+Each turn, deal 2x the sum total of all [poison] damage dealt to all units to the nearest enemy as [dark] damage.
+2x
+sum
+Fragility
+Whenever an enemy is [frozen], reduces that enemy's [physical] and [ice] resist by 100 until it is unfrozen.
+reduces
+enemy's
+Glittering
+Dance
+When you cast three [arcane] spells in a row, regain a charge of a random [translocation] spell and summon [2_faeries:num_summons].
+The faeries fly, and have [9_HP:minion_health], [1_SH:shields], [75_arcane:arcane] resistance, and a passive blink.
+The faeries can heal allies for [5_HP:heal], with a range of [4_tiles:minion_range].
+The faeries have a [4_arcane:arcane] damage attack, with a range of [4_tiles:minion_range].
+The faeries vanish after [10_turns:minion_duration].
+
+three
+row
+regain
+translocation
+2 faeries
+Water
+Whenever a [frozen] enemy takes [holy] damage, you and all allies in line of sight gain [1_SH:shields], up to a max of [3:shields].
+Whenever an enemy dies to [dark] damage, up to [3:num_targets] random enemies in line of sight of that enemy are [stunned] for [5_turns:duration]
+Begin each level surrounded by friendly hell hounds.
+Hell hounds have [19_HP:minion_health], [100_fire:fire] resist, [50_dark:dark] resist, and [-50_ice:ice] resist.
+Hell hounds have fiery bodies which deal [4_fire:fire] damage to melee attackers.
+Hell hounds a melee attack which deals [6_fire:fire] damage.
+Hell hounds have a leap attack which deals [6_fire:fire] damage with a range of [4_tiles:minion_range].
+
+Begin
+hell
+hounds
+Hell
+19 HP
+bodies
+4 fire
+attackers
+leap
+Whenever you cast a [dark] spell, if your next spell is a [holy] spell of a lower level, that spell's cost is refunded.
+Whenever you cast a [holy] spell, if your next spell is a [dark] spell of a lower level, that spell's cost is refunded.
+cost
+refunded
+Last
+Whenever you finish a level, gain a charge of each of your [word] spells.
+finish
+word
+Frenzy
+Whenever you cast a [lightning] spell, your [lightning] spells and skills gain [4_damage:damage] for [6_turns:duration]
+Melting
+Armor
+Whenever an enemy takes [fire] damage, it loses [10_physical:physical] and [10_fire:fire] resist.
+You get +1 [lightning] damage for each undead ally you control.
+get
++
+Prince
+Ruin
+Whenever an enemy dies to [fire], [physical], or [lightning] damage, deal [13_damage:damage] of that type to a random enemy in line of sight of the target up to [5_tiles:radius] away.
+13 damage
+type
+5 tiles
+Whenever you or an allied unit deals physical damage to an enemy, if the source of that damage is shielded, redeal 50% of that damage as arcane and 50% of that damage as holy.
+source
+shielded
+redeal
+Whenever a summoned minion witnesses an enemy take [fire] damage, that minion heals for half that damage.
+witnesses
+Righteous
+March
+Whenever an enemy dies to [holy] damage, allies witnessing it gain [1_SH:shields] if they are not already shielded.
+witnessing
+already
+Heat
+Whenever you cast a [fire] spell, deal [3_fire:fire] damage to all enemies in line of sight of the target.
+This damage is fixed and cannot be modified.
+modified
+You are a spider.
+Passively spawn a web each turn on a random adjacent tile.  Webs will not spawn on top of units or walls.
+Whenever you cast a translocation spell targeting a web, refund 1 charge of that spell and consume the web.
+Passively
+top
+refund
+consume
+Caller
+Whenever [ice] or [lightning] damage is dealt to an enemy unit, create a blizzard or thundercloud nearby.
+The clouds last [5_turns:duration].
+thundercloud
+Telepathic
+Link
+Form a one-way telepathic link with your ally.
+Self-targeting enchantments can now be cast on your ally player, no matter how far away they are.
+Form
+one-way
+telepathic
+link
+Self-targeting
+enchantments
+now
+player
+matter
+far
+Thorn
+Garden
+Whenever you cast an [arcane] or [nature] spell, summon [2:num_summons] fae thorns near the target.
+Fae Thorns have [10_HP:minion_health], and cannot move.
+Fae Thorns have a melee attack which deals [4_physical:physical] damage.
+The thorns vanish after [6_turns:minion_duration].
+fae
+thorns
+Thorns
+4 physical
+Bone
+Guard
+level 6
+Begin each level accompanied by 4 bone knights.
+Bone knights have [40_HP:minion_health], [1_SH:shields], [100_dark:dark] resist, and [50_ice:ice] resist.
+Bone knights have a melee attack which deals [9_dark:dark] damage and drains 2 max HP.
+
+accompanied
+bone
+knights
+drains
+Whenever an enemy takes [arcane] damage, deal that much [lightning] damage to up to [2:num_targets] enemy units in a [6_tile:radius] burst.
+Fiery
+Judgement
+Half of all [fire] damage you or your minions deal is redealt as [holy] damage.
+Half
+redealt
+Frostbite
+Holy Thunder
+Ice Tap
+Icy Vengeance
+Inferno Engines
+Lightning Warp
+Moonspeaker
+Scalespinner
+Starfire
+Steam Anima
+Arch Conjurer
+Arch Enchanter
+Arch Sorcerer
+Dark Lord
+Dragon Lord
+Fire Lord
+Ice Lord
+Light Lord
+Metal Lord
+Nature Lord
+Orb Lord
+Shock Value
+Soul Harvest
+Thunder Lord
+Translocation Master
+Unblinking Eye
+Void Lord
+Void Spikes
+Page 2/2
+Each turn all frozen enemies take [7_dark:dark] damage.
+7 dark
+Thunder
+Half of all [lightning] damage you or your minions deal is redealt as [holy] damage.
+Tap
+Whenever you cast an [arcane] spell targeting a [frozen] unit, make a copy of that spell targeting each other frozen unit in line of sight.
+Remove [frozen] from all affected units.
+make
+Remove
+Icy
+Vengeance
+Whenever one of your minions dies, up to [3:num_targets] random enemies in a [5_tile:radius] radius take [ice] damage equal to half the dead minion's max HP.
+dead
+minion's
+Inferno
+Engines
+Whenever you cast a [fire] spell, all of your [metallic] allies gain [2_damage:damage] [fire] aura with radius equal to the level of the spell you cast for [10_turns:duration].
+This damage is fixed, and cannot be increased using shrines, skills, or buffs.
+
+Warp
+Whenever you cast a [lightning] spell, all enemy units within [3_tiles:radius] of the target are teleported to random spaces [4_to_8_tiles:range] away and take [12_lightning:lightning] damage.
+teleported
+spaces
+4 to 8 tiles
+Whenever an enemy takes [arcane] damage, all [holy] minions in line of sight of that enemy redeal 50% of that damage as [holy] damage.
+Whenever an allied [dragon] uses a breath weapon, all your summoned units gain 100 resist to that breath weapon's element for [5_turns:duration]
+dragon
+uses
+weapon's
+element
+Half of all [fire] damage you or your minions deal is redealt as [arcane] damage.
+Steam
+Anima
+Whenever a unit is unfrozen by fire damage, spawn [3:num_summons] steam elementals nearby.
+Steam elementals have [16_HP:minion_health], [100_physical:physical] resist, [100_ice:ice] resist, and [100_fire:fire] resist.
+Steam elementals have a ranged attack which deals [9_fire:fire] damage, with a range of [6_tiles:minion_range].
+The elementals vanish after [5_turns:minion_duration].
+steam
+6 tiles
+Arch
+Conjurer
+level 7
+Conjuration spells and skills gain [2_max_charges:max_charges].
+2 max charges
+Conjuration spells and skills gain [3_minion_damage:minion_damage].
+3 minion damage
+Conjuration spells and skills gain [7_minion_health:minion_health].
+7 minion health
+Conjuration spells and skills gain [1_minion_range:minion_range].
+1 minion range
+Conjuration spells and skills gain [1_minion_duration:minion_duration].
+1 minion duration
+Enchanter
+Enchantment spells and skills gain [2_max_charges:max_charges].
+Enchantment spells and skills gain [3_duration:duration].
+3 duration
+Enchantment spells and skills gain [5_damage:damage].
+5 damage
+Sorcerer
+Sorcery spells and skills gain [2_max_charges:max_charges].
+Sorcery spells and skills gain [7_damage:damage].
+Sorcery spells and skills gain [2_range:range].
+2 range
+Lord
+Dark spells and skills gain [3_max_charges:max_charges].
+3 max charges
+Dark spells and skills gain [6_minion_damage:minion_damage].
+6 minion damage
+Dark spells and skills gain [6_damage:damage].
+Dragon spells and skills gain [3_max_charges:max_charges].
+Dragon spells and skills gain [25_minion_health:minion_health].
+25 minion health
+Dragon spells and skills gain [10_breath_damage:breath_damage].
+10 breath damage
+Fire spells and skills gain [1_max_charges:max_charges].
+1 max charges
+Fire spells and skills gain [12_damage:damage].
+12 damage
+Fire spells and skills gain [1_radius:radius].
+1 radius
+Ice spells and skills gain [1_max_charges:max_charges].
+Ice spells and skills gain [6_damage:damage].
+Ice spells and skills gain [2_duration:duration].
+2 duration
+Light
+Holy spells and skills gain [2_max_charges:max_charges].
+Holy spells and skills gain [12_damage:damage].
+Holy spells and skills gain [15_minion_health:minion_health].
+15 minion health
+Holy spells and skills gain [7_minion_duration:minion_duration].
+7 minion duration
+Metal
+Metallic spells and skills gain [3_max_charges:max_charges].
+Metallic spells and skills gain [5_duration:duration].
+5 duration
+Metallic spells and skills gain [4_range:range].
+4 range
+25% Resist Physical
+Nature spells and skills gain [3_max_charges:max_charges].
+Nature spells and skills gain [2_duration:duration].
+Nature spells and skills gain [7_minion_damage:minion_damage].
+7 minion damage
+Nature spells and skills gain [10_minion_health:minion_health].
+10 minion health
+Orb spells and skills gain [3_max_charges:max_charges].
+Orb spells and skills gain [4_range:range].
+Orb spells and skills gain [35_minion_health:minion_health].
+35 minion health
+Shock
+Value
+Whenever an enemy dies to [lightning] damage, another random enemy in line of sight of that enemy goes [berserk] for [5_turns:duration].
+[Berserk] units are hostile to all other units, they will attack and be attacked by their allies.
+goes
+Soul
+Harvest
+Whenever an enemy unit dies, each of your [dark] spells has a 10% chance of gaining a charge.
+This chance is tripled if the unit died to [dark] damage.
+10%
+gaining
+tripled
+died
+Lightning spells and skills gain [1_max_charges:max_charges].
+Lightning spells and skills gain [8_damage:damage].
+8 damage
+Lightning spells and skills gain [2_cascade_range:cascade_range].
+2 cascade range
+Lightning spells and skills gain [1_num_targets:num_targets].
+1 num targets
+50% Resist Lightning
+Master
+Translocation spells and skills gain [5_max_charges:max_charges].
+5 max charges
+Translocation spells and skills gain [3_range:range].
+3 range
+Unblinking
+Eye spells and skills gain [-1_shot_cooldown:shot_cooldown].
+-1 shot cooldown
+Eye spells and skills gain [10_duration:duration].
+10 duration
+Eye spells and skills gain [10_minion_duration:minion_duration].
+10 minion duration
+Eye spells and skills gain [1_max_charges:max_charges].
+Arcane spells and skills gain [2_max_charges:max_charges].
+Arcane spells and skills gain [8_damage:damage].
+Arcane spells and skills gain [2_range:range].
+Spikes
+Whenever you or one of your [arcane] or [undead] allies take damage from an enemy, deal [5_arcane:arcane] damage to the source of that damage.
+5 arcane
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bestiary: 328 of 500 Monsters Slain
+Goblin
+Giant Goblin
+Armored Goblin
+Red Goblin
+Lanky Goblin
+Psychic Goblin
+Goblin Void Demolitionist
+Goblin Fire Demolitionist
+Goblin Siege Mechanic
+Bat
+Vampire
+Vampire Bat
+Giant Bat
+Toxic Bat
+Flame Bat
+Flappy, Bat King
+Void Bomber
+Void Rift
+Giant Void Bomber
+Giant Fire Bomber
+Void Cluster Bomber
+Fire Bomber
+Flame Rift
+Fire Cluster Bomber
+Fire Imp
+Furnace Imp
+Chaos Imp
+Ash Imp
+Firestorm Imp
+Giant Fire Imp
+Krilt, Fire Imp King
+Void Imp
+Insanity Imp
+Rot Imp
+Imp Tablet
+Spark Imp
+Copper Imp
+Giant Spark Imp
+Xilet, Spark Imp King
+Ghost
+Void Ghost
+Giant Ghost
+Fire Ghost
+Ghost King
+<<<<
+Page 1/12
+>>>>
+HP 7/7
+HP
+Living
+Melee
+ 2 Physical damage
+Ghostly Mass
+Witch
+Haunter
+Mind Maggot
+Giant Mind Maggot
+Mind Maggot Drone
+Flud, Mind Maggot King
+Mind Devourer
+Mind Maggot Queen
+Displacer Beast
+Displacer Broodmother
+Razor Beast
+Giant Displacer Beast
+Spirit Strider
+Bloodfrenzy Feline
+Nine the Cat
+Green Mushboom
+Giant Green Mushboom
+Acrinar, Green Mushboom King
+Glass Mushboom
+Swamp Queen
+Mantis
+Metal Mantis
+Giant Mantis
+Ghost Mantis
+Lightning Mantis
+Void Mantis
+Snake
+Giant Snake
+Lightning Snake
+Fire Snake
+Death Snake
+Slazephan, Serpent Philosopher
+Spriggan
+Spriggan Bush
+Toxic Spriggan
+Toxic Spriggan Bush
+Icy Spriggan
+Icy Spriggan Bush
+Treant
+Boggart
+Toxic Boggart
+Giant Boggart
+Boggart Aether Zealot
+Page 2/12
+Ghostly
+Mass
+HP 28/28
+Dark
+Undead
+ 2 Dark damage
+Flying
+100% Resist Physical
+100% Resist Poison
+50% Resist Ice
+50% Resist Dark
+-100% Resist Holy
+Each turn, 25% chance to blink to a random tile up to 3 tiles away
+Each
+turn
+,
+25%
+chance
+to
+blink
+a
+random
+tile
+up
+3
+tiles
+away
+On death, spawn 8 Ghosts
+On
+death
+spawn
+8
+Ghosts
+Trafflerabus, Boggart King
+Boggart Void Mage
+Boggart Assassin
+Iron Imp
+Giant Iron Imp
+Tungsten Imp
+Thrahn, Iron Imp King
+Satyr
+Zahlgrahd, Satyr King
+Giant Satyr
+Wild Satyr
+Dark Satyr
+Armored Satyr
+Large Worm Ball
+Giant Worm Ball
+Large Iron Worm Ball
+Large Toxic Worm Ball
+Large Ghost Worm Ball
+Kobold
+Pakkatok, Kobold King
+Kobold Longbowman
+Kobold Crossbowman
+Kobold Siege Mechanic
+Faewitch
+Ice Witch
+Fire Witch
+Old Witch
+Blood Witch
+Orc
+Orc Boar Rider
+Orc Boar
+Orc Flame Zealot
+Orc Pyromancer
+Akabalah, Orc King
+Orc Juggernaut
+Orc Houndlord
+Giant Spider
+Giant Spider Queen
+Steel Spider
+Aether Spider
+Arachnid Abombination
+Aelf Arachnomancer
+Ice Lizard
+Giant Ice Lizard
+Page 3/12
+Trafflerabus
+King
+HP 24/24
+SH 1
+SH
+Nature
+Arcane
+Call Kingdom
+ 10 turn cooldown
+Summon 2 Boggart gates
+Summon
+2
+gates
+ 4 Arcane damage
+75% Resist Arcane
+Ice Lizard Belcher
+Armored Ice Lizard
+Fire Lizard
+Giant Fire Lizard
+Fire Lizard Belcher
+Armored Fire Lizard
+Grey Mushboom
+Giant Grey Mushboom
+Palinar, Grey Mushboom King
+Horned Toad
+Ghost Toad
+Towering Toadbeast
+Void Toad
+Flame Toad
+Rumplerog, Horned Toad King
+Toad Chaos Sorcerer
+Toad Nightmare Sorcerer
+Raven
+Possessed Raven
+Giant Raven
+Toxic Raven
+Wereraven
+Wolf
+Raven Mage
+Goatia
+Giant Goatia
+Steel Goatia
+Ghostly Goatia
+Goatia Tablet
+Centaur
+Centaur Druid
+Armored Centaur
+Trolltaur
+Ogre
+Thunderbone Shaman
+Ogre Juggernaut
+Blackblaze Shaman
+Spore Beast
+Toxic Spore Beast
+Spore Beast Alpha
+Possessed Spore Beast
+Bag of Bugs
+Bag of Fire Flies
+Bag of Lightning Bugs
+Page 4/12
+Ice
+Lizard
+Belcher
+HP 23/23
+Ice Bolt
+ 4 Ice damage
+ 5 range
+ 2 radius
+75% Resist Ice
+-50% Resist Fire
+Giant Bag of Bugs
+Bag of Brain Flies
+Troll
+Yiggoroth, Troll King
+Earth Troll
+Storm Troll
+Troubler
+Troubling Mass
+Big Troubler
+Iron Troubler
+Glass Troubler
+Evil Faery
+Faery Arcanist
+Fae Queen
+Ice Faery
+Glass Faery
+Vampire Count
+Greater Vampire
+Vampiric Mist
+Mind Vampire
+Vampire Eye
+Vampire Necromancer
+Armored Vampire
+Gnome
+Micrognome
+Iron Gnome
+Gnome Druid
+Gdeit, Gnome King
+Giant Gnome
+Copper Spider
+Furnace Spider
+Steel Spider Queen
+Steel Arachnid Abombination
+Massive Metal Mantis
+Copper Mantis
+Furnace Mantis
+Green Slime
+Green Slime Cube
+Shraggi, Green Slime King
+Void Slime
+Ice Slime
+Red Slime
+Slime Brewer
+Bloodghast
+Page 5/12
+Giant
+Bag
+of
+Bugs
+HP 96/96
+Construct
+ 8 Physical damage
+25% Resist Physical
+-100% Resist Fire
+Spawns 32 Fly Swarms on death
+Spawns
+32
+Fly
+Swarms
+on
+Has a 10% chance each turn to spawn a Fly Swarm
+Has
+10%
+each
+Swarm
+Old Blood Witch
+Blood Bear
+Blood Hound
+Polar Bear
+Giant Polar Bear
+Polar Bear Blizzard Shaman
+Possessed Polar Bear
+Armored Polar Bear
+Hell Hound
+Ice Hound
+Furnace Hound
+Chaos Hound
+Insanity Hound
+Cultist
+Lesser Demonic Altar
+Greater Demonic Altar
+Cultist Necromancer
+Cultist Chosen
+Werewolf
+Wild Man
+Werewolf Shaman
+Werewolf Alpha
+Possessed Werewolf
+Possessed Wild Man
+Blizzard Beast
+Chaos Chimera
+Fire Lion
+Giant Chaos Chimera
+Giant Chaos Lion
+Thunderbird
+Bone Knight
+Bone Archer
+Bone Champion
+Ossuonobius, Bone King
+Bone Wizard
+Spark Spirit
+Chaos Spirit
+Storm Spirit
+Fire Spirit
+Starfire Spirit
+Golem
+Clay Golem
+Gold Golem
+Spiked Golem
+Page 6/12
+Old
+Blood
+Summon Bloodghasts
+ 5 turn cooldown
+Summons 2 temporary Bloodghasts
+Summons
+temporary
+Bloodghasts
+Life Drain Frenzy
+ 7 Dark damage
+ 6 range
+Drains life.
+Gains 2 damage for 10 turns on hit.
+Drains
+life
+.
+Gains
+damage
+for
+10
+turns
+hit
+-50% Resist Holy
+Redcap
+Green Gorgon
+Giant Green Gorgon
+Possessed Green Gorgon
+Earth Troll Coppermancer
+Earth Troll Magmancer
+Earth Troll Priest
+Aether Spider Queen
+Aether Arachnid Abombination
+Spike Beast
+Spike Beast Alpha
+Possessed Spike Beast
+Old Faewitch
+Old Fire Witch
+Old Ice Witch
+Night Hag
+Dream Hag
+Red Slime Cube
+Praggi, Red Slime King
+Ice Slime Cube
+Xiaggi, Ice Slime King
+Living Scroll of Lightning
+Living Scroll of Fireball
+Duergar
+Duergar Executioner
+Duergar Lizard Lord
+Duergar Dark Priest
+Fiery Tormentor
+Giant Fiery Tormentor
+Fiery Tormenting Mass
+Ghostfire Tormentor
+Frostfire Tormentor
+Dark Tormentor
+Giant Dark Tormentor
+Dark Tormenting Mass
+Deathchill Tormentor
+Rolling Spike Ball
+Toxic Spike Ball
+Ghostly Spike Ball
+Tungsten Spike Ball
+Copper Spike Ball
+Gazing Spike Ball
+Floating Eyeball
+Ice Eye
+Page 7/12
+HP 14/14
+Fire
+Fire Seed
+ 1 Physical damage
+ 4 range
+ 2 turn cooldown
+Summons a red mushboom near the target
+red
+mushboom
+near
+the
+target
+75% Resist Fire
+50% Resist Arcane
+-50% Resist Ice
+Mass of Eyes
+Flaming Eyeball
+Storm Drake
+Massive Storm Drake
+Armored Storm Drake
+Fire Drake
+Massive Fire Drake
+Armored Fire Drake
+Bone Shambler
+Towering Bone Shambler
+Bone Shambler Megalith
+Greater Spore Beast
+Giant Flame Toad
+Armored Flame Toad
+Giant Void Toad
+Armored Void Toad
+Storm Troll Juggernaut
+Storm Troll Mystic
+Minotaur
+Metal Minotaur
+Dozadoka, Minotaur King
+Minotaur Magma Shaman
+Aelf
+Aelf Aethermancer
+Aelf Lightning Artist
+Aelf Siege Engineer
+Meilmanir, Aelf King
+Aelf Elite
+Purple Hand
+Iron Hand
+Jeweled Hand
+Gold Hand
+Deathchill Chimera
+Ice Lion
+Giant Deathchill Chimera
+Giant Ice Lion
+Glass Golem
+Starfire Chimera
+Star Lion
+Giant Starfire Chimera
+Giant Star Lion
+False Prophet
+Giant Mind Devourer
+Fire Wyrm
+Page 8/12
+Eyes
+HP 18/18
+SH 5
+Demon
+Arcane Bolt
+ 99 range
+100% Resist Arcane
+100% Resist Dark
+On death, spawn 6 Floating Eyeballs
+6
+Floating
+Eyeballs
+Fire Wyrm Broodmother
+Armored Fire Wyrm
+Gargoyle
+Gargoyle Statue
+Mega Gargoyle
+Mega Gargoyle Statue
+Ice Gargoyle
+Ice Gargoyle Statue
+Fire Gargoyle
+Fire Gargoyle Statue
+Void Slime Cube
+Eoggi, Void Slime King
+Cyclops
+Giant Floating Skull
+Golden Skull
+Giant Flaming Skull
+Grey Gorgon
+Efreet
+Pyrubo, Efreet King
+Efreet Juggernaut
+Yeti
+Giant Yeti
+Yeti Shaman
+Void Drake
+Massive Void Drake
+Armored Void Drake
+Cockatrice
+Butterfly Demon
+Chaos Knight
+Chaos Champion
+Vuldakot, Chaos King
+Gold Drake
+Massive Gold Drake
+Armored Gold Drake
+Frosty Tormentor
+Giant Frosty Tormentor
+Elder Dream Hag
+Ice Drake
+Ice Wyrm
+Ice Wyrm Broodmother
+Armored Ice Wyrm
+Fire Fiend
+Storm Fiend
+Iron Fiend
+Page 9/12
+Wyrm
+Broodmother
+HP 225/225
+Dragon
+Fire Breath
+ 9 Fire damage
+ 7 range
+ 3 turn cooldown
+Breathes a cone of fire dealing 9 damage
+Breathes
+cone
+fire
+dealing
+9
+ 14 Physical damage
+Trample attack
+Trample
+attack
+100% Resist Fire
+Regenerates 8 HP per turn
+Regenerates
+per
+Has a 5% chance each turn to spawn a Fire Wyrm
+5%
+Lich
+Void Knight
+Void Champion
+Zex Ku, Void King
+Storm Knight
+Storm Champion
+Koseidius, Storm King
+Nightmare Turtle
+Lamasu
+Greater Lamasu
+Gilded Lamasu
+Ghostly Lamasu
+Corrupted Lamasu
+Glass Cockatrice
+Glass Butterfly
+Phoenix
+Volcano Turtle
+Dracolich
+Aesir
+Titan
+Reaper
+Fleshy Mass
+Chaos Fiend
+Copper Fiend
+Furnace Fiend
+Insanity Fiend
+Rot Fiend
+Ash Fiend
+Energy Knight
+Twilight Knight
+Idol of the Weak
+Idol of the Foolish
+Idol of the Fickle
+Necromancer
+War Banner
+Watcher
+Void Watcher
+Fly Trap
+Idol of Undeath
+Idol of Life
+Dark Priest
+Rogath, Ogre King
+The Dreamer
+Fallen Angel
+Page 10/12
+HP 55/55
+SH 2
+Dark Bolt
+ 8 Dark damage
+Soul Jar
+ 20 turn cooldown
+Summon a soul jar.  The caster is unkillable while the soul jar exists.  Limit one jar per lich.
+soul
+jar
+The
+caster
+is
+unkillable
+while
+exists
+Limit
+one
+lich
+Spore Man Ancient
+Tombstone
+Yggdrasil
+Idol of Sorcery
+Idol of Clarity
+Time Keeper
+Giant Soul Jar
+Medusa
+Bat Dragon
+Red Cyclops
+Chaos Quill
+Fire Wyrm Egg
+Ice Wyrm Egg
+Box of Woe
+Jack O' Lantern
+Avian Wizard
+Lightning Master
+Mountain Mage
+Masked Wizard
+Arachnid Wizard
+Dragon Mage
+Troll Geomancer
+Void Magus
+Glass Master
+Demon Sorcerer
+Twilight Seer
+Ice Lich
+Fire Lich
+Ice Wizard
+Goblin Wizard
+Frostfire Mage
+Starfire Sorcerer
+Fire Wizard
+Enchanter
+Black Rider
+White Rider
+Red Rider
+Pale Rider
+The Furnace
+Pillar of Bones
+Pillar of Worms
+Imp Collector
+Feathered Serpent
+Translocator
+Page 11/12
+Spore
+Man
+Ancient
+HP 672/672
+ 28 Physical damage
+When damaged, has a 30% chance to heal all units within 9 tiles 16 HP
+When
+damaged
+has
+30%
+heal
+all
+units
+within
+16
+Mechanomancer
+Minos, The Golden Bull
+Chronos, Titan Immortal
+Odin, Aesir Immortal
+Gemini Twin
+The Mischief Maker
+Slime Drake
+Void Phoenix
+Wireform Golem
+War Golem
+Shadowflesh Golem
+Magma Golem
+Liquid Metal Golem
+Radiant Golem
+Duelist Golem
+Mordred
+Page 12/12
+HP 131/131
+Summon Golems
+Summons 2 Golems
+Golems
+Iron Blessing
+Applies Iron Plating for 16 turns
+Applies
+Iron
+Plating
+Reconstitution
+ 25 Heal damage
+Heals one Construct ally for 25
+Heals
+ally
+25
+Spikebolt
+ 3 range
+Whenever a friendly construct dies, deal 6 fire or physical damage to up to 3 enemies in a 4 tiles burst
+Whenever
+friendly
+construct
+dies
+deal
+or
+physical
+enemies
+in
+4
+burst
+HP 42/42
+ 4 Physical damage
+Armored
+HP 32/32
+50% Resist Physical
+-50% Resist Lightning
+Red
+HP 25/25
+ 1 Fire damage
+50% Resist Fire
+Lanky
+Long Armed Melee
+ 5 Physical damage
+Psychic
+Mind Blast
+ 2 Arcane damage
+ 10 range
+Void
+Demolitionist
+HP 16/16
+Toss Void Bomber
+Toss a living bomb in the general direction of an enemy.
+Toss
+living
+bomb
+general
+direction
+an
+enemy
+Toss Fire Bomber
+Siege
+Mechanic
+HP 11/11
+Operate Cannon
+Activate's a Cannon
+Activate's
+Cannon
+Repair Cannon
+Repair 1 damage to a Cannon
+Repair
+1
+Wander
+ 8 range
+Walk towards a nearby Cannon
+Walk
+towards
+nearby
+Construct Cannon
+ 30 turn cooldown
+Begins construction of a Cannon.
+Begins
+construction
+HP 4/4
+Drain Life
+Drains life
+On reaching 0 hp, transforms into a Vampire Bat
+reaching
+0
+hp
+transforms
+into
+Will become a Vampire in 20 turns
+Will
+become
+20
+HP 38/38
+Toxic
+HP 20/20
+Poison
+Poison Spit
+ 1 Poison damage
+Applies Poison for 10 turns
+Each turn, deals 1 Poison damage to enemy units in a 3 tile radius
+deals
+radius
+Flame
+Flame Spit
+ 7 Fire damage
+Flappy
+HP 52/52
+Summon 2 Bat gates
+Bomber
+HP 1/1
+Suicide Explosion
+ 12 Arcane damage
+Suicide attack
+3x3 square area
+Autocast on death
+Suicide
+3x3
+square
+area
+Autocast
+Rift
+HP 30/30
+ 5 Arcane damage
+Immobile
+Has a 20% chance each turn to spawn a Void Bomber
+20%
+Each turn, 10% chance to blink to a random tile up to 8 tiles away
+ 2 range
+Suicide attack
+5x5 square area
+Autocast on death
+5x5
+Suicide attack
+4 tile radius
+Autocast on death
+Cluster
+Spawns 3 void bombers on death
+void
+bombers
+ 12 Fire damage
+Suicide attack
+2 tile radius
+Autocast on death
+Fire Bolt
+ 5 Fire damage
+-100% Resist Ice
+Has a 20% chance each turn to spawn a Fire Bomber
+Imp
+HP 5/5
+Imp Fire
+ 3 Fire damage
+75% Resist Dark
+-75% Resist Ice
+Furnace
+HP 12/12
+Metallic
+Furnace Shards
+ 4 damage
+ 1 radius
+Randomly deals Physical or Fire damage
+Randomly
+Physical
+100% Resist Lightning
+75% Resist Physical
+Each turn, deals 1 Fire damage to enemy units in a 4 tile radius
+Chaos
+Lightning
+Chaos Shards
+ 6 damage
+Randomly deals Lightning or Fire damage
+75% Resist Lightning
+Ash
+Ash Bolt
+ 6 Fire damage
+Applies Blind for 1 turns
+Blind
+Firestorm
+ 4 Fire damage
+HP 33/33
+Krilt
+HP 45/45
+Summon 2 Fire Imp gates
+ 3 Arcane damage
+Beam attack
+Melts through walls
+Beam
+Melts
+through
+walls
+Insanity
+Phase Bolt
+Teleports target unit up to 4 tiles away
+Teleports
+unit
+Rot
+Rot Bolt
+ 3 Dark damage
+Removes 1 max hp from the target
+Removes
+max
+from
+Tablet
+HP 35/35
+Bless imp
+ 50 range
+Grant a friendly imp +5 max hp and +1 damage
+Grant
+imp
++
+5
+and
+Spark
+Imp Spark
+ 3 Lightning damage
+Copper
+Lightning Bolt
+ 4 Lightning damage
+Beam attack
+Physical Bolt
+ 7 Physical damage
+100% Resist Ice
+ 9 Lightning damage
+Xilet
+Summon 2 Spark Imp gates
+ 6 Lightning damage
+ 1 Dark damage
+Void Bolt
+ 1 Arcane damage
+HP 34/34
+ 6 Dark damage
+Summon 2 Ghost gates
+HP 13/13
+Summon Ghost
+Summons a temporary Ghost
+HP 44/44
+Reincarnates when killed (4 times)
+Reincarnates
+when
+killed
+(
+times
+)
+Each turn, deals 2 Arcane or Dark damage to enemy units in a 8 tile radius
+Mind
+Maggot
+Brain Bite
+On hit, drains a charge of a random spell
+drains
+charge
+spell
+ 8 Arcane damage
+Drone
+Dive Attack
+ 3 Physical damage
+Leap attack
+Leap
+Flud
+Summon 2 Mind Maggot gates
+Devourer
+Tentacle
+Pulls the target 1 tiles towards the caster
+Pulls
+Queen
+HP 90/90
+ 9 Physical damage
+Has a 10% chance each turn to spawn a Mind Maggot
+Displacer
+Beast
+HP 10/10
+HP 72/72
+ 12 Physical damage
+Has a 10% chance each turn to spawn a Displacer Beast
+Razor
+ 18 Physical damage
+HP 60/60
+Spirit
+Strider
+Bloodfrenzy
+Feline
+Frenzy Claw
+Gain +3 damage for 10 turns with each attack
+Gain
+with
+Nine
+Cat
+Gains 1 shield every 9 turns up to a max of 9
+shield
+every
+Reincarnates when killed (9 times)
+Green
+Mushboom
+Poison Puff
+Applies 4 turns of poison
+poison
+On death, applies 12 turns of Poison to adjacent units
+applies
+12
+adjacent
+HP 66/66
+ 4 Poison damage
+Acrinar
+Summon 2 Green Mushboom gates
+Glass
+Glass Gas
+ 4 turn cooldown
+Applies 2 turns of glassification to living enemies
+glassification
+-100% Resist Physical
+On death, applies 3 turns of Glassed to adjacent units
+Glassed
+Swamp
+HP 59/59
+Mushbloom
+ 12 turn cooldown
+Summons 5 grey or green mushbooms
+grey
+green
+mushbooms
+Heal Ally
+ 18 Heal damage
+ 9 range
+Heals an ally for 18
+18
+Toxic Gaze
+ 14 range
+Applies poison for 4 turns
+Pounce
+Metal
+ 6 Physical damage
+ 4 Dark damage
+Charge
+ 6 Arcane damage
+Teleport Attack
+Teleport
+Attack
+HP 9/9
+Applies Poison for 5 turns.
+HP 54/54
+ 5 Lightning damage
+Applies Poison for 10 turns.
+Bite
+Death
+Darkness
+ 5 Dark damage
+Slazephan
+Serpent
+Philosopher
+HP 36/36
+Enlighten Serpent
+Transform a snake into a dragon.
+Transform
+snake
+dragon
+Poison Bolt
+ 5 Poison damage
+On reaching 0 hp, transforms into a Spriggan Bush
+Bush
+HP 6/6
+On reaching 0 hp, transforms into a Toxic Spriggan Bush
+Icy
+ 3 Ice damage
+On reaching 0 hp, transforms into a Icy Spriggan Bush
+HP 37/37
+Regrow
+Heals self for 12 HP
+self
+Aether
+Zealot
+Aether Charge
+Mage
+SH 3
+Summon Void Mantises
+Summons 2 Void Mantises
+Mantises
+Teleports to a random tile
+Void Beam
+ 9 Arcane damage
+ 8 turn cooldown
+Assassin
+HP 15/15
+Lunge
+ 9 turn cooldown
+Poison Stab
+Blinding Powder
+Blind nearby units and teleport 6 to 10 tiles away.  Caster runs away while this ability is on cooldown.
+teleport
+Caster
+runs
+this
+ability
+cooldown
+Pointy Poke
+Imp Shot
+Tungsten
+90% Resist Physical
+Thrahn
+Summon 2 Iron Imp gates
+HP 19/19
+Refresh
+Heal self or ally for 5 HP
+Heal
+Zahlgrahd
+HP 76/76
+Summon 2 Satyr gates
+HP 95/95
+Wild
+Summon Wolfs
+Summons 2 temporary Wolfs
+Wolfs
+Deathball
+Large
+Worm
+Ball
+On death, splits into 2 smaller versions of itself
+splits
+smaller
+versions
+itself
+Regenerates 3 HP per turn
+Spit Worms
+Summons a small worm ball adjacent to to the target
+small
+worm
+ball
+Each turn, deals 2 Poison damage to enemy units in a 3 tile radius
+Bow
+Pakkatok
+Summon 2 Kobold gates
+Longbowman
+Longbow
+ 20 range
+Cast Time: 3 turns
+Cast
+Time:
+Crossbowman
+Crossbow
+Operate Ballista
+Activate's a Ballista
+Ballista
+Repair Ballista
+Repair 1 damage to a Ballista
+Walk towards a nearby Ballista
+Construct Ballista
+Begins construction of a Ballista.
+Spirit Shield
+ 6 radius
+Grant all undead allies within 6 tiles 1 shield, to a max of 1
+undead
+allies
+ 7 Heal damage
+Heals an ally for 7
+7
+Each turn, 50% chance to blink to a random tile up to 3 tiles away
+50%
+HP 22/22
+Witchfreeze
+ 13 turn cooldown
+Sacrifices an adjacent friendly ghost to freeze one target for 2 turns
+Sacrifices
+ghost
+freeze
+ 5 Ice damage
+Summon Fire Ghost
+Summons a temporary Fire Ghost
+Infernal Fireball
+ 5 damage
+Slain living and undead units are raised as fire ghosts.
+Slain
+are
+raised
+as
+ghosts
+Summon Ghosts
+Summons 2 temporary Ghosts
+Life Drain
+Heals caster for damage dealt
+dealt
+Summon Bloodghast
+Summons a temporary Bloodghast
+Drains life.
+Gains 1 damage for 10 turns on hit.
+Boar
+Rider
+Charge attack
+On reaching 0 hp, transforms into a Orc Boar
+Find Rider
+Find an adjacent nearby orc to serve as a mount
+Find
+orc
+serve
+mount
+Flame Charge
+Pyromancer
+HP 26/26
+Fireball
+ 8 Fire damage
+Akabalah
+HP 80/80
+Summon 2 Orc gates
+Juggernaut
+Houndlord
+HP 29/29
+Summon Orc Wolfs
+Summons 2 Orc Wolfs
+Spider
+Weaves webs each turn
+Weaves
+webs
+Summon Baby Giant Spiders
+Summons 4 Baby Giant Spiders
+Baby
+Spiders
+Steel
+Each turn, 50% chance to blink to a random tile up to 7 tiles away
+Arachnid
+Abombination
+On death, spawn 7 Giant Spiders
+Arachnomancer
+HP 70/70
+ 12 range
+Whenever an enemy unit in line of sight takes poison damage, redeal that damage as dark damage.
+line
+sight
+takes
+redeal
+that
+dark
+ 8 Ice damage
+Grey
+Spore Puff
+Applies 2 turns of stun
+stun
+On death, applies 3 turns of Stunned to adjacent units
+Stunned
+Palinar
+Summon 2 Grey Mushboom gates
+Horned
+Toad
+Frog Hop
+Hops to a random tile up to 4 tiles away
+Hops
+Tongue Lash
+Towering
+Toadbeast
+HP 85/85
+ 15 Physical damage
+Regenerate 5 HP per turn.  Disabled on taking fire damage.
+Regenerate
+Disabled
+taking
+Void Lick
+ 7 Arcane damage
+Pulls the target towards the caster.
+Melts walls.
+Rumplerog
+Summon 2 Horned Toad gates
+Sorcerer
+HP 99/99
+Imp Swarm
+Summons 2 imps each turn for 5 turns
+imps
+Fire Ball
+ 7 Lightning damage
+Nightmare
+Nightmare Aura
+ 7 radius
+ 16 turn cooldown
+Deals 2 Dark or Arcane damage to all enemies in the radius each turn
+Deals
+Poison Burst
+Deals damage in a burst around the caster.
+Applies 7 turns of poison
+around
+Peck
+Applies Blind for 3 turns.
+Possessed
+HP 17/17
+On death, spawn 3 Fire Imps
+Imps
+HP 78/78
+On reaching 0 hp, transforms into a Wolf
+Will become a Wereraven in 20 turns
+HP 46/46
+Summon Ravens
+Summons 3 Ravens
+Ravens
+Ride the Wind
+ 18 turn cooldown
+Teleports to a random tile in line of sight
+Mass Blindness
+Blind all enemies for 3 turns
+Carrion Channel
+ 15 turn cooldown
+Summons 2 fly swarms each turn.
+Can channel for 5 turns.
+fly
+swarms
+Can
+channel
+Death Touch
+ 23 Dark damage
+Horrid Braying
+Increase the damage of an allied unit by 3
+Increase
+allied
+by
+On death, deals 7 Dark damage to all tiles in a radius of 1
+HP 102/102
+ 10 Physical damage
+HP 21/21
+Bless goatia
+Grant a friendly goatia +5 max hp and +1 damage
+goatia
+Throw Spear
+Druid
+Heal Aura
+ 14 turn cooldown
+Heals allies within a [7_tile:radius] radius for [2_HP:heal] each turn for [8_turns:duration].
+7 tile
+2 HP
+8 turns
+Summon Thunderbirds
+Summons 2 temporary Thunderbirds
+Thunderbirds
+Thunderbone
+Shaman
+Thunder Strike
+ 7 damage
+Stuns enemies near the target
+Stuns
+Summon Spark Spirits
+Summons 2 temporary Spark Spirits
+Spirits
+50% Resist Lightning
+ 22 Physical damage
+Blackblaze
+HP 57/57
+Blackfire Aura
+Deals 2 Dark or Fire damage to all enemies in the radius each turn
+Bloodlust
+ 6 turn cooldown
+Increases damage by 4 for all allied units within 6 tiles for 5 turns
+Increases
+When damaged, has a 30% chance to heal all units within 2 tiles 8 HP
+HP 40/40
+Alpha
+HP 150/150
+ 16 Physical damage
+Spawns 4 Fly Swarms on death
+Has a 5% chance each turn to spawn a Fly Swarm
+Flies
+Spawns 4 Fire Fly Swarms on death
+Has a 5% chance each turn to spawn a Fire Fly Swarm
+Spawns 4 Lightning Bug Swarms on death
+Bug
+Has a 5% chance each turn to spawn a Lightning Bug Swarm
+Brain
+Spawns 4 Brain Fly Swarms on death
+Has a 5% chance each turn to spawn a Brain Fly Swarm
+Yiggoroth
+HP 120/120
+Summon 2 Troll gates
+Earth
+Storm
+Spawns Storm Clouds up to 3 tiles away
+Clouds
+Teleports victims randomly up to 3 tiles away
+victims
+randomly
+Troubling
+On death, spawn 9 Baby Troublers
+Troublers
+Big
+Massive Phase Bolt
+Teleports victims randomly up to 9 tiles away
+Iron Gaze
+Petrifies target for 1 turn
+Petrifies
+Glass Gaze
+Glassifies target for 1 turn
+Glassifies
+Evil
+Faery
+Arcanist
+ 9 Heal damage
+Heals an ally for 9
+Arcane Blast
+Removes 1 buff
+buff
+Each turn, 70% chance to blink to a random tile up to 3 tiles away
+70%
+Gains 1 shield every 3 turns up to a max of 2
+Fae
+HP 50/50
+Fae Queen's Guard
+Summons 4 Evil Faeries for 15 turns
+Faeries
+15
+Summons a fae thorn up to 6 tiles away each turn.
+fae
+thorn
+Heals allies in a 8 tile radius for 6 each turn
+Freezing Bolt
+ 2 Ice damage
+Applies Frozen for 1 turns
+Frozen
+Glassification Bolt
+Applies Glassed for 1 turns
+Count
+HP 93/93
+ 11 Dark damage
+Whenever any enemy unit takes dark damage, heals for 4 HP
+any
+heals
+Greater
+HP 48/48
+Greater Life Drain
+Drains max hp
+On reaching 0 hp, transforms into a Vampiric Mist
+Vampiric
+Mist
+Will become a Greater Vampire in 20 turns
+Mind Drain
+Drains spell charges from the target and adds 1 shield to the caster, to a max of 3.
+charges
+adds
+On reaching 0 hp, transforms into a Vampire Eye
+Eye
+Will become a Mind Vampire in 20 turns
+Freeze
+Freezes the target for 2 turns
+Freezes
+Haunt
+Haunts the target, spawning 2 ghosts nearby each turn for 7 turns
+Haunts
+spawning
+Thorn Bolt
+Summons a fae thorn adjacent to the target
+Iron Thorn Bolt
+Summons an iron fae thorn adjacent to the target
+iron
+Summon Ghost Toads
+Summons 2 temporary Ghost Toads
+Toads
+Shield Ally
+Grant an ally 2 shields, to a maximum of 2
+shields
+maximum
+Gdeit
+Summon 2 Gnome gates
+Each turn, deals 2 Fire damage to enemy units in a 4 tile radius
+Summon Baby Steel Spiders
+Summons 4 Baby Steel Spiders
+On death, spawn 7 Steel Spiders
+Massive
+Slime
+ 3 Poison damage
+50% chance to gain 1 hp and max hp per turn.  Upon reaching 20 HP, splits into 2 slimes.
+gain
+Upon
+slimes
+Cube
+Summon Green Slime
+Summons a Green Slime
+50% chance to gain 3 hp and max hp per turn.  Upon reaching 60 HP, splits into 2 slimes.
+60
+Shraggi
+Summon 2 Green Slime gates
+50% chance to gain 4 hp and max hp per turn.  Upon reaching 80 HP, splits into 2 slimes.
+80
+Each turn, 25% chance to blink to a random tile up to 7 tiles away
+Brewer
+Grow Slimes
+All slimes gain 1 current and max hp
+All
+current
+Slime Shot
+Summons a slime adjacent to the target
+slime
+Frenzy Haunt
+Gain +2 damage for 10 turns with each attack
+Bear
+HP 65/65
+Hound
+Frenzy Bite
+Polar
+Hibernate
+Freezes self for 4 turns
+Heals 10 HP per turn while frozen
+frozen
+HP 300/300
+ 24 Physical damage
+Heals 20 HP per turn while frozen
+Blizzard
+HP 63/63
+ 4 radius
+Creates blizzard clouds in an area of radius 3
+Creates
+blizzard
+clouds
+Summon Ice Hounds
+Summons 2 temporary Ice Hounds
+Hounds
+ 15 Heal damage
+Heals an ally for 15
+HP 64/64
+Hell
+Deals 4 Fire damage to melee attackers
+melee
+attackers
+ 6 Ice damage
+Deals 4 Ice damage to melee attackers
+Chaos Bolt
+Randomly deals Fire or Lightning damage
+Deals 3 Fire damage to melee attackers
+Deals 3 Lightning damage to melee attackers
+Aether Swap
+Swaps places
+Only targets the Wizard
+Swaps
+places
+Only
+targets
+Wizard
+Deals 4 Arcane damage to melee attackers
+Pain
+Deals 1 damage to caster
+Ignores walls
+Ignores
+Lesser
+Demonic
+Altar
+Whenever a cultist dies, randomly spawns 3 fire or spark imps
+cultist
+spawns
+spark
+Whenever a cultist dies, gains a charge.  At 3 charges, summons a dark or fiery tormentor.
+
+Current charges: 0
+gains
+At
+summons
+fiery
+tormentor
+Current
+charges:
+Whenever a cultist dies, raises that unit as a skeleton.
+raises
+skeleton
+Chosen
+On reaching 0 hp, transforms into a Wild Man
+HP 8/8
+Will become a Werewolf in 20 turns
+ 5 radius
+Increases damage by 3 for all allied units within 5 tiles for 5 turns
+ 14 Heal damage
+Heals an ally for 14
+14
+HP 108/108
+On reaching 0 hp, transforms into a Possessed Wild Man
+Will become a Possessed Werewolf in 20 turns
+When damaged, creates 2 blizzards up to 2 tiles away
+creates
+blizzards
+Chimera
+On reaching 0 hp, transforms into a Fire Lion
+Lion
+On reaching 0 hp, transforms into a Lightning Snake
+HP 156/156
+ 10 Fire damage
+ 10 Lightning damage
+Lightning Dive
+Lightning Talons
+Bone
+Knight
+Wight Blade
+ 9 Dark damage
+Living targets lose 2 max hp
+lose
+Archer
+Wight Bow
+Living targets lose 1 max hp
+Champion
+HP 240/240
+ 18 Dark damage
+Ossuonobius
+HP 160/160
+Summon 2 Bone Knight gates
+Bone Swap
+Swaps places with a random Undead unit
+Assemble Bone Knight
+ 24 turn cooldown
+Summons a Bone Knight
+Raises slain targets as skeletons
+Raises
+slain
+skeletons
+Spirit Spark
+Gain 5 max HP whenever witnessing Lightning spell
+whenever
+witnessing
+Deals 4 Lightning damage to melee attackers
+Chaos Blast
+ 11 damage
+Gain 5 max HP whenever witnessing Fire spell
+Storm Blast
+Randomly deals Ice or Lightning damage
+Gain 5 max HP whenever witnessing Ice spell
+Spirit Fire
+Starfire
+Starfire Blast
+Randomly deals Fire or Arcane damage
+Gain 5 max HP whenever witnessing Arcane spell
+Clay
+Regenerates 7 HP per turn
+Gold
+SH 4
+50% Resist Holy
+Spiked
+ 17 Physical damage
+Deals 6 Physical damage to melee attackers
+Gorgon
+Green Gorgon Breath
+Breathes poison gas, poisoning living enemies
+gas
+poisoning
+ 13 Physical damage
+HP 396/396
+ 26 Physical damage
+On death, spawn 3 Rot Imps
+Coppermancer
+Charge Body
+Enemies within 4 tiles of target enemy take 1 damage each turn for 30 turns.
+Enemies
+take
+30
+Copper Imp Swarm
+For 7 turns, summon 2 copper imps near the cast each turn
+For
+summon
+copper
+cast
+Magmancer
+HP 43/43
+Quakeport
+ 19 turn cooldown
+Teleports to the target and creates a local earthquake
+local
+earthquake
+Fire Protection
+Grants caster and allies 50% resistance to Fire and Ice for 8 turns
+Grants
+resistance
+Magma Shell
+Grant an ally 50% resistance to fire and physical damage for 5 turns.  Afterwards, deals 9 fire damage to adjacent units.
+Afterwards
+Priest
+Summon Hallowed Earth Elemental
+ 7 turn cooldown
+Summons a Hallowed Earth Elemental
+Hallowed
+Elemental
+Holy Bolt
+ 6 Holy damage
+75% Resist Holy
+Summon Baby Aether Spiders
+Summons 4 Baby Aether Spiders
+On death, spawn 7 Aether Spiders
+Spike
+When damaged, has a 30% chance to deal 8 physical damage to all units within 2 tiles
+Deals 3 Physical damage to melee attackers
+HP 210/210
+On death, spawn 3 Iron Imps
+ 11 Heal damage
+Heals an ally for 11
+11
+ 3 radius
+Sacrifices an adjacent friendly ghost to freeze one target for 4 turns
+Night
+Hag
+HP 84/84
+Summons 3 temporary Ghosts
+Life Siphon
+ 2 damage
+Steal health from all living creatures in line of sight
+Steal
+health
+creatures
+Sleep Touch
+Applies Stunned for 1 turns.
+Dream
+HP 67/67
+Gains 1 shield every 2 turns up to a max of 2
+Summon Red Slime
+Summons a Red Slime
+Praggi
+Summon 2 Red Slime gates
+Summon Ice Slime
+Summons a Ice Slime
+Xiaggi
+Summon 2 Ice Slime gates
+Scroll
+Beam attack
+Kills the caster
+Kills
+Kills the caster
+ 16 range
+Short Sword
+Executioner
+Axe
+ 27 Physical damage
+Lord
+Summon Ice Lizards
+Summons 2 Ice Lizards
+Lizards
+HP 27/27
+Summon Bats
+Summons 7 temporary Bats
+Bats
+ 6 Heal damage
+Heals an ally for 6
+Fiery
+Tormentor
+Fiery Torment
+Deals damage in a burst around the caster.
+Soul Suck
+HP 204/204
+ 14 Fire damage
+Tormenting
+HP 51/51
+On death, spawn 3 Fiery Tormentors
+Tormentors
+Ghostfire
+HP 56/56
+Dark Torment
+Deals damage in a burst around the caster.
+The burst ignores walls.
+ignores
+Frostfire
+Frosty Torment
+ 7 Ice damage
+Deals damage in a burst around the caster.
+Applies 2 turns of freeze
+ 14 Dark damage
+On death, spawn 3 Dark Tormentors
+Deathchill
+Rolling
+Each turn, deals 1 Poison damage to enemy units in a 4 tile radius
+Each turn, deals 3 Lightning damage to enemy units in a 2 tile radius
+Gazing
+Eye Beam
+Eyeball
+Flaming
+Drake
+Storm Breath
+Breathes a cone of storm clouds, dealing 10 damage
+storm
+HP 114/114
+ 14 Lightning damage
+Breathes a cone of storm clouds, dealing 14 damage
+HP 89/89
+ 13 Fire damage
+Breathes a cone of fire dealing 13 damage
+13
+Shambler
+HP 128/128
+ 32 Physical damage
+Megalith
+HP 256/256
+ 64 Physical damage
+HP 39/39
+ 14 Arcane damage
+Mystic
+HP 41/41
+Crackleball
+Randomly deals Arcane or Lightning damage
+ 16 Heal damage
+Heals an ally for 16
+Dozadoka
+HP 180/180
+Summon 2 Minotaur gates
+Magma
+Flame Aura
+Deals 2 Fire damage to all enemies in the radius each turn
+Cauterize
+Heal target ally for up to 15 hp.  Deals 10 fire damage to all enemies adjacent to that ally.
+ 10 Dark damage
+Aethermancer
+Crackleburn
+Artist
+Chain Lightning
+Chains to targets up to 4 tiles away.
+Chains
+Engineer
+Operate Aether Prism
+Activate's a Aether Prism
+Prism
+Repair Aether Prism
+Repair 1 damage to a Aether Prism
+Walk towards a nearby Aether Prism
+Construct Aether Prism
+Begins construction of a Aether Prism.
+Meilmanir
+Summon 2 Aelf gates
+Elite
+ 20 Dark damage
+Purple
+Hand
+Void Flick
+ 13 Arcane damage
+Randomly teleport the target up to 5 tiles away.
+HP 68/68
+Iron Flick
+ 19 Physical damage
+Jeweled
+Holy
+100% Resist Holy
+-100% Resist Dark
+On reaching 0 hp, transforms into a Ice Lion
+On reaching 0 hp, transforms into a Death Snake
+Claw
+ 10 Ice damage
+On reaching 0 hp, transforms into a Star Lion
+Star
+On reaching 0 hp, transforms into a Fire Snake
+ 10 Arcane damage
+False
+Prophet
+Heavenly Blast
+ 7 Holy damage
+Beam Attack
+Heals allies in the area
+Reincarnates when killed (1 times)
+HP 252/252
+ 16 Arcane damage
+HP 75/75
+HP 167/167
+On reaching 0 hp, transforms into a Gargoyle Statue
+Statue
+Will become a Gargoyle in 10 turns
+Mega
+Will become a Mega Gargoyle in 10 turns
+Will become a Ice Gargoyle in 10 turns
+Will become a Fire Gargoyle in 10 turns
+Summon Void Slime
+Summons a Void Slime
+Eoggi
+Summon 2 Void Slime gates
+Throw boulder
+Stuns for 1 turn
+Skull
+Death Gaze
+ 13 Dark damage
+Golden
+Wrath Gaze
+ 13 Holy damage
+ 13 Heal damage
+Heals an ally for 13
+Giant Fireball
+ 25 Fire damage
+HP 88/88
+Grey Gorgon Breath
+Breathes a petrifying gas dealing 9 physical damage and petrifying living creatures
+petrifying
+Each turn, deals 2 Fire damage to enemy units in a 5 tile radius
+Pyrubo
+Summon 2 Efreet gates
+Each turn, deals 1 Ice damage to enemy units in a 4 tile radius
+HP 450/450
+Ice Ball
+ 11 turn cooldown
+Applies Frozen for 2 turns
+ 33 Heal damage
+Heals an ally for 33
+33
+Void Breath
+Breathes a cone of void dealing arcane damage and melting walls
+arcane
+melting
+Stone Gaze
+Petrifies target for 3 turns
+-100% Resist Lightning
+Butterfly
+Deals damage and destroys walls in a line
+destroys
+Deals damage to all points in a line
+points
+Chaos Ball
+Randomly deals Fire or Lightning or Physical damage
+Deals an additional 5 fire or lightning damage on hit.
+additional
+lightning
+HP 360/360
+ 16 damage
+Vuldakot
+Summon 2 Chaos Knight gates
+Holy Breath
+ 9 Holy damage
+Breathes a cone of holy flame, dealing holy damage to enemies and healing allies
+holy
+flame
+healing
+Frosty
+Applies frozen for 1 turn
+ 14 Ice damage
+Elder
+HP 268/268
+Ice Breath
+Breathes a cone of ice dealing 7 damage and freezing units for 2 turns
+ice
+freezing
+Has a 5% chance each turn to spawn a Ice Wyrm
+Fiend
+HP 166/166
+Summon Fire Imps
+Summons 3 Fire Imps
+Storm Bolt
+A beam which leaves storm clouds along its path
+A
+beam
+which
+leaves
+along
+its
+path
+Summon Spark Imps
+Summons 3 Spark Imps
+Death Beam
+Summon Iron Imps
+Summons 3 Iron Imps
+Teleports the target to a random location up to 5 tiles away
+location
+Ignores obstacles
+obstacles
+HP 280/280
+ 15 Arcane damage
+Zex
+Ku
+Summon 2 Void Knight gates
+Flash of Lightning
+Frost
+ 13 Ice damage
+Applies frozen for 2 turns
+Storm Strike
+Creates thunderstorms and blizzards
+thunderstorms
+ 15 Lightning damage
+ 19 Ice damage
+Koseidius
+Summon 2 Storm Knight gates
+Turtle
+ 20 Physical damage
+Each turn, deals 1 Arcane or Dark damage to enemy units in a 7 tile radius
+Withdraws into its shell upon taking damage, gaining 50% physical, fire, and lightning resistance
+Withdraws
+shell
+upon
+gaining
+HP 200/200
+Heals allies in a 6 tile radius for 5 each turn
+HP 800/800
+Gilded
+HP 400/400
+Shield Allies
+Grant all allies in line of sight 1 shield, to a max of 3
+Corrupted
+Each turn, deals 3 Dark damage to enemy units in a 6 tile radius
+Glassy Gaze
+Turns victim to glass for 3 turns
+Turns
+victim
+glass
+SH 16
+HP 250/250
+-50% Resist Dark
+On death, deals 25 fire damage to all tiles within 6.  Friendly units are healed instead of damaged.
+Friendly
+healed
+instead
+Volcano
+Spews 3 meteors each turn at random locations within a radius of 6.
+
+The meteors create explosions with 2 tiles radii, dealing 8 fire damage.
+
+Tiles directly hit take 11 additional physical damage and become floor tiles.
+
+Enemies directly hit are stunned for 1 turn.
+Spews
+meteors
+at
+locations
+create
+explosions
+radii
+Tiles
+directly
+floor
+stunned
+Dark Breath
+Breathes a cone of dark energy, dealing dark damage and reanimating slain units as skeletons.
+energy
+reanimating
+HP 121/121
+ 29 Physical damage
+ 22 Lightning damage
+HP 244/244
+ 35 Physical damage
+ 19 Fire damage
+HP 31/31
+ 200 Dark damage
+Fleshy
+HP 431/431
+-50% Resist Physical
+Regenerates 21 HP per turn
+21
+Summon Chaos Imps
+Summons 3 Chaos Imps
+ 13 damage
+Summon Copper Imps
+Summons 3 Copper Imps
+Conductivity
+Applies Conductivity for 7 turns
+ 11 range
+Summon Furnace Imps
+Summons 3 Furnace Imps
+Fire Blast
+Each turn, deals 2 Fire damage to enemy units in a 7 tile radius
+Summon Insanity Imps
+Summons 3 Insanity Imps
+Summon Rot Imps
+Summons 3 Rot Imps
+Rot Blast
+Targets permenantly lose 3 max hp.
+Targets
+permenantly
+Summon Ash Imps
+Summons 3 Ash Imps
+Ash Blast
+Randomly deals Fire or Dark or Poison damage
+Applies Blind for 1 turns
+Energy
+SH 6
+Twilight
+ 14 Holy damage
+Living targets lose 7 max hp
+Idol
+Weak
+Curse of the Weak
+Decreases player spell and skill damage by 4
+Decreases
+player
+skill
+Foolish
+Curse of the Foolish
+Decreases player spell and skill range by 1
+range
+Fickle
+Curse of the Fickle
+Decreases player spell and skill duration by 3
+duration
+Whenever a non-undead unit dies, raises that unit as a skeleton.
+non-undead
+War
+Banner
+Gates spawn units 1 turn faster
+Gates
+faster
+Lightning Eye
+ 30 range
+Void Eye
+Trap
+Spawn Flies
+Summons 3 swarms of flies
+flies
+Tongue
+Undeath
+Each turn all friendly undead units heal for 1 and all enemy living units take 1 dark damage
+Life
+Each turn all friendly living units are healed for 3
+Mass Heal
+Heal all allies for 15
+Rogath
+Summon 2 Ogre gates
+Dreamer
+SH 10
+50% chance to teleport each other unit up to 4 squares away each turn
+other
+squares
+Fallen
+Angel
+Cacophony
+ 22 Dark damage
+Deals 22 damage to all enemies within 6 tiles
+22
+Grant all allies in line of sight 1 shield, to a max of 2
+Hellfire
+Summons a ghost near the wizard
+wizard
+HP 550/550
+Grow Thorns
+ 100 range
+Summons 3 fae thorns near the player
+thorns
+ 8 Lightning damage
+Each turn, deals 1 Arcane or Dark damage to enemy units in a 30 tile radius
+Sorcery
+Grant Sorcery
+Grants a ranged Fire or Lightning attack to a random ally, along with immunity to that element.
+ranged
+immunity
+element
+Clarity
+Cure stun, berserk, or petrify on a random ally each turn
+Cure
+berserk
+petrify
+Time
+Keeper
+Timestop
+Stun all enemies for 1 turn
+Stun
+Soul
+Jar
+HP 100/100
+Pickle Soul
+A non construct ally loses 10 max hp but cannot die until the Giant Soul Jar is destroyed.
+non
+loses
+but
+cannot
+die
+until
+destroyed
+Medusa's Gaze
+Petrifies all units in line of sight for 3 turns
+Snake Bites
+Applies Poison for 3 turns.  Attacks 5 times.
+Attacks
+Spawns snakes when damaged.  One snake is spawned per 5 hp damage taken, rounded up.
+snakes
+One
+spawned
+taken
+rounded
+Torrent of Bats
+Breathes a cone of bats dealing 7 damage to occupied tiles and summoning bats in empty ones.
+bats
+occupied
+summoning
+empty
+ones
+HP 126/126
+Swat Enemy
+Bats an enemy away
+Swat Ally
+ 15 range
+Bats an adjacent unit towards an enemy
+Quill
+Scribe Chaos Scrolls
+Summon 2-4 living fireball or lightning scrolls
+2-4
+fireball
+scrolls
+Each turn, 10% chance to blink to a random tile up to 5 tiles away
+Egg
+On reaching 0 hp, transforms into a Fire Wyrm
+On reaching 0 hp, transforms into a Ice Wyrm
+Box
+Woe
+Each turn, deals 2 Ice or Dark or Lightning damage to enemy units in a 9 tile radius
+Releases 3 evil spirits when destroyed
+Releases
+evil
+spirits
+Jack
+O'
+Lantern
+Dark Winter Night
+Up to 4 random allied Dark units gain +1 damage for 25 turns
+Up
+Avian
+Summon Eagles
+Summons 2 Eagles
+Eagles
+Heals allies within a [7_tile:radius] radius for [5_HP:heal] each turn for [7_turns:duration].
+5 HP
+7 turns
+Creates storm clouds near the target
+Master
+SH 8
+Lightning Protection
+Grants caster and allies 50% resistance to Lightning for 8 turns
+ 9 damage
+Stuns all enemies in an area around the target
+ 3 damage
+Teleports the caster.  Blinds and deals damage to all units in line of sight on arrival for 1 turn.
+Blinds
+arrival
+Mountain
+HP 86/86
+Stoneskin
+Grants caster and allies 50% resistance to Physical damage for 8 turns
+Earthen Sentinel
+Summons a temporary earth elemental
+earth
+elemental
+Summon Wolf
+Summons a Wolf
+Masked
+SH 13
+Warp Ball
+Teleports units up to 5 tiles away
+Warptouch
+ 17 Arcane damage
+Prison of Thorns
+Surrounds a group of units with thorny plants
+Surrounds
+group
+thorny
+plants
+Void Orb
+ 18 range
+Conjures a slow moving void orb
+Conjures
+slow
+moving
+orb
+Spider Bite
+Beckon Dragons
+ 22 turn cooldown
+Calls 2 random dragons up from the chasms
+Calls
+dragons
+chasms
+Storm Ball
+Dark Ball
+Deals dark and arcane damage, melts walls
+melts
+Geomancer
+Petrify
+ 0 Physical damage
+Petrifies the target for 3 turns
+Summon Clay Hound
+Summons a Clay Hound
+Boiling Blood
+Allies in line of sight temporarily gain +4 damage to physical and fire attacks
+Allies
+temporarily
+attacks
+Magus
+Void Maw
+Summons a hungry maw
+hungry
+maw
+Grant all allies in line of sight 1 shield, to a max of 1
+Nightmare Spark
+SH 7
+Glass Orb
+ 12 damage
+Conjures a glass orb that glassifies enemies, shields allies, and deals physical damage in a radius once it reaches its target.
+glassifies
+once
+it
+reaches
+Summon Glass Golems
+Summons 2 temporary Glass Golems
+Glass Shard
+Invoke Chaos
+Teleport all other units to random locations.  All of those units are then stunned for 1 turn, with the exception of the Wizard.
+those
+then
+exception
+Chaos Aura
+Deals 2 Physical or Fire or Lightning damage to all enemies in the radius each turn
+Destruction
+Seer
+Twilight Protection
+Grants caster and allies 50% resistance to Dark and Holy damage for 8 turns
+Eye of Ice
+ 25 turn cooldown
+Deals ice damage to a random enemy in line of sight each turn
+Freezes for 3 turns
+Eye of Fire
+Deals fire damage to a random enemy in line of sight each turn
+Summons 2 Ice Hounds
+Ice Age
+ 8 damage
+ 8 radius
+A burst of ice freezes all units in the radius.
+Allies are healed.
+Enemies take ice damage.
+freezes
+Icicle
+Deals ice and physical damage
+Summon Giant Spiders
+Summons 3 temporary Giant Spiders
+Ignite Poison
+Target poisoned unit loses all poison stacks and takes that much fire damage
+Target
+poisoned
+stacks
+much
+Poison Sting
+Applies poison for 7 turns
+Summon Frostfire Hydra
+Frostfire Protection
+Gaze of Winter
+Freezes all units in line of sight for 3 turns
+Hurl Frostfire
+Randomly deals Ice or Fire damage
+Summon Starfire Spirits
+Summons 2 temporary Starfire Spirits
+Starfire Pulse
+ 17 turn cooldown
+Deals arcane damage in a beam, and fire damage adjacent to the beam.  Melts walls.
+Solar Orb
+ 1 damage
+Create a slow moving searing orb
+
+Each turn, the orb deals damage to all enemies in line of sight.
+
+Allies in line of sight are healed instead.
+Create
+searing
+Ball of Starfire
+Randomly deals Arcane or Fire damage
+Summon Fire Drake
+Summons a Fire Drake
+Grants caster and allies 50% resistance to Fire for 8 turns
+Enchantment
+Regeneration Aura
+ 32 turn cooldown
+Each turn for [8_turns:duration], all allied units in a [4_tile:radius] radius are healed for [8_HP:heal].
+4 tile
+8 HP
+Grant an ally 3 shields, to a maximum of 3
+Black
+HP 374/374
+Tide of Rot
+All enemies in line of sight lose 1 max hp and are poisoned for 4 turns.
+Tide of Sin
+ 1 Holy damage
+All enemies in line of sight take damage and lose one random spell charge.
+White
+Arrow of Halting
+Applies Stunned for 1 turns
+Arrow of Poison
+Arrow of Flame
+Strife
+Berserk all enemy summoned units in LOS for 3 turns
+Berserk
+summoned
+LOS
+ 34 Physical damage
+Whenever another unit takes physical or fire damage, heals 5 hp.
+another
+Pale
+Army of Hades
+Summons 7 Ghosts
+Beasts of Earth
+Summons 3 Blood Hounds
+Famine Gaze
+Drains 3 maximum hp
+HP 451/451
+Each turn, deals 1 Fire damage to enemy units in a 12 tile radius
+Has a 10% chance each turn to spawn a Furnace Hound
+Has a 10% chance each turn to spawn a Furnace Imp
+Pillar
+Bones
+Awaken Bone Shamblers
+Can be channeled for 4 turns
+be
+channeled
+ 32 Heal damage
+Heals one Undead ally for 32
+Bone Spear
+Worms
+Summon Giant Worm Ball
+Can be channeled for 3 turns
+ 20 Heal damage
+Heals one Living ally for 20
+Applies Poison for 20 turns
+Collector
+Call Imps
+Summon 2 random imps
+Imp Harvest
+For 5 turns, whenever a demon dies, reduce spell cool downs by 1
+demon
+reduce
+cool
+downs
+Feathered
+HP 97/97
+Heals one Living ally for 25
+Emerald Breath
+Breath weapon, poisons living enemies and shields allies
+Breath
+weapon
+poisons
+Reincarnates when killed (2 times)
+Translocation
+Swaps places
+Only targets the Wizard
+Ignores walls.
+Minos
+Bull
+HP 960/960
+Chronos
+Immortal
+HP 1200/1200
+ 28 Fire damage
+Each turn, deals 2 Fire damage to enemy units in a 9 tile radius
+Odin
+HP 676/676
+ 14 damage
+Gemini
+Twin
+Duplicate
+Creates another Gemini Twin with equal HP to the current one.
+Only two twins can exist at once.
+equal
+two
+twins
+can
+exist
+ 25 range
+Heals allies in a 7 tile radius for 3 each turn
+Mischief
+Maker
+SH 33
+Thorncurse
+Teleports the target up to 3 tiles away and summons 3 fae thorns near them.
+them
+HP 140/140
+Poison Breath
+ 9 Poison damage
+Breathes a cone of poison dealing 9 damage
+50% chance to gain 14 hp and max hp per turn.  Upon reaching 280 HP, splits into 2 slime drakes.
+280
+drakes
+Melts through walls
+On death, deals 25 arcane damage to all tiles within 6.  Friendly units gain 2 SH instead of taking damage.  Melts walls.
+Each turn, deals 3 Arcane damage to enemy units in a 9 tile radius
+HP 697/697
+Planar Interposition
+Mix the current realm with another.
+Friends and foes may be left behind, Mordred and the Wizard will always remain.
+Mix
+realm
+Friends
+foes
+may
+left
+behind
+will
+always
+remain
+Void Tango
+Mordred teleports to a random tile.
+The Wizard is teleported to Mordred's old location.
+teleports
+teleported
+Mordred's
+old
+Mordred's Touch
+Mordred's Gaze
