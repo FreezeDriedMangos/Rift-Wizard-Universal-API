@@ -76,20 +76,74 @@ def load_translation(self):
 	else:
 		translation_font = None
 
-
 untranslated_strings = set()
+def declare_untranslated_string(string):
+	# global untranslated_strings
+	# if string not in untranslated_strings:
+	# 	print(string)
+	# 	untranslated_strings.add(string)
+	pass
+
+import re
 def translate(string):
 	if translation == None:
 		return string
 
-	if not string in translation:
-		global untranslated_strings
-		if string not in untranslated_strings:
-			print(string)
-			untranslated_strings.add(string)
-		return string
+	if string in translation:
+		return translation[string]
 
-	return translation[string]
+	# attempt to translate word by word
+	exp = '[\[\]:|\w\|\'|%|-]+|.| |,'
+	words = re.findall(exp, string)
+	words.reverse()
+
+	translated_string = ''
+	for word in words:
+		if word in translation:
+			translated_string += translation[word]
+		elif word and word[0] == '[' and word[-1] == ']':
+			translated_string += '['
+
+			tokens = word[1:-1].split(':')
+			if len(tokens) == 1:
+				# ex [fire] -> [fuego:fire]
+				word = tokens[0]
+
+				if word in translation:
+					translated_string += '['+translation[word]+':'+word+']'
+				else:
+					translated_string += '['+word+']'
+					declare_untranslated_string(word)
+
+				translated_string += word
+				
+			elif len(tokens) == 2:
+				# ex [2_fire_damage:fire] -> [2_daños_por_fuego:fire]
+				word = tokens[0].replace('_', ' ')
+
+				if word in translation:
+					translated_string += translation[w]
+				else:
+					word = word.split(' ')
+					for (w, i) in zip(word, range(len(word))):
+						
+						if w in translation:
+							translated_string += translation[w]
+						else:
+							translated_string += w
+							declare_untranslated_string(w)
+
+						if i < len(word)-1:
+							translated_string += '_'
+
+				translated_string += ":"+tokens[1]+"]" # reconstruct the original tag (the tooltip_colors dict is in english regardless of the translation loaded)
+		else:
+			translated_string += word
+			declare_untranslated_string(word)
+		
+	return string
+
+	
 
 
 def get_language_font(self):
