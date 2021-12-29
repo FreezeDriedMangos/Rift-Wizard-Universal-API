@@ -1,6 +1,6 @@
 
 from collections import namedtuple
-
+import pygame
 
 
 ####################################################
@@ -24,21 +24,91 @@ RiftWizard = get_RiftWizard() #                    |
 
 
 class Menu():
+	def __init__(self, pages):
+		self.pages = pages
+		self.cur_page_index = 0
+		self.loops = False
+		# self.can_scroll_pages_on_select_header = False
 
-	def process_input(self, pygameview):
+	def process_input(self, pygameview, up_keys, down_keys, left_keys, right_keys, confirm_keys):
 		for event in pygameview.events:
-			if right:
-				if cur_page.selected_subrow_index >= len(cur_page.rows[curpage.selected_row_index].subrows)-1:
-					# cur_page = next page
+			if event.type != pygame.KEYDOWN:
+				return
+
+			cur_page = self.pages[self.cur_page_index]
+
+			if event.key in right_keys:
+				if cur_page.selected_subrow_index >= len(cur_page.rows[cur_page.selected_row_index].subrows)-1: # if the last subrow appears to be selected
+					self.cur_page_index += 1
+					if self.loops:
+						self.cur_page_index %= len(self.pages)
+					else:
+						self.cur_page_index = min(self.cur_page_index, len(self.pages)-1)
+
+					next_page = self.pages[self.cur_page_index]
+					next_page.selected_row_index = cur_page.selected_row_index
+					next_page.selected_subrow_index = 0
+
 					continue # don't pass this event to the new cur_page
 			
-			if left:
-				if cur_page.selected_subrow_index == 0 or len(curpage.rows[cur_page.selected_row_index].subrows) == 0:
-					# cur_page = prev page
+			if event.key in left_keys:
+				if cur_page.selected_subrow_index == 0 or len(cur_page.rows[cur_page.selected_row_index].subrows) == 0: # if subrow 0 appears to be selected
+					self.cur_page_index -= 1
+					if self.loops:
+						self.cur_page_index = self.cur_page_index if self.cur_page_index >= 0 else len(self.pages)-1
+					else:
+						self.cur_page_index = max(self.cur_page_index, 0)
+
+					next_page = self.pages[self.cur_page_index]
+					next_page.selected_row_index = cur_page.selected_row_index
+					next_page.selected_subrow_index = len(next_page.rows[next_page.selected_row_index].subrows)-1
+
 					continue # don't pass this event to the new cur_page
 
-			# cur_page.process_one_input_key(event)
+			cur_page.process_one_input_key(pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys)
 
+
+		#
+		# Mouse
+		#
+
+		mouse_dx, mouse_dy = self.get_mouse_rel()
+		if mouse_dx or mouse_dy:
+			self.examine_target = None
+
+			mx, my = self.get_mouse_pos()
+			for r, c in self.ui_rects:
+				if r.collidepoint((mx, my)):
+					self.examine_target = c.mouse_content
+
+		for evt in self.events:
+			if not evt.type == pygame.MOUSEBUTTONDOWN:
+				continue
+
+			mx, my = self.get_mouse_pos()
+			for r, c in self.ui_rects:
+				if r.collidepoint((mx, my)):
+					self.examine_target = c.mouse_content
+
+					if evt.button == pygame.BUTTON_LEFT:
+						if c.on_confirm_callback:
+							c.on_confirm_callback()
+
+			
+	def draw(self, pygameview, draw_pane, x, y):
+		cur_page = self.pages[self.cur_page_index]
+		cur_page.draw(pygameview, draw_pane, x, y)
+
+
+def make_menu_from_rows(rows, page_height, font, linesize, header_rows=[], footer_rows=[], add_page_count_footer=True, loopable=True):
+	return Menu(make_pages(rows, page_height, font, linesize, header_rows= header_rows, footer_rows=footer_rows, add_page_count_footer=add_page_count_footer, loopable=loopable))
+
+def make_single_page_menu_from_rows(rows, page_height):
+	page = Page(rows, page_height)
+	return Menu([page])
+
+def make_menu_from_pages(pages):
+	return Menu(page)
 
 # def make_pages(rows, page_height):
 # 	pages = []
@@ -56,14 +126,14 @@ class Menu():
 # 	return pages
 
 # to make a menu that doesn't scroll and has pages instead
-def make_pages(rows, page_height, font, header_rows=[], footer_rows=[], add_page_count_footer=True, loopable=True):
+def make_pages(rows, page_height, font, linesize, header_rows=[], footer_rows=[], add_page_count_footer=True, loopable=True):
 	if add_page_count_footer:
-		prev_page_row = make_row_from_text('<<<', font)
-		next_page_row = make_row_from_text('>>>', font)
+		prev_page_row = row_from_text('<<<', font, linesize)
+		next_page_row = row_from_text('>>>', font, linesize)
 		prev_page_row.selectable = True
 		next_page_row.selectable = True
 
-		footer_rows.append( MultiRow(next_page_row, make_row_from_text(" Page ww/ww ", font), next_page_row) )
+		footer_rows.append( MultiRow(next_page_row, row_from_text(" Page ww/ww ", font, linesize), next_page_row) )
 
 	footer_height = sum(row.height for row in footer_rows)
 	header_height = sum(row.height for row in header_rows)
@@ -105,6 +175,8 @@ def make_pages(rows, page_height, font, header_rows=[], footer_rows=[], add_page
 class Page():
 	def __init__(self, rows, height):
 		self.width = rows[0].width
+		self.height = height
+
 		if sum(row.height for row in rows) > height:
 			self.scrolls = True
 
@@ -112,53 +184,96 @@ class Page():
 		for row in rows:
 			if not isinstance(row, MultiRow):
 				self.rows.append(MultiRow(row))
-			else
+			else:
 				self.rows.append(row)
 
 		self.selected_row_index = 0
 		self.selected_subrow_index = 0
 		self.scroll_index = 0
 
-	def process_one_input_key(self, pygameview, event, up_keys, down_keys, left_keys, right_keys):
-		if evt.type != pygame.KEYDOWN:
+		selectable_rows = [index for (row, index) in zip(self.rows, range(len(self.rows))) if row.selectable] + [0]
+		self.selected_row_index = selectable_rows[0]
+
+	def process_one_input_key(self, pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys):
+		if event.type != pygame.KEYDOWN:
+			return
+
+
+		maxindex = len(self.rows)-1
+		selectedindex = min(self.selected_row_index, maxindex)
+		maxsubindex = len(self.rows[selectedindex].subrows)-1
+		selectedsubindex = min(self.selected_subrow_index, maxsubindex)
+		print("before: " + str(self.selected_row_index))
+
+		# if nothing's selected in the menu, just select what we were last on
+		if not self.rows[selectedindex].selectable or pygameview.examine_target != self.rows[selectedindex].subrows[selectedsubindex].mouse_content:
+			selected_row = self.rows[selectedindex].subrows[min(selectedsubindex, len(self.rows[selectedindex].subrows))]
+			pygameview.examine_target = selected_row.mouse_content
+
+			self.selected_row_index = selectedindex
+			self.selected_subrow_index = selectedsubindex
 			return
 
 		if event.key in up_keys:
-			self.selected_row_index = max(0, self.selected_row_index-1)
+			rows = self.rows[:selectedindex]
+			selectable_rows = [selectedindex] + [index for (row, index) in zip(rows, range(len(rows))) if row.selectable]
+			# selectable_rows = [index for (row, index) in zip(rows, range(len(rows))) if row.selectable]
+			self.selected_row_index = selectable_rows[-1]
 			
+			print('\t'+str(len(rows)) + "   " + str(selectable_rows))
+
+			# if the previous row is offscreen, scroll up
 			if self.selected_row_index == self.scroll_index:
 				self.scroll_index = max(0, self.scroll_index-1)
 		if event.key in down_keys:
-			self.selected_row_index = min(self.selected_row_index+1, len(self.rows)-1)
+			# self.selected_row_index = min(selectedindex+1, maxindex)
+			rows = self.rows[selectedindex:]
+			selectable_rows = [index for (row, index) in zip(rows, range(selectedindex, len(rows))) if row.selectable] + [selectedindex, selectedindex]
+			self.selected_row_index = selectable_rows[1]
 			
-			if self.selected_row_index != len(self.rows)-1:
-				next_row_index = min(self.selected_row_index+1, len(self.rows)-1)
+			print('\t'+str(len(selectable_rows)) + "   " + str(selectable_rows))
+
+			# if the next row is off the screen, scroll down
+			if self.selected_row_index < maxindex:
+				print('\t' + str(self.selected_row_index) + " < " + str(maxindex))
+				next_row_index = self.selected_row_index+1
 				cur_height_to_selection = sum(row.height for row in self.rows[self.scroll_index:self.selected_row_index])
 				if cur_height_to_selection + self.rows[next_row_index].height > self.height:
 					self.scroll_index += 1
 
+		selectedindex = min(self.selected_row_index, maxindex)
+		maxsubindex = len(self.rows[selectedindex].subrows)-1
+		selectedsubindex = min(self.selected_subrow_index, maxsubindex)
 		if event.key in right_keys:
-			self.selected_subrow_index += 1
-			self.selected_subrow_index = min(self.selected_subrow_index, len(rows[selectedindex].subrows-1))
+			self.selected_subrow_index = min(selectedsubindex+1, maxsubindex)
 		if event.key in left_keys:
-			max_subrow_index = min(len(self.rows[self.selected_row_index].subrows)-1, 0)
-			if self.selected_subrow_index >= len(self.rows[self.selected_row_index].subrows)-1: # if it appears that the last subrow is already selected, change the max to the second to last subrow, so the left key appears to function as normal
-				max_subrow_index = min(len(self.rows[self.selected_row_index].subrows)-2, 0)
+			self.selected_subrow_index = max(0, selectedsubindex-1)
 
-			self.selected_subrow_index -= 1
-			self.selected_subrow_index = max(0, min(self.selected_subrow_index, max_subrow_index))
+		selected_row = self.rows[selectedindex].subrows[min(selectedsubindex, len(self.rows[selectedindex].subrows))]
+
+		if selected_row.on_select_callback:
+			selected_row.on_select_callback()
+
+		if event.key in confirm_keys and selected_row.on_confirm_callback:
+			selected_row.on_confirm_callback()
 		
-		pygameview.examine_target = rows[selectedindex].subrows[min(selectedsubrowindex, len(rows[selectedindex].subrows))]
+		pygameview.examine_target = selected_row.mouse_content
+		
+		print("\tafter: " + str(self.selected_row_index))
 		
 
 	def draw(self, pygameview, draw_pane, x, y):
 		cur_y = y
+		cur_x = x
 		for row in self.rows[self.scroll_index:]:
 			if cur_y >= self.height:
 				return
 			
-			row.draw(x, cur_y)
+			if row.center: 
+				cur_x += self.width//2
+			row.draw(pygameview, draw_pane, cur_x, cur_y)
 			cur_y += row.height
+			cur_x = x
 	
 
 
@@ -167,13 +282,36 @@ class Row():
 	def __init__(self, width, height):
 		self.width = width
 		self.height = height
+		self.on_confirm_callback = None
+		self.center = False
+		self.on_select_callback = None
+		self.selectable = False
+		self.mouse_content = self
  
 	def draw(self, pygameview, draw_pane, x, y):
+		if not hasattr(self, 'font'):
+			return
 		font = self.font
 		linesize = self.font
+		cur_x = x
+		cur_y = y
 		for line in self.lines:
+			cur_x = x
+			if self.center:
+				cur_x -= sum(self.font.size(word.text+" ")[0] for word in line)//2
+
 			for word in line:
-				pygameview.draw_string(word.text+" ", word.color, cur_x, cur_y mouse_content=self if self.selectable else None)
+				old_linesize = pygameview.linesize
+				pygameview.linesize = self.linesize
+				pygameview.draw_string(word.text+" ", draw_pane, cur_x, cur_y, color=word.color, mouse_content=self.mouse_content if self.selectable else None, font=self.font)
+				pygameview.linesize = old_linesize
+
+				cur_x += self.font.size(word.text+" ")[0]
+			
+			cur_y += self.linesize
+
+	def set_text(self, text):
+		self.lines = string_to_words(text, self.width, self.font, self.linesize)
 
 
 class RowWithIcon(Row):
@@ -188,8 +326,8 @@ class RowWithIcon(Row):
 class RowWithSpellIcon(Row):
 	def draw(self, pygameview, draw_pane, x, y):
 		# draw icon
-		RiftWizard.draw_spell_icon(self.spell, draw_pane, x, y, grey=False, animated=False):
-		Row.draw(self, pygameview, draw_pane, x+16, y, font, linesize)
+		RiftWizard.draw_spell_icon(self.spell, draw_pane, x, y, grey=False, animated=False)
+		Row.draw(self, pygameview, draw_pane, x+16, y)
 
 
 # for stuff like "<<< Page 3/7 >>>" which has two selectable buttons and one non selectable text on the same row
@@ -199,25 +337,37 @@ class MultiRow():
 		self.subrows = args
 		self.width = sum(subrow.width for subrow in self.subrows)
 		self.height = max(subrow.height for subrow in self.subrows)
+		self.center = args[0].center
+
+		self.selectable = any(row.selectable for row in self.subrows)
 
 	def draw(self, pygameview, draw_pane, x, y):
 		for row in self.subrows:
 			row.draw(pygameview, draw_pane, x, y)
 			x += row.width
 
+	def on_confirm_callback():
+		for row in self.subrows:
+			if row.on_confirm_callback:
+				row.on_confirm_callback()
+
+	def on_select_callback():
+		for row in self.subrows:
+			if row.on_select_callback:
+				row.on_select_callback()
 
 
 
 
-	
+import re
 
 # modified from RiftWizard.PyGameView.draw_wrapped_string
 def string_to_words(string, width, font, linesize, color=(255, 255, 255), indent=False, extra_space=False):
 	lines = string.split('\n')
-	processed_lines = []
+	processed_lines = [[]]
 
-	cur_x = x
-	cur_y = y
+	cur_x = 0
+	cur_y = 0
 	# linesize = linesize
 	tooltip_colors = RiftWizard.tooltip_colors
 	num_lines = 0
@@ -234,7 +384,7 @@ def string_to_words(string, width, font, linesize, color=(255, 255, 255), indent
 		chars_left = chars_per_line
 
 		# Start each line all the way to the left
-		cur_x = x
+		cur_x = 0
 		assert(all(len(word) < chars_per_line) for word in words)
 
 		while words:
@@ -258,7 +408,7 @@ def string_to_words(string, width, font, linesize, color=(255, 255, 255), indent
 					cur_y += linesize
 					num_lines += 1
 					# Indent by one for next line
-					cur_x = x + char_width
+					cur_x = 0 + char_width
 					chars_left = chars_per_line
 
 				# self.draw_string(word, surface, cur_x, cur_y, cur_color, content_width=width)	
@@ -278,10 +428,21 @@ def string_to_words(string, width, font, linesize, color=(255, 255, 255), indent
 
 
 
-def row_from_size(width, height):
-	return Row(width, height)
+def row_from_size(width, height, custom_draw_function=None, selectable=False, on_confirm_callback=None, center=False, mouse_content=None):
+	row = Row(width, height)
+	if custom_draw_function:
+		row.draw = custom_draw_function
 
-def row_from_text(text, font, linesize, width=None, height=0):
+	row.selectable = selectable
+	row.on_confirm_callback = on_confirm_callback
+	row.center = center
+
+	if mouse_content != None:
+		row.mouse_content = mouse_content
+
+	return row
+
+def row_from_text(text, font, linesize, width=None, height=0, selectable=False, on_confirm_callback=None, center=False):
 	if width == None:
 		width = font.size(text)[0]
 
@@ -291,9 +452,13 @@ def row_from_text(text, font, linesize, width=None, height=0):
 	row.lines = lines
 	row.font = font
 	row.linesize = linesize
+	row.selectable = selectable
+	row.on_confirm_callback = on_confirm_callback
+	row.center = center
+
 	return row
 
-def row_from_text_and_icon(text, font, linesize, icon_asset, width=None, height=0):
+def row_from_text_and_icon(text, font, linesize, icon_asset, width=None, height=0, selectable=False, on_confirm_callback=None, center=False):
 	if width == None:
 		width = font.size(text)[0]
 
@@ -304,11 +469,14 @@ def row_from_text_and_icon(text, font, linesize, icon_asset, width=None, height=
 	row.icon_asset = icon_asset
 	row.font = font
 	row.linesize = linesize
+	row.selectable = selectable
+	row.on_confirm_callback = on_confirm_callback
+	row.center = center
 
 	return row
 
 # also works for items
-def row_from_text_and_spell(text, font, linesize, spell, width=None, height=0):
+def row_from_text_and_spell(text, font, linesize, spell, width=None, height=0, selectable=False, on_confirm_callback=None, center=False):
 	if width == None:
 		width = font.size(text)[0]
 
@@ -319,7 +487,13 @@ def row_from_text_and_spell(text, font, linesize, spell, width=None, height=0):
 	row.spell = spell
 	row.font = font
 	row.linesize = linesize
+	row.selectable = selectable
+	row.on_confirm_callback = on_confirm_callback
 
 	return row
+
+# also works for items
+def row_from_spell(spell, font, linesize, width=None, height=0, selectable=False, on_confirm_callback=None, center=False):
+	return row_from_text_and_spell(spell.name, font, linesize, spell, width=width, height=height, selectable=selectable, on_confirm_callback=on_confirm_callback, center=center)
 
 
