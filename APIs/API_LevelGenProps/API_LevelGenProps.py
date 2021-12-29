@@ -81,6 +81,9 @@ def pre_populate_level(levelgenerator, prng = None):
 		prng = random
 
 	opts = [(num, weight) for (num, weight, condition) in random_num_extra_props if condition(level)]
+	if not len(opts):
+		return
+
 	num = prng.choices([o[0] for o in opts], weights=[o[1] for o in opts])[0]
 
 	for i in range(num):
