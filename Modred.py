@@ -5,6 +5,7 @@ import mods.API_Universal.APIs.API_Spells.API_Spells as API_Spells
 import mods.API_Universal.APIs.API_OptionsMenu.API_OptionsMenu as API_OptionsMenu
 import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.APIs.API_Music.API_Music as API_Music
+import mods.API_Universal.APIs.API_LevelGenProps.API_LevelGenProps as API_LevelGenProps
 import mods.API_Universal.EventSystem as EventSystem
 
 import mods.API_Universal.Libraries.Library_TextInput.Library_TextInput as Library_TextInput
@@ -339,6 +340,42 @@ API_LevelGenProps_Constants.ITEM_UNCOMMON = API_LevelGenProps.ITEM_UNCOMMON
 API_LevelGenProps_Constants.ITEM_RARE = API_LevelGenProps.ITEM_RARE
 API_LevelGenProps_Constants.ITEM_SUPER_RARE = API_LevelGenProps.ITEM_SUPER_RARE
 
+
+
+# example: adding a new shop:
+#
+# def item_with_cost(item, cost):
+#   item.cost = cost
+#   return item
+# def gen_shop():
+# 	shop = Level.Shop()
+# 	shop.items = [item_with_cost(Consumables.teleporter(), 5), item_with_cost(Consumables.heal_potion(), 10)]
+# 	shop.currency = Level.CURRENCY_GOLD
+#   shop.description = "An example shop."
+# 	shop.asset = ["MyMod", "shop_sprite"]
+# 	return shop
+# Modred.add_primary_prop_type(gen_shop, Modred.API_LevelGenProps_Constants.SHRINE_WEIGHT, lambda level: level > 4)
+
+
+# example: adding a "pick one free spell" shop as a free bonus to every level
+#
+# def gen_shop_2_spells():
+# 	shop = Level.Shop()
+# 	shop.items = [Spells.FireballSpell(), Spells.FlameTongue()]
+# 	shop.currency = Level.CURRENCY_PICK
+#   shop.description = "Pick one spell."
+# 	shop.asset = ["MyMod", "shop_sprite"]
+# 	return shop
+# def gen_shop_3_spells():
+# 	shop = gen_shop_2_spells()
+# 	shop.items = [Spells.FireballSpell(), Spells.FlameTongue(), LightningBoltSpell()]
+# 	return shop
+# Modred.add_secondary_prop_type(gen_shop_2_spells, Modred.API_LevelGenProps_Constants.SHRINE_WEIGHT)
+# Modred.add_secondary_prop_type(gen_shop_3_spells, Modred.API_LevelGenProps_Constants.SHRINE_WEIGHT, lambda level: level > 5) # after level 5, have an equal chance to generate a shop with 3 spells instead of 2
+# Modred.add_num_secondary_props_random_option(1, 1, lambda level: level > 3) # only generate bonus props after level 3
+
+
+# Note: Check out Level.ShiftingShop too. It's very useful for dynamically generating shop items.
 
 ##################################################
 ##################################################
