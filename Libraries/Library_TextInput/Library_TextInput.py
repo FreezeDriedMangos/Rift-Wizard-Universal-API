@@ -18,16 +18,21 @@ class TextInput():
 
 		self.selection_highlight_width = 30
 
+		self.placeholder_text = "type here"
+
 	def draw(self, pygameview, x, y, draw_panel, center=False):
 		if self.font == None:
 			self.font = pygameview.font
 		if self.linesize == None:
 			self.linesize = pygameview.linesize
 	
+		draw_placeholder = bool(self.text == '') and not self.has_focus
+		text = self.placeholder_text if draw_placeholder else self.text
+
 		if self.has_focus:
-			text = ' '+self.text +'|' if self.blink_count//self.blink_freq == 1 else ' '+self.text+' '
+			text = ' '+text +'|' if self.blink_count//self.blink_freq == 1 else ' '+text+' '
 		else:
-			text = self.text
+			text = text
 
 		if center:
 			text = " "*math.floor(self.selection_highlight_width/2) + text + " "*math.ceil(self.selection_highlight_width/2)
@@ -39,7 +44,7 @@ class TextInput():
 
 		old_linesize = pygameview.linesize
 		pygameview.linesize = self.linesize # :(
-		pygameview.draw_string(text, draw_panel, x, y, font=self.font, mouse_content=self)
+		pygameview.draw_string(text, draw_panel, x, y, font=self.font, mouse_content=self, color=(50, 50, 50) if draw_placeholder else (255, 255, 255))
 		pygameview.linesize = old_linesize
 
 		self.blink_count += 1
