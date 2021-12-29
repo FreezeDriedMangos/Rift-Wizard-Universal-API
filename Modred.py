@@ -8,6 +8,7 @@ import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.EventSystem as EventSystem
 
 import mods.API_Universal.Libraries.Library_TextInput.Library_TextInput as Library_TextInput
+import mods.API_Universal.Libraries.Library_Menus.Library_Menus as Library_Menus
 
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
@@ -268,6 +269,83 @@ add_track = API_Music.add_track
 play_music = API_Music.play_music
 
 
+#########################
+### API_LevelGenProps ###
+#########################
+# allows you to customize the primary reward for rifts (eg shrines/circles/ruby hearts)
+
+API_LevelGenProps_Constants = ConstantsPackage()
+
+
+# Add a new shrine to the level gen pool
+#
+# shrine - a class that inherits from Shrine, eg Shrines.RedFlameShrine
+# rarity - one of the rarity constants. I don't think this actually effects anything
+#
+# def add_shrine(shrine, rarity = API_LevelGenProps_Constants.COMMON):
+add_shrine = API_LevelGenProps.add_shrine
+
+API_LevelGenProps_Constants.SHRINE_COMMON = API_LevelGenProps.SHRINE_COMMON
+API_LevelGenProps_Constants.SHRINE_UNCOMMON = API_LevelGenProps.SHRINE_UNCOMMON
+API_LevelGenProps_Constants.SHRINE_RARE = API_LevelGenProps.SHRINE_RARE
+
+
+# Add a primary reward for a rift (something that will generate instead of shrines/circles/ruby hearts)
+#
+# prop_generator - a function that takes (player) and returns an object that inherits from the Prop class
+# weight - a number. the higher it is the more likely this prop will generate
+# condition -  a function that takes the rift level (int) and returns True or False (should this prop be able to generate on this level)
+#
+# def add_primary_prop_type(prop_generator, weight, condition=lambda level: True):
+add_primary_prop_type = API_LevelGenProps.add_primary_prop_type
+
+API_LevelGenProps_Constants.RUBY_HEART_WEIGHT = API_LevelGenProps.RUBY_HEART_WEIGHT
+API_LevelGenProps_Constants.SPELL_CIRCLE_WEIGHT = API_LevelGenProps.SPELL_CIRCLE_WEIGHT
+API_LevelGenProps_Constants.SHRINE_WEIGHT = API_LevelGenProps.SHRINE_WEIGHT
+
+
+# Add a secondary reward for a rift (something that will generate alongside shrines/circles/ruby hearts)
+#
+# prop_generator - a function that takes (player) and returns an object that inherits from the Prop class
+# weight - a number. the higher it is the more likely this prop will generate
+# condition -  a function that takes the rift level (int) and returns True or False (should this prop be able to generate on this level)
+#
+# def add_secondary_prop_type(prop_generator, weight, condition=lambda level: True):
+add_secondary_prop_type = API_LevelGenProps.add_secondary_prop_type
+	
+
+# Define chances for how many secondary props are generated in a level 
+# eg, "I want there to be a 50% chance for a level to generate 3 secondary props past level 5": 
+#       add_num_secondary_props_random_option(3, .5, lambda level: level > 5)
+#
+# num - int. how many secondary props will be generated if this option is randomly selected
+# weight - a number. the higher it is the more likely this prop will generate
+# condition -  a function that takes the rift level (int) and returns True or False (should this option be able to be selected on this level)
+# 
+# def add_num_secondary_props_random_option(num, weight, condition = lambda level: True):
+add_num_secondary_props_random_option = API_LevelGenProps.add_num_secondary_props_random_option
+
+
+# Add a new kind of item that can generate in rifts
+#  
+# item_generator - a function that takes no params and returns an Item object (eg Consumables.heal_potion) 
+# weight - an API_LevelGenProps_Constants Item rarity constant (see below)
+#
+# def add_item_type(item_generator, weight):
+add_item_type = API_LevelGenProps.add_item_type
+
+API_LevelGenProps_Constants.ITEM_COMMON = API_LevelGenProps.ITEM_COMMON
+API_LevelGenProps_Constants.ITEM_UNCOMMON = API_LevelGenProps.ITEM_UNCOMMON
+API_LevelGenProps_Constants.ITEM_RARE = API_LevelGenProps.ITEM_RARE
+API_LevelGenProps_Constants.ITEM_SUPER_RARE = API_LevelGenProps.ITEM_SUPER_RARE
+
+
+##################################################
+##################################################
+###   LIBRARIES
+##################################################
+##################################################
+
 
 
 
@@ -276,3 +354,47 @@ play_music = API_Music.play_music
 #########################
 
 TextInput = Library_TextInput.TextInput
+
+
+
+#####################
+### Library_Menus ###
+#####################
+
+make_menu_from_rows = Library_Menus.make_menu_from_rows
+make_single_page_menu_from_rows = Library_Menus.make_single_page_menu_from_rows
+make_menu_from_pages = Library_Menus.make_menu_from_rows
+
+
+
+# 
+# 
+# def row_from_size(width, height):
+row_from_size = Library_Menus.row_from_size
+
+# 
+# 
+# def row_from_text(text, font, linesize, width=None, height=0):
+row_from_text = Library_Menus.row_from_text
+
+# 
+# 
+# def row_from_text_and_icon(text, font, linesize, icon_asset, width=None, height=0):
+row_from_text_and_icon = Library_Menus.row_from_text_and_icon
+
+# 
+# also works for items
+# 
+# def row_from_text_and_spell(text, font, linesize, spell, width=None, height=0):
+row_from_text_and_spell = Library_Menus.row_from_text_and_spell
+
+# 
+# also works for items
+# 
+# def row_from_spell(spell, font, linesize, width=None, height=0):
+row_from_spell = Library_Menus.row_from_spell
+
+# 
+# 
+# def make_multirow(*rows):
+make_multirow = Library_Menus.MultiRow
