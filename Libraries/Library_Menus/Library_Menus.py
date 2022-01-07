@@ -121,6 +121,7 @@ def make_menu_from_rows(rows, page_height, font, linesize, header_rows=[], foote
 
 def make_single_page_menu_from_rows(rows, page_height):
 	page = Page(rows, page_height)
+	# page.draw_elipsis = True
 	return Menu([page])
 
 def make_menu_from_pages(pages):
@@ -214,6 +215,8 @@ class Page():
 
 		self.scroll_up_on_last_selectable_row = True
 		self.scroll_down_on_last_selectable_row = True
+
+		self.draw_elipsis = False
 
 	def process_one_input_key(self, pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys):
 		if event.type != pygame.KEYDOWN:
@@ -319,11 +322,15 @@ class Page():
 			if cur_y >= self.height:
 				return
 			
-			if row.center: 
-				cur_x += self.width//2
-			row.draw(pygameview, draw_pane, cur_x, cur_y)
-			cur_y += row.height
-			cur_x = x
+			if self.draw_elipsis and row.height + cur_y >= self.height:
+				pygameview.draw_string("...", draw_pane, cur_x, cur_y)
+			else:
+				if row.center: 
+					cur_x += self.width//2
+				row.draw(pygameview, draw_pane, cur_x, cur_y)
+				cur_y += row.height
+				cur_x = x
+			
 
 			self.second_to_last_row_drawn = self.last_row_drawn
 			self.last_row_drawn = row
