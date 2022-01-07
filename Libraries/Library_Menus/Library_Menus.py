@@ -284,11 +284,11 @@ class Page():
 				print('\t' + str(self.selected_row_index) + " < " + str(maxindex))
 				# next_row_index = max(self.selected_row_index+1, len(self.rows)-1)
 				# cur_height_to_selection = sum(row.height for row in self.rows[self.scroll_index:self.selected_row_index])
-				# if cur_height_to_selection + self.rows[next_row_index].height > self.height: # TODO: change to `if selectedrow = self.second_to_last_row_drawn or (scroll down on last selectable row and (I'm on the last selectable row and lastrowdrawn != last row))`
+				# if cur_height_to_selection + self.rows[next_row_index].height > self.height: 
 				# 	self.scroll_index += 1
 				# 	print('height to selection: ' + str(cur_height_to_selection) + '   next row height: ' + str(self.rows[next_row_index].height) +'   page height: ' + str(self.height))
 				on_last_selectable_row = selectedindex == self.selected_row_index
-				if self.rows[self.selected_row_index] == self.second_to_last_row_drawn or (self.scroll_down_on_last_selectable_row and on_last_selectable_row and self.last_row_drawn != self.rows[-1]):
+				if self.rows[selectedindex] == self.second_to_last_row_drawn or (self.scroll_down_on_last_selectable_row and on_last_selectable_row and self.last_row_drawn != self.rows[-1]):
 					self.scroll_index += 1
 
 
