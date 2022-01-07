@@ -228,6 +228,11 @@ class Page():
 		maxsubindex = len(self.rows[selectedindex].subrows)-1
 		selectedsubindex = min(self.selected_subrow_index, maxsubindex)
 
+		if not self.rows[selectedindex].subrows[selectedsubindex].selectable:
+			subrows = self.rows[selectedindex].subrows[selectedsubindex:]
+			selectable_subrows = [index for (subrow, index) in zip(subrows, range(selectedsubindex, selectedsubindex+len(subrows))) if subrow.selectable] + [selectedsubindex, selectedsubindex]
+			selectedsubindex = selectable_subrows[0]
+
 		# if nothing's selected in the menu, just select what we were last on
 		if not self.rows[selectedindex].selectable or pygameview.examine_target != self.rows[selectedindex].subrows[selectedsubindex].mouse_content:
 			selected_subrow = self.rows[selectedindex].subrows[min(selectedsubindex, len(self.rows[selectedindex].subrows))]
@@ -288,6 +293,12 @@ class Page():
 		selectedindex = min(self.selected_row_index, maxindex)
 		maxsubindex = len(self.rows[selectedindex].subrows)-1
 		selectedsubindex = min(self.selected_subrow_index, maxsubindex)
+		if not self.rows[selectedindex].subrows[selectedsubindex].selectable:
+			subrows = self.rows[selectedindex].subrows[selectedsubindex:]
+			selectable_subrows = [index for (subrow, index) in zip(subrows, range(selectedsubindex, selectedsubindex+len(subrows))) if subrow.selectable] + [selectedsubindex, selectedsubindex]
+			selectedsubindex = selectable_subrows[0]
+
+
 		if event.key in right_keys:
 			subrows = self.rows[selectedindex].subrows[selectedsubindex:]
 			selectable_subrows = [index for (subrow, index) in zip(subrows, range(selectedsubindex, selectedsubindex+len(subrows))) if subrow.selectable] + [selectedsubindex, selectedsubindex]
@@ -318,12 +329,21 @@ class Page():
 	def draw(self, pygameview, draw_pane, x, y):
 		cur_y = y
 		cur_x = x
-		for row in self.rows[self.scroll_index:]:
+
+		first_row_index = self.scroll_index
+
+		if self.draw_elipsis and self.scroll_index != 0:
+			pygameview.draw_string("...", draw_pane, cur_x, cur_y)
+			cur_y += pygameview.linesize
+			first_row_index += 1
+
+		for row in self.rows[first_row_index:]:
 			if cur_y >= self.height:
 				return
 			
 			if self.draw_elipsis and row.height + cur_y >= self.height:
 				pygameview.draw_string("...", draw_pane, cur_x, cur_y)
+				cur_y += pygameview.linesize
 			else:
 				if row.center: 
 					cur_x += self.width//2
