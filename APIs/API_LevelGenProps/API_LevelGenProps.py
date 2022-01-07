@@ -10,7 +10,7 @@ SHRINE_COMMON = Shrines.COMMON
 SHRINE_UNCOMMON = Shrines.UNCOMMON
 SHRINE_RARE = Shrines.RARE
 
-def add_shrine(shrine, rarity = COMMON):
+def add_shrine(shrine, rarity = SHRINE_COMMON):
 	Shrines.new_shrines.append((shrine, rarity))
 
 
@@ -75,6 +75,7 @@ ITEM_SUPER_RARE = Consumables.SUPER_RARE
 def pre_populate_level(levelgenerator, prng = None):
 	if not len(random_num_extra_props):
 		return
+	level = levelgenerator.difficulty
 
 	levelgenerator.extra_props = []
 	if not prng:
@@ -95,8 +96,8 @@ def pre_populate_level(levelgenerator, prng = None):
 def place_extra_props(levelgenerator):
 	if hasattr(levelgenerator, "extra_props"):
 		for prop in levelgenerator.extra_props:
-			p = self.empty_spawn_points.pop()
-			self.level.add_prop(prop, p.x, p.y)
+			p = levelgenerator.empty_spawn_points.pop()
+			levelgenerator.level.add_prop(prop, p.x, p.y)
 
 
 

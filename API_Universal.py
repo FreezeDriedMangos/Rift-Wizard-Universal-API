@@ -19,10 +19,10 @@ import mods.API_Universal.Modred
 
 # TODO: also add a way to block all but the bestiary
 
-# TODO: move all apis to folder APIs
 # TODO: add hashes of rift wizard source files, throw warning if stored hashes don't match current computed hashes (and display warning on title screen)
 
 
+# TODO: API_Boss doesn't work - Universal results in an instant win when fighting Mordred
 
 
 # ######################################### 
