@@ -210,11 +210,14 @@ class Page():
 		self.selected_row_index = 0
 		self.selected_subrow_index = 0
 		self.scroll_index = 0
+		self.second_to_last_row_drawn = None
+		self.last_row_drawn = None
 
 		selectable_rows = [index for (row, index) in zip(self.rows, range(len(self.rows))) if row.selectable] + [0]
 		self.selected_row_index = selectable_rows[0]
 
 		self.scroll_up_on_last_selectable_row = True
+		self.scroll_down_on_last_selectable_row = True
 
 	def process_one_input_key(self, pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys):
 		if event.type != pygame.KEYDOWN:
@@ -279,11 +282,15 @@ class Page():
 			# if the next row is off the screen, scroll down
 			if self.selected_row_index < maxindex:
 				print('\t' + str(self.selected_row_index) + " < " + str(maxindex))
-				next_row_index = max(self.selected_row_index+1, len(self.rows)-1)
-				cur_height_to_selection = sum(row.height for row in self.rows[self.scroll_index:self.selected_row_index])
-				if cur_height_to_selection + self.rows[next_row_index].height > self.height:
+				# next_row_index = max(self.selected_row_index+1, len(self.rows)-1)
+				# cur_height_to_selection = sum(row.height for row in self.rows[self.scroll_index:self.selected_row_index])
+				# if cur_height_to_selection + self.rows[next_row_index].height > self.height: # TODO: change to `if selectedrow = self.second_to_last_row_drawn or (scroll down on last selectable row and (I'm on the last selectable row and lastrowdrawn != last row))`
+				# 	self.scroll_index += 1
+				# 	print('height to selection: ' + str(cur_height_to_selection) + '   next row height: ' + str(self.rows[next_row_index].height) +'   page height: ' + str(self.height))
+				on_last_selectable_row = selectedindex == self.selected_row_index
+				if self.rows[self.selected_row_index] == self.second_to_last_row_drawn or (self.scroll_down_on_last_selectable_row and on_last_selectable_row and self.last_row_drawn != self.rows[-1]):
 					self.scroll_index += 1
-					print('height to selection: ' + str(cur_height_to_selection) + '   next row height: ' + str(self.rows[next_row_index].height) +'   page height: ' + str(self.height))
+
 
 		selectedindex = min(self.selected_row_index, maxindex)
 		maxsubindex = len(self.rows[selectedindex].subrows)-1
@@ -336,6 +343,9 @@ class Page():
 			row.draw(pygameview, draw_pane, cur_x, cur_y)
 			cur_y += row.height
 			cur_x = x
+
+			self.second_to_last_row_drawn = self.last_row_drawn
+			self.last_row_drawn = row
 	
 
 
