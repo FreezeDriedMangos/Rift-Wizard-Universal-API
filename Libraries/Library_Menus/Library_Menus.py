@@ -66,8 +66,6 @@ class Menu():
 					continue # don't pass this event to the new cur_page
 
 			cur_page.process_one_input_key(pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys)
-
-			print("New indexes: " + str(cur_page.selected_row_index) + " sub " + str(cur_page.selected_subrow_index))
 			
 
 		#
@@ -97,8 +95,6 @@ class Menu():
 						if br:
 							break
 					break
-					
-			print("New indexes: " + str(cur_page.selected_row_index) + " sub " + str(cur_page.selected_subrow_index))
 
 
 		for evt in pygameview.events:
@@ -228,7 +224,6 @@ class Page():
 		selectedindex = min(self.selected_row_index, maxindex)
 		maxsubindex = len(self.rows[selectedindex].subrows)-1
 		selectedsubindex = min(self.selected_subrow_index, maxsubindex)
-		print("before: " + str(self.selected_row_index))
 
 		# if nothing's selected in the menu, just select what we were last on
 		if not self.rows[selectedindex].selectable or pygameview.examine_target != self.rows[selectedindex].subrows[selectedsubindex].mouse_content:
@@ -262,8 +257,6 @@ class Page():
 			selectable_rows = [selectedindex] + [index for (row, index) in zip(rows, range(len(rows))) if row.selectable]
 			# selectable_rows = [index for (row, index) in zip(rows, range(len(rows))) if row.selectable]
 			self.selected_row_index = selectable_rows[-1]
-			
-			print('\t'+str(len(rows)) + "   " + str(selectable_rows))
 
 			# if the previous row is offscreen, scroll up
 			if self.selected_row_index == self.scroll_index:
@@ -276,12 +269,9 @@ class Page():
 			rows = self.rows[selectedindex:]
 			selectable_rows = [index for (row, index) in zip(rows, range(selectedindex, selectedindex+len(rows))) if row.selectable] + [selectedindex, selectedindex]
 			self.selected_row_index = selectable_rows[1]
-			
-			print('\t'+str(len(selectable_rows)) + "   " + str(selectable_rows))
 
 			# if the next row is off the screen, scroll down
 			if self.selected_row_index < maxindex:
-				print('\t' + str(self.selected_row_index) + " < " + str(maxindex))
 				# next_row_index = max(self.selected_row_index+1, len(self.rows)-1)
 				# cur_height_to_selection = sum(row.height for row in self.rows[self.scroll_index:self.selected_row_index])
 				# if cur_height_to_selection + self.rows[next_row_index].height > self.height: 
@@ -301,11 +291,6 @@ class Page():
 			self.selected_subrow_index = selectable_subrows[1]
 			selectedsubindex = self.selected_subrow_index
 
-			print(selectable_subrows)
-			print(len(subrows))
-			print(list(range(selectedsubindex, len(subrows))))
-			print( [(index, subrow.selectable) for (subrow, index) in zip(subrows, range(selectedsubindex, len(subrows)))])
-
 			# self.selected_subrow_index = min(selectedsubindex+1, maxsubindex)
 
 		if event.key in left_keys:
@@ -313,8 +298,6 @@ class Page():
 			selectable_subrows = [selectedsubindex] + [index for (subrow, index) in zip(subrows, range(len(subrows))) if subrow.selectable] 
 			self.selected_subrow_index = selectable_subrows[-1]
 			selectedsubindex = self.selected_subrow_index
-
-			print (selectable_subrows)
 
 			# self.selected_subrow_index = max(0, selectedsubindex-1)
 
@@ -327,8 +310,6 @@ class Page():
 			selected_row.on_confirm_callback()
 		
 		pygameview.examine_target = selected_row.mouse_content
-		
-		print("\tafter: " + str(self.selected_row_index))
 		
 
 	def draw(self, pygameview, draw_pane, x, y):
