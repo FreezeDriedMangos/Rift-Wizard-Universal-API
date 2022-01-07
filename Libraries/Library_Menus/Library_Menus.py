@@ -33,7 +33,7 @@ class Menu():
 	def process_input(self, pygameview, up_keys, down_keys, left_keys, right_keys, confirm_keys):
 		for event in pygameview.events:
 			if event.type != pygame.KEYDOWN:
-				return
+				continue
 
 			cur_page = self.pages[self.cur_page_index]
 
@@ -67,28 +67,48 @@ class Menu():
 
 			cur_page.process_one_input_key(pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys)
 
+			print("New indexes: " + str(cur_page.selected_row_index) + " sub " + str(cur_page.selected_subrow_index))
+			
 
 		#
 		# Mouse
 		#
 
-		mouse_dx, mouse_dy = self.get_mouse_rel()
+		cur_page = self.pages[self.cur_page_index]
+
+		mouse_dx, mouse_dy = pygameview.get_mouse_rel()
 		if mouse_dx or mouse_dy:
-			self.examine_target = None
+			pygameview.examine_target = None
 
-			mx, my = self.get_mouse_pos()
-			for r, c in self.ui_rects:
+			mx, my = pygameview.get_mouse_pos()
+			for r, c in pygameview.ui_rects:
 				if r.collidepoint((mx, my)):
-					self.examine_target = c.mouse_content
+					pygameview.examine_target = c.mouse_content
 
-		for evt in self.events:
+					# search for any subrow with mouse_content = c.mouse_content
+					br = False
+					for (row, row_index) in zip(cur_page.rows, range(0, len(cur_page.rows))):
+						for (subrow, sub_row_index) in zip(row.subrows, range(0, len(row.subrows))):
+							if subrow.mouse_content == pygameview.examine_target:
+								cur_page.selected_row_index = row_index
+								cur_page.selected_subrow_index = sub_row_index
+								br = True
+								break
+						if br:
+							break
+					break
+					
+			print("New indexes: " + str(cur_page.selected_row_index) + " sub " + str(cur_page.selected_subrow_index))
+
+
+		for evt in pygameview.events:
 			if not evt.type == pygame.MOUSEBUTTONDOWN:
 				continue
 
-			mx, my = self.get_mouse_pos()
-			for r, c in self.ui_rects:
+			mx, my = pygameview.get_mouse_pos()
+			for r, c in pygameview.ui_rects:
 				if r.collidepoint((mx, my)):
-					self.examine_target = c.mouse_content
+					pygameview.examine_target = c.mouse_content
 
 					if evt.button == pygame.BUTTON_LEFT:
 						if c.on_confirm_callback:
@@ -194,6 +214,8 @@ class Page():
 		selectable_rows = [index for (row, index) in zip(self.rows, range(len(self.rows))) if row.selectable] + [0]
 		self.selected_row_index = selectable_rows[0]
 
+		self.scroll_up_on_last_selectable_row = True
+
 	def process_one_input_key(self, pygameview, event, up_keys, down_keys, left_keys, right_keys, confirm_keys):
 		if event.type != pygame.KEYDOWN:
 			return
@@ -207,8 +229,26 @@ class Page():
 
 		# if nothing's selected in the menu, just select what we were last on
 		if not self.rows[selectedindex].selectable or pygameview.examine_target != self.rows[selectedindex].subrows[selectedsubindex].mouse_content:
-			selected_row = self.rows[selectedindex].subrows[min(selectedsubindex, len(self.rows[selectedindex].subrows))]
-			pygameview.examine_target = selected_row.mouse_content
+			selected_subrow = self.rows[selectedindex].subrows[min(selectedsubindex, len(self.rows[selectedindex].subrows))]
+			if not selected_subrow.selectable:
+				# options = [row for row in self.rows[selectedindex].subrows if row.selectable] + [selected_subrow]
+				# selected_subrow = options[0]
+
+				# ensure that a selectable subrow is selected
+				rows = self.rows[selectedindex:]
+				selectable_rows = [index for (row, index) in zip(rows, range(selectedindex, selectedindex+len(rows))) if row.selectable] + [selectedindex, selectedindex]
+				self.selected_row_index = selectable_rows[0]
+				selectedindex = self.selected_row_index
+				
+				subrows = self.rows[selectedindex].subrows[selectedsubindex:]
+				selectable_subrows = [index for (subrow, index) in zip(subrows, range(selectedsubindex, selectedsubindex+len(subrows))) if subrow.selectable] + [selectedsubindex, selectedsubindex]
+				self.selected_subrow_index = selectable_subrows[0]
+				selectedsubindex = self.selected_subrow_index
+
+				selected_subrow = self.rows[selectedindex].subrows[selectedsubindex]
+
+
+			pygameview.examine_target = selected_subrow.mouse_content
 
 			self.selected_row_index = selectedindex
 			self.selected_subrow_index = selectedsubindex
@@ -225,10 +265,13 @@ class Page():
 			# if the previous row is offscreen, scroll up
 			if self.selected_row_index == self.scroll_index:
 				self.scroll_index = max(0, self.scroll_index-1)
+			if self.scroll_up_on_last_selectable_row and selectedindex == self.selected_row_index:
+				self.scroll_index = max(0, self.scroll_index-1)
+
 		if event.key in down_keys:
 			# self.selected_row_index = min(selectedindex+1, maxindex)
 			rows = self.rows[selectedindex:]
-			selectable_rows = [index for (row, index) in zip(rows, range(selectedindex, len(rows))) if row.selectable] + [selectedindex, selectedindex]
+			selectable_rows = [index for (row, index) in zip(rows, range(selectedindex, selectedindex+len(rows))) if row.selectable] + [selectedindex, selectedindex]
 			self.selected_row_index = selectable_rows[1]
 			
 			print('\t'+str(len(selectable_rows)) + "   " + str(selectable_rows))
@@ -236,18 +279,37 @@ class Page():
 			# if the next row is off the screen, scroll down
 			if self.selected_row_index < maxindex:
 				print('\t' + str(self.selected_row_index) + " < " + str(maxindex))
-				next_row_index = self.selected_row_index+1
+				next_row_index = max(self.selected_row_index+1, len(self.rows)-1)
 				cur_height_to_selection = sum(row.height for row in self.rows[self.scroll_index:self.selected_row_index])
 				if cur_height_to_selection + self.rows[next_row_index].height > self.height:
 					self.scroll_index += 1
+					print('height to selection: ' + str(cur_height_to_selection) + '   next row height: ' + str(self.rows[next_row_index].height) +'   page height: ' + str(self.height))
 
 		selectedindex = min(self.selected_row_index, maxindex)
 		maxsubindex = len(self.rows[selectedindex].subrows)-1
 		selectedsubindex = min(self.selected_subrow_index, maxsubindex)
 		if event.key in right_keys:
-			self.selected_subrow_index = min(selectedsubindex+1, maxsubindex)
+			subrows = self.rows[selectedindex].subrows[selectedsubindex:]
+			selectable_subrows = [index for (subrow, index) in zip(subrows, range(selectedsubindex, selectedsubindex+len(subrows))) if subrow.selectable] + [selectedsubindex, selectedsubindex]
+			self.selected_subrow_index = selectable_subrows[1]
+			selectedsubindex = self.selected_subrow_index
+
+			print(selectable_subrows)
+			print(len(subrows))
+			print(list(range(selectedsubindex, len(subrows))))
+			print( [(index, subrow.selectable) for (subrow, index) in zip(subrows, range(selectedsubindex, len(subrows)))])
+
+			# self.selected_subrow_index = min(selectedsubindex+1, maxsubindex)
+
 		if event.key in left_keys:
-			self.selected_subrow_index = max(0, selectedsubindex-1)
+			subrows = self.rows[selectedindex].subrows[:selectedsubindex]
+			selectable_subrows = [selectedsubindex] + [index for (subrow, index) in zip(subrows, range(len(subrows))) if subrow.selectable] 
+			self.selected_subrow_index = selectable_subrows[-1]
+			selectedsubindex = self.selected_subrow_index
+
+			print (selectable_subrows)
+
+			# self.selected_subrow_index = max(0, selectedsubindex-1)
 
 		selected_row = self.rows[selectedindex].subrows[min(selectedsubindex, len(self.rows[selectedindex].subrows))]
 
@@ -395,13 +457,17 @@ def string_to_words(string, width, font, linesize, color=(255, 255, 255), indent
 
 				# Process complex tooltips- strip off the []s and look up the color
 				if word and word[0] == '[' and word[-1] == ']':
-					tokens = word[1:-1].split(':')
-					if len(tokens) == 1:
-						word = tokens[0] # todo- fmt attribute?
-						cur_color = tooltip_colors[word.lower()].to_tup()
-					elif len(tokens) == 2:
-						word = tokens[0].replace('_', ' ')
-						cur_color = tooltip_colors[tokens[1].lower()].to_tup()
+					original_word = word
+					try:
+						tokens = word[1:-1].split(':')
+						if len(tokens) == 1:
+							word = tokens[0] # todo- fmt attribute?
+							cur_color = tooltip_colors[word.lower()].to_tup()
+						elif len(tokens) == 2:
+							word = tokens[0].replace('_', ' ')
+							cur_color = tooltip_colors[tokens[1].lower()].to_tup()
+					except:
+						word = original_word
 
 				max_size = chars_left if word in [' ', '.', ','] else chars_left - 1
 				if len(word) > max_size:
