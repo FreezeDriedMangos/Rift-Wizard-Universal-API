@@ -1,8 +1,10 @@
 
-import mods.API_Universal.RiftWizardOverrides
-import mods.API_Universal.LevelOverrides
-import mods.API_Universal.LevelGenOverrides
+import mods.API_Universal.ConsumablesOverrides
 import mods.API_Universal.GameOverrides
+import mods.API_Universal.LevelGenOverrides
+import mods.API_Universal.LevelOverrides
+import mods.API_Universal.RiftWizardOverrides
+import mods.API_Universal.ShrinesOverrides
 
 import mods.API_Universal.Modred
 

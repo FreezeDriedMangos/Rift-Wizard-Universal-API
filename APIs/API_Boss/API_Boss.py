@@ -35,6 +35,7 @@ def check_triggers_post(self):
 #Marks all bosses on the final level as final bosses
 def levelgenerator_init(self, *args, **kwargs):
 	# __levelgenerator_init_old(self, *args, **kwargs)
+
 	if(self.difficulty == Level.LAST_LEVEL):
 		finalboss = random.choice(default_finalbosses)
 		finalboss.generator(self)
