@@ -28,6 +28,7 @@ import mods.API_Universal.APIs.API_OptionsMenu.API_OptionsMenu as API_OptionsMen
 import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.APIs.API_Spells.API_Spells as API_Spells
+import mods.API_Universal.APIs.API_DrawLevel.API_DrawLevel as API_DrawLevel
 import mods.API_Universal.EventSystem as EventSystem
 
 # ----------------------------------------------------------------------------------------+
@@ -147,6 +148,7 @@ def get_repeatable_keys(self):
 		
 RiftWizard.PyGameView.get_repeatable_keys = get_repeatable_keys
 
+RiftWizard.PyGameView.draw_level = API_DrawLevel.draw_level
 
 import gc
 import time

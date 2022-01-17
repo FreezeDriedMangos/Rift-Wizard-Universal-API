@@ -25,18 +25,18 @@ from collections import namedtuple
 
 Menu = namedtuple('Menu', 'id draw_function process_input blocks_char_sheet_and_examine')
 menus = [
-	Menu(RiftWizard.STATE_TITLE, RiftWizard.PyGameView.draw_title, RiftWizard.PyGameView.process_title_input, True),
-	Menu(RiftWizard.STATE_PICK_MODE, RiftWizard.PyGameView.draw_pick_mode, RiftWizard.PyGameView.process_pick_mode_input, True),
-	Menu(RiftWizard.STATE_PICK_TRIAL, RiftWizard.PyGameView.draw_pick_trial, RiftWizard.PyGameView.process_pick_trial_input, True),
-	Menu(RiftWizard.STATE_OPTIONS, RiftWizard.PyGameView.draw_options_menu, RiftWizard.PyGameView.process_options_input, True),
-	Menu(RiftWizard.STATE_REBIND, RiftWizard.PyGameView.draw_key_rebind, RiftWizard.PyGameView.process_key_rebind, True),
-	Menu(RiftWizard.STATE_MESSAGE, RiftWizard.PyGameView.draw_message, RiftWizard.PyGameView.process_message_input, True),
-	Menu(RiftWizard.STATE_REMINISCE, RiftWizard.PyGameView.draw_reminisce, RiftWizard.PyGameView.process_reminisce_input, True),
-	Menu(RiftWizard.STATE_LEVEL, RiftWizard.PyGameView.draw_level, lambda pygameview: None, False),
-	Menu(RiftWizard.STATE_CHAR_SHEET, RiftWizard.PyGameView.draw_char_sheet, RiftWizard.PyGameView.process_char_sheet_input, False),
-	Menu(RiftWizard.STATE_SHOP, RiftWizard.PyGameView.draw_shop, RiftWizard.PyGameView.process_shop_input, False),
-	Menu(RiftWizard.STATE_CONFIRM, RiftWizard.PyGameView.draw_confirm, RiftWizard.PyGameView.process_confirm_input, False),
-	Menu(RiftWizard.STATE_COMBAT_LOG, RiftWizard.PyGameView.draw_combat_log, RiftWizard.PyGameView.process_combat_log_input, False),
+	Menu(RiftWizard.STATE_TITLE, lambda self: RiftWizard.PyGameView.draw_title(self), lambda self: RiftWizard.PyGameView.process_title_input(self), True),
+	Menu(RiftWizard.STATE_PICK_MODE, lambda self: RiftWizard.PyGameView.draw_pick_mode(self), lambda self: RiftWizard.PyGameView.process_pick_mode_input(self), True),
+	Menu(RiftWizard.STATE_PICK_TRIAL, lambda self: RiftWizard.PyGameView.draw_pick_trial(self), lambda self: RiftWizard.PyGameView.process_pick_trial_input(self), True),
+	Menu(RiftWizard.STATE_OPTIONS, lambda self: RiftWizard.PyGameView.draw_options_menu(self), lambda self: RiftWizard.PyGameView.process_options_input(self), True),
+	Menu(RiftWizard.STATE_REBIND, lambda self: RiftWizard.PyGameView.draw_key_rebind(self), lambda self: RiftWizard.PyGameView.process_key_rebind(self), True),
+	Menu(RiftWizard.STATE_MESSAGE, lambda self: RiftWizard.PyGameView.draw_message(self), lambda self: RiftWizard.PyGameView.process_message_input(self), True),
+	Menu(RiftWizard.STATE_REMINISCE, lambda self: RiftWizard.PyGameView.draw_reminisce(self), lambda self: RiftWizard.PyGameView.process_reminisce_input(self), True),
+	Menu(RiftWizard.STATE_LEVEL, lambda self: RiftWizard.PyGameView.draw_level(self), lambda self: None, False),
+	Menu(RiftWizard.STATE_CHAR_SHEET, lambda self: RiftWizard.PyGameView.draw_char_sheet(self), lambda self: RiftWizard.PyGameView.process_char_sheet_input(self), False),
+	Menu(RiftWizard.STATE_SHOP, lambda self: RiftWizard.PyGameView.draw_shop(self), lambda self: RiftWizard.PyGameView.process_shop_input(self), False),
+	Menu(RiftWizard.STATE_CONFIRM, lambda self: RiftWizard.PyGameView.draw_confirm(self), lambda self: RiftWizard.PyGameView.process_confirm_input(self), False),
+	Menu(RiftWizard.STATE_COMBAT_LOG, lambda self: RiftWizard.PyGameView.draw_combat_log(self), lambda self: RiftWizard.PyGameView.process_combat_log_input(self), False),
 ]
 menu_transition_overrides = []
 
