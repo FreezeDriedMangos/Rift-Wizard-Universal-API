@@ -21,6 +21,7 @@ RiftWizard = get_RiftWizard() #                    |
 
 
 from collections import namedtuple
+import mods.API_Universal.APIs.API_DrawPanel.API_DrawPanel as API_DrawPanel
 
 
 Menu = namedtuple('Menu', 'id draw_function process_input blocks_char_sheet_and_examine')
@@ -61,6 +62,9 @@ def on_run_process_input(self):
 	prev_state = self.state
 	cur_menu.process_input(self)
 	new_state = self.state
+
+	if new_state == prev_state and not cur_menu.blocks_char_sheet_and_examine:
+		API_DrawPanel.process_input_character(self)
 
 	global menu_transition_overrides
 	state_transition_overrides = [override for (fro, to, override, condition) in menu_transition_overrides if condition(self) and fro == prev_state and to == new_state]
