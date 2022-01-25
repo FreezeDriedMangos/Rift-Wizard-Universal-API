@@ -3,6 +3,7 @@ import Level
 import inspect 
 import Game
 import os
+import random
 
 frm = inspect.stack()[-1]
 RiftWizard = inspect.getmodule(frm[0])
@@ -98,3 +99,31 @@ def add_tag_tooltip(tag):
 # color - (int, int, int) color. The color of the attribute
 def add_attr_color(attr, color):
     RiftWizard.tooltip_colors[attr] = color
+
+# Adds an tag to the shrine options.
+#
+# tag - Tag. Level.Tag() Object
+# magnitude - int. 1 = uncommon Tag (eg elements), 2 = common Tag (eg sorcery/conjuration), rest = rare Tag (eg dragon/chaos),
+#
+# def add_shrine_option(tag, magnitude):
+def add_shrine_option(tag, magnitude):
+	if(magnitude==1):
+		primary_shrine_option.append(tag)
+	elif(magnitude==2):
+		secondary_shrine_option.append(tag)
+	else:
+		tertiary_shrine_option.append(tag)
+
+primary_shrine_option = [Level.Tags.Fire, Level.Tags.Lightning, Level.Tags.Dark, Level.Tags.Arcane, Level.Tags.Nature, Level.Tags.Holy, Level.Tags.Ice]
+secondary_shrine_option = [Level.Tags.Sorcery, Level.Tags.Enchantment, Level.Tags.Conjuration]
+tertiary_shrine_option = [Level.Tags.Word, Level.Tags.Dragon, Level.Tags.Translocation, Level.Tags.Eye, Level.Tags.Chaos, Level.Tags.Orb, Level.Tags.Metallic]
+
+#This is a variable version of the power circle wheel from the base game - currently only used to overwrite base version
+def random_spell_tag():
+	roll = random.random()
+	if roll < .6:
+		return random.choice(primary_shrine_option)
+	if roll < .97:
+		return random.choice(secondary_shrine_option)
+	else:
+		return random.choice(tertiary_shrine_option)

@@ -156,6 +156,14 @@ add_tag_tooltip = API_Spells.add_tag_tooltip
 # def add_attr_color(attr, color):
 add_attr_color = API_Spells.add_attr_color
 
+# Adds an tag to the shrine options.
+#
+# tag - Tag. Level.Tag() Object
+# magnitude - int. 1 = uncommon Tag (eg elements), 2 = common Tag (eg sorcery/conjuration), rest = rare Tag (eg dragon/chaos),
+#
+# def add_shrine_option(tag, magnitude):
+add_shrine_option = API_Spells.add_shrine_option
+
 
 #######################
 ### API_OptionsMenu ###
