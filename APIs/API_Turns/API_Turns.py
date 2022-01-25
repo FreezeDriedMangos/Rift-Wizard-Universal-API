@@ -1,6 +1,12 @@
 import Level
+import mods.API_Universal.Libraries.Library_QuickPatch.Library_QuickPatch as Library_QuickPatch
 import time, random
 from typing import List
+
+def unit_init(self, *args, **kwargs):
+    self.haste = 0
+
+Library_QuickPatch.patch_init(Level.Unit, unit_init)
 
 class TurnAdvancer:
 
@@ -54,7 +60,7 @@ class TurnUnits(TurnAdvancerSplit):
                     self.level.is_awaiting_input = True
                     yield
                 finished_advance = unit.advance()
-                if getattr(unit, 'haste', 0):
+                if unit.haste and unit.is_alive():
                     finished_advance = False
                     unit.haste -= 1
                 
