@@ -285,7 +285,7 @@ def run(self):
 
 			prev_state = self.state
 			self.process_level_input()
-			if prev_state != self.state:
+			if prev_state != self.state: # If we're opening a menu from the Level, delay menu process for one tick, fixes ESC and charsheet processing
 				delay_menu_process = True
 
 			if self.game and self.game.victory_evt:

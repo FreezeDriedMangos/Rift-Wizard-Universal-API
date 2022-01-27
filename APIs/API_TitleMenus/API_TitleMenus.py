@@ -26,18 +26,18 @@ import mods.API_Universal.APIs.API_DrawPanel.API_DrawPanel as API_DrawPanel
 
 Menu = namedtuple('Menu', 'id draw_function process_input blocks_char_sheet_and_examine')
 menus = [
-	Menu(RiftWizard.STATE_TITLE, lambda self: RiftWizard.PyGameView.draw_title(self), lambda self: RiftWizard.PyGameView.process_title_input(self), True),
-	Menu(RiftWizard.STATE_PICK_MODE, lambda self: RiftWizard.PyGameView.draw_pick_mode(self), lambda self: RiftWizard.PyGameView.process_pick_mode_input(self), True),
-	Menu(RiftWizard.STATE_PICK_TRIAL, lambda self: RiftWizard.PyGameView.draw_pick_trial(self), lambda self: RiftWizard.PyGameView.process_pick_trial_input(self), True),
-	Menu(RiftWizard.STATE_OPTIONS, lambda self: RiftWizard.PyGameView.draw_options_menu(self), lambda self: RiftWizard.PyGameView.process_options_input(self), True),
-	Menu(RiftWizard.STATE_REBIND, lambda self: RiftWizard.PyGameView.draw_key_rebind(self), lambda self: RiftWizard.PyGameView.process_key_rebind(self), True),
-	Menu(RiftWizard.STATE_MESSAGE, lambda self: RiftWizard.PyGameView.draw_message(self), lambda self: RiftWizard.PyGameView.process_message_input(self), True),
-	Menu(RiftWizard.STATE_REMINISCE, lambda self: RiftWizard.PyGameView.draw_reminisce(self), lambda self: RiftWizard.PyGameView.process_reminisce_input(self), True),
-	Menu(RiftWizard.STATE_LEVEL, lambda self: RiftWizard.PyGameView.draw_level(self), lambda self: None, False),
-	Menu(RiftWizard.STATE_CHAR_SHEET, lambda self: RiftWizard.PyGameView.draw_char_sheet(self), lambda self: RiftWizard.PyGameView.process_char_sheet_input(self), False),
-	Menu(RiftWizard.STATE_SHOP, lambda self: RiftWizard.PyGameView.draw_shop(self), lambda self: RiftWizard.PyGameView.process_shop_input(self), False),
-	Menu(RiftWizard.STATE_CONFIRM, lambda self: RiftWizard.PyGameView.draw_confirm(self), lambda self: RiftWizard.PyGameView.process_confirm_input(self), False),
-	Menu(RiftWizard.STATE_COMBAT_LOG, lambda self: RiftWizard.PyGameView.draw_combat_log(self), lambda self: RiftWizard.PyGameView.process_combat_log_input(self), False),
+	Menu(RiftWizard.STATE_TITLE, lambda pygameview: RiftWizard.PyGameView.draw_title(pygameview), lambda pygameview: RiftWizard.PyGameView.process_title_input(pygameview), True),
+	Menu(RiftWizard.STATE_PICK_MODE, lambda pygameview: RiftWizard.PyGameView.draw_pick_mode(pygameview), lambda pygameview: RiftWizard.PyGameView.process_pick_mode_input(pygameview), True),
+	Menu(RiftWizard.STATE_PICK_TRIAL, lambda pygameview: RiftWizard.PyGameView.draw_pick_trial(pygameview), lambda pygameview: RiftWizard.PyGameView.process_pick_trial_input(pygameview), True),
+	Menu(RiftWizard.STATE_OPTIONS, lambda pygameview: RiftWizard.PyGameView.draw_options_menu(pygameview), lambda pygameview: RiftWizard.PyGameView.process_options_input(pygameview), True),
+	Menu(RiftWizard.STATE_REBIND, lambda pygameview: RiftWizard.PyGameView.draw_key_rebind(pygameview), lambda pygameview: RiftWizard.PyGameView.process_key_rebind(pygameview), True),
+	Menu(RiftWizard.STATE_MESSAGE, lambda pygameview: RiftWizard.PyGameView.draw_message(pygameview), lambda pygameview: RiftWizard.PyGameView.process_message_input(pygameview), True),
+	Menu(RiftWizard.STATE_REMINISCE, lambda pygameview: RiftWizard.PyGameView.draw_reminisce(pygameview), lambda pygameview: RiftWizard.PyGameView.process_reminisce_input(pygameview), True),
+	Menu(RiftWizard.STATE_LEVEL, lambda pygameview: RiftWizard.PyGameView.draw_level(pygameview), lambda pygameview: None, False),
+	Menu(RiftWizard.STATE_CHAR_SHEET, lambda pygameview: RiftWizard.PyGameView.draw_char_sheet(pygameview), lambda pygameview: RiftWizard.PyGameView.process_char_sheet_input(pygameview), False),
+	Menu(RiftWizard.STATE_SHOP, lambda pygameview: RiftWizard.PyGameView.draw_shop(pygameview), lambda pygameview: RiftWizard.PyGameView.process_shop_input(pygameview), False),
+	Menu(RiftWizard.STATE_CONFIRM, lambda pygameview: RiftWizard.PyGameView.draw_confirm(pygameview), lambda pygameview: RiftWizard.PyGameView.process_confirm_input(pygameview), False),
+	Menu(RiftWizard.STATE_COMBAT_LOG, lambda pygameview: RiftWizard.PyGameView.draw_combat_log(pygameview), lambda pygameview: RiftWizard.PyGameView.process_combat_log_input(pygameview), False),
 ]
 menu_transition_overrides = []
 
