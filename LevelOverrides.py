@@ -1,5 +1,6 @@
 import Level
 import mods.API_Universal.APIs.API_Disrupt.API_Disrupt as API_Disrupt
+import mods.API_Universal.APIs.API_Turns.API_Turns as API_Turns
 
 
 # ----------------------------------------------------------------------------------------+
@@ -22,6 +23,7 @@ def portal_disrupt(self, caster):
 	API_Disrupt.disrupt_default(self, caster)
 Level.Portal.disrupt = portal_disrupt
 
+Level.Level.iter_frame = API_Turns.iter_frame
 
 if API_Multiplayer:
 	Level.Level.iter_frame = API_Multiplayer.Level_iter_frame

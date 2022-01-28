@@ -21,22 +21,23 @@ RiftWizard = get_RiftWizard() #                    |
 
 
 from collections import namedtuple
+import mods.API_Universal.APIs.API_DrawPanel.API_DrawPanel as API_DrawPanel
 
 
 Menu = namedtuple('Menu', 'id draw_function process_input blocks_char_sheet_and_examine')
 menus = [
-	Menu(RiftWizard.STATE_TITLE, RiftWizard.PyGameView.draw_title, RiftWizard.PyGameView.process_title_input, True),
-	Menu(RiftWizard.STATE_PICK_MODE, RiftWizard.PyGameView.draw_pick_mode, RiftWizard.PyGameView.process_pick_mode_input, True),
-	Menu(RiftWizard.STATE_PICK_TRIAL, RiftWizard.PyGameView.draw_pick_trial, RiftWizard.PyGameView.process_pick_trial_input, True),
-	Menu(RiftWizard.STATE_OPTIONS, RiftWizard.PyGameView.draw_options_menu, RiftWizard.PyGameView.process_options_input, True),
-	Menu(RiftWizard.STATE_REBIND, RiftWizard.PyGameView.draw_key_rebind, RiftWizard.PyGameView.process_key_rebind, True),
-	Menu(RiftWizard.STATE_MESSAGE, RiftWizard.PyGameView.draw_message, RiftWizard.PyGameView.process_message_input, True),
-	Menu(RiftWizard.STATE_REMINISCE, RiftWizard.PyGameView.draw_reminisce, RiftWizard.PyGameView.process_reminisce_input, True),
-	Menu(RiftWizard.STATE_LEVEL, RiftWizard.PyGameView.draw_level, lambda pygameview: None, False),
-	Menu(RiftWizard.STATE_CHAR_SHEET, RiftWizard.PyGameView.draw_char_sheet, RiftWizard.PyGameView.process_char_sheet_input, False),
-	Menu(RiftWizard.STATE_SHOP, RiftWizard.PyGameView.draw_shop, RiftWizard.PyGameView.process_shop_input, False),
-	Menu(RiftWizard.STATE_CONFIRM, RiftWizard.PyGameView.draw_confirm, RiftWizard.PyGameView.process_confirm_input, False),
-	Menu(RiftWizard.STATE_COMBAT_LOG, RiftWizard.PyGameView.draw_combat_log, RiftWizard.PyGameView.process_combat_log_input, False),
+	Menu(RiftWizard.STATE_TITLE, lambda pygameview: RiftWizard.PyGameView.draw_title(pygameview), lambda pygameview: RiftWizard.PyGameView.process_title_input(pygameview), True),
+	Menu(RiftWizard.STATE_PICK_MODE, lambda pygameview: RiftWizard.PyGameView.draw_pick_mode(pygameview), lambda pygameview: RiftWizard.PyGameView.process_pick_mode_input(pygameview), True),
+	Menu(RiftWizard.STATE_PICK_TRIAL, lambda pygameview: RiftWizard.PyGameView.draw_pick_trial(pygameview), lambda pygameview: RiftWizard.PyGameView.process_pick_trial_input(pygameview), True),
+	Menu(RiftWizard.STATE_OPTIONS, lambda pygameview: RiftWizard.PyGameView.draw_options_menu(pygameview), lambda pygameview: RiftWizard.PyGameView.process_options_input(pygameview), True),
+	Menu(RiftWizard.STATE_REBIND, lambda pygameview: RiftWizard.PyGameView.draw_key_rebind(pygameview), lambda pygameview: RiftWizard.PyGameView.process_key_rebind(pygameview), True),
+	Menu(RiftWizard.STATE_MESSAGE, lambda pygameview: RiftWizard.PyGameView.draw_message(pygameview), lambda pygameview: RiftWizard.PyGameView.process_message_input(pygameview), True),
+	Menu(RiftWizard.STATE_REMINISCE, lambda pygameview: RiftWizard.PyGameView.draw_reminisce(pygameview), lambda pygameview: RiftWizard.PyGameView.process_reminisce_input(pygameview), True),
+	Menu(RiftWizard.STATE_LEVEL, lambda pygameview: RiftWizard.PyGameView.draw_level(pygameview), lambda pygameview: None, False),
+	Menu(RiftWizard.STATE_CHAR_SHEET, lambda pygameview: RiftWizard.PyGameView.draw_char_sheet(pygameview), lambda pygameview: RiftWizard.PyGameView.process_char_sheet_input(pygameview), False),
+	Menu(RiftWizard.STATE_SHOP, lambda pygameview: RiftWizard.PyGameView.draw_shop(pygameview), lambda pygameview: RiftWizard.PyGameView.process_shop_input(pygameview), False),
+	Menu(RiftWizard.STATE_CONFIRM, lambda pygameview: RiftWizard.PyGameView.draw_confirm(pygameview), lambda pygameview: RiftWizard.PyGameView.process_confirm_input(pygameview), False),
+	Menu(RiftWizard.STATE_COMBAT_LOG, lambda pygameview: RiftWizard.PyGameView.draw_combat_log(pygameview), lambda pygameview: RiftWizard.PyGameView.process_combat_log_input(pygameview), False),
 ]
 menu_transition_overrides = []
 
@@ -61,6 +62,9 @@ def on_run_process_input(self):
 	prev_state = self.state
 	cur_menu.process_input(self)
 	new_state = self.state
+
+	if new_state == prev_state and not cur_menu.blocks_char_sheet_and_examine:
+		API_DrawPanel.process_input_character(self)
 
 	global menu_transition_overrides
 	state_transition_overrides = [override for (fro, to, override, condition) in menu_transition_overrides if condition(self) and fro == prev_state and to == new_state]

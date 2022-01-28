@@ -28,6 +28,8 @@ import mods.API_Universal.APIs.API_OptionsMenu.API_OptionsMenu as API_OptionsMen
 import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.APIs.API_Spells.API_Spells as API_Spells
+import mods.API_Universal.APIs.API_DrawLevel.API_DrawLevel as API_DrawLevel
+import mods.API_Universal.APIs.API_DrawPanel.API_DrawPanel as API_DrawPanel
 import mods.API_Universal.EventSystem as EventSystem
 
 # ----------------------------------------------------------------------------------------+
@@ -139,13 +141,17 @@ def get_repeatable_keys(self):
 		RiftWizard.KEY_BIND_UP_RIGHT,
 		RiftWizard.KEY_BIND_UP_LEFT,
 		RiftWizard.KEY_BIND_DOWN_RIGHT,
-		RiftWizard.KEY_BIND_DOWN_LEFT
+		RiftWizard.KEY_BIND_DOWN_LEFT,
+		RiftWizard.KEY_BIND_PASS
 	]
 	
 	return [key for kb in repeatable_keybinds for key in self.key_binds[kb]]
 		
 RiftWizard.PyGameView.get_repeatable_keys = get_repeatable_keys
 
+RiftWizard.PyGameView.draw_level = API_DrawLevel.draw_level
+
+RiftWizard.PyGameView.draw_character = API_DrawPanel.draw_character
 
 import gc
 import time
@@ -254,6 +260,7 @@ def run(self):
 			self.process_examine_panel_input()
 
 		advanced = False
+		delay_menu_process = False
 		if self.game and self.state == RiftWizard.STATE_LEVEL:
 			level = self.get_display_level()
 			# If any creatuers are doing a cast anim, do not process effects or spells or later moves
@@ -276,7 +283,10 @@ def run(self):
 				self.deploy_target = Level.Point(self.game.p1.x, self.game.p1.y)
 				self.tab_targets = [t for t in self.game.next_level.iter_tiles() if isinstance(t.prop, Level.Portal)]
 
+			prev_state = self.state
 			self.process_level_input()
+			if prev_state != self.state: # If we're opening a menu from the Level, delay menu process for one tick, fixes ESC and charsheet processing
+				delay_menu_process = True
 
 			if self.game and self.game.victory_evt:
 				self.game.victory_evt = False
@@ -298,7 +308,7 @@ def run(self):
 						self.game.advance()
 				# Continually advance everything in super turbo, attemptng to do full turn in 1 go
 				if self.options['spell_speed'] == 3:
-					while not self.game.is_awaiting_input():
+					while not self.game.is_awaiting_input() and not self.game.gameover and not self.game.victory:
 						self.game.advance()
 
 				# Check triggers
@@ -308,10 +318,9 @@ def run(self):
 					else:
 						self.open_shop(RiftWizard.SHOP_TYPE_SHOP)
 
-
-		# here's wehre I add code for input for custom menus
-		API_TitleMenus.on_run_process_input(self)
-
+		if not delay_menu_process:
+			# here's wehre I add code for input for custom menus
+			API_TitleMenus.on_run_process_input(self)
 		
 		# If not examining anything- examine cur spell if possible
 		if not self.examine_target and self.cur_spell and self.cur_spell.show_tt:

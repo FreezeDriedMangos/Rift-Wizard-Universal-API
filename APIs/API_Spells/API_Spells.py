@@ -70,7 +70,12 @@ RiftWizard.PyGameView.cast_cur_spell = cast_cur_spell #override completely
 	
 __pygameview_choose_spell_old = RiftWizard.PyGameView.choose_spell
 
-def choose_spell(self, spell):
+def choose_spell(self, spell: Level.Spell):
+	if not spell.can_pay_costs():
+		self.play_sound("menu_abort")
+		self.cast_fail_frames = RiftWizard.SPELL_FAIL_LOCKOUT_FRAMES
+		return
+
 	__pygameview_choose_spell_old(self, spell)
 	spell.multi_targets = [] #reset targets
 

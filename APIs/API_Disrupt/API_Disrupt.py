@@ -1,3 +1,4 @@
+import Level
 
 def disrupt_default(self, caster):
 	self.level_gen_params = caster.level.gen_params.make_child_generator()
