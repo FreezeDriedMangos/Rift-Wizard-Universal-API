@@ -13,7 +13,7 @@ def get_RiftWizard(): #                            |
     for f in inspect.stack()[::-1]: #              |
         if "file 'RiftWizard.py'" in str(f): #     |
             return inspect.getmodule(f[0]) #       |
-	 #                                             |
+    #                                             |
     return inspect.getmodule(f[0]) #               |
 #                                                  |
 RiftWizard = get_RiftWizard() #                    |
@@ -354,15 +354,19 @@ def draw_character(self: RiftWizard.PyGameView):
 
     self.character_display.set_clip(pygame.Rect(cur_x, cur_y, self.character_display.get_width() - self.border_margin - cur_x, self.character_display.get_height() - self.border_margin - cur_y))
 
-    menu_keybind_str = pygame.key.name(self.key_binds[RiftWizard.KEY_BIND_ABORT][0]).upper()
+
+    k = self.key_binds[RiftWizard.KEY_BIND_ABORT][0]
+    menu_keybind_str = pygame.key.name(k).upper() if k else "Unbound" 
     self.draw_string("Menu (%s)" % menu_keybind_str, self.character_display, cur_x, cur_y, mouse_content=RiftWizard.OPTIONS_TARGET)
     cur_y += linesize
-
-    howto_keybind_str = pygame.key.name(self.key_binds[RiftWizard.KEY_BIND_HELP][0]).upper()
+    
+    k = self.key_binds[RiftWizard.KEY_BIND_HELP][0]
+    howto_keybind_str = pygame.key.name(k).upper() if k else "Unbound" 
     self.draw_string("How to Play (%s)" % howto_keybind_str, self.character_display, cur_x, cur_y, mouse_content=RiftWizard.INSTRUCTIONS_TARGET)
     cur_y += linesize
 
-    char_keybind_str = pygame.key.name(self.key_binds[RiftWizard.KEY_BIND_CHAR][0]).upper()
+    k = self.key_binds[RiftWizard.KEY_BIND_CHAR][0]
+    char_keybind_str = pygame.key.name(k).upper() if k else "Unbound" 
     color = self.game.p1.discount_tag.color.to_tup() if self.game.p1.discount_tag else (255, 255, 255)
     self.draw_string("Character Sheet (%s)" % char_keybind_str, self.character_display, cur_x, cur_y, color=color, mouse_content=RiftWizard.CHAR_SHEET_TARGET)
 
