@@ -6,6 +6,7 @@ import mods.API_Universal.APIs.API_OptionsMenu.API_OptionsMenu as API_OptionsMen
 import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.APIs.API_LevelGenProps.API_LevelGenProps as API_LevelGenProps
+import mods.API_Universal.APIs.API_LevelGen.API_LevelGen as API_LevelGen
 import mods.API_Universal.EventSystem as EventSystem
 
 import mods.API_Universal.Libraries.Library_TextInput.Library_TextInput as Library_TextInput
@@ -13,6 +14,7 @@ import mods.API_Universal.Libraries.Library_Menus.Library_Menus as Library_Menus
 
 # regex find: /def (.*)\(.*/
 # regex replace: /#\n# $&\n$1 = API_Boss.$1/
+
 
 
 ###################
@@ -384,6 +386,34 @@ API_LevelGenProps_Constants.ITEM_SUPER_RARE = API_LevelGenProps.ITEM_SUPER_RARE
 
 
 # Note: Check out Level.ShiftingShop too. It's very useful for dynamically generating shop items.
+
+
+
+####################
+### API_LevelGen ###
+####################
+
+# Overrides the level generation with a new level generation function
+#
+# level_maker - a function that takes (level_generator) as an argument and returns a level object
+# 
+# def set_level_maker(level_maker):
+set_level_maker = API_LevelGen.set_level_maker
+
+# Undo's the last call to set_level_maker
+# 
+# def restore_level_maker():
+restore_level_maker = API_LevelGen.restore_level_maker
+
+# Resets the level maker to the vanilla one. Called on loading the title screen.
+#
+# def clear_level_makers():
+clear_level_makers = API_LevelGen.clear_level_makers
+
+
+
+API_LevelGen_Constants = ConstantsPackage()
+API_LevelGen_Constants.LEVEL_SIZE = API_LevelGen.LEVEL_SIZE
 
 ##################################################
 ##################################################
