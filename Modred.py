@@ -7,6 +7,7 @@ import mods.API_Universal.APIs.API_TitleMenus.API_TitleMenus as API_TitleMenus
 import mods.API_Universal.APIs.API_Music.API_Music as API_Music
 import mods.API_Universal.APIs.API_LevelGenProps.API_LevelGenProps as API_LevelGenProps
 import mods.API_Universal.APIs.API_LevelGen.API_LevelGen as API_LevelGen
+import mods.API_Universal.APIs.API_WinCondition.API_WinCondition as API_WinCondition
 import mods.API_Universal.EventSystem as EventSystem
 
 import mods.API_Universal.Libraries.Library_TextInput.Library_TextInput as Library_TextInput
@@ -414,6 +415,31 @@ clear_level_makers = API_LevelGen.clear_level_makers
 
 API_LevelGen_Constants = ConstantsPackage()
 API_LevelGen_Constants.LEVEL_SIZE = API_LevelGen.LEVEL_SIZE
+
+
+
+
+########################
+### API_WinCondition ###
+########################
+
+# adds a new required win condition
+#
+# condition - a function that takes a game object and returns True if the condition is satisfied, otherwise False
+#
+# def add_win_condition(condition):
+add_win_condition = API_WinCondition.add_win_condition
+
+# Removes all custom win conditions from the list of required conditions
+#
+# def reset_win_conditions():
+reset_win_conditions = API_WinCondition.reset_win_conditions
+
+# removes the base game's win condition (no units on a team other than TEAM_PLAYER present on the level) from the list of win conditions
+#
+# def remove_default_win_condition():
+remove_default_win_condition = API_WinCondition.remove_default_win_condition
+
 
 ##################################################
 ##################################################

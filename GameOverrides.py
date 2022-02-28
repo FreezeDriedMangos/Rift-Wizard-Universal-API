@@ -1,6 +1,7 @@
 import Game
+import Level
 import mods.API_Universal.APIs.API_Boss.API_Boss as API_Boss
-
+import mods.API_Universal.APIs.API_WinCondition.API_WinCondition as API_WinCondition
 
 # ----------------------------------------------------------------------------------------+
 # try to import API_Multiplayer from either the mods/ folder or the API_Univerasl/ folder |
@@ -21,12 +22,14 @@ except:
 __check_triggers_old = Game.Game.check_triggers
 def check_triggers(self):
 	API_Boss.check_triggers_pre(self)
+	API_WinCondition.check_triggers_pre(self)
 
 	if API_Multiplayer:
 		API_Multiplayer.check_triggers(self)
 	else:
 		__check_triggers_old(self)
 
+	API_WinCondition.check_triggers_post(self)
 	API_Boss.check_triggers_post(self)
 Game.Game.check_triggers = check_triggers
 
