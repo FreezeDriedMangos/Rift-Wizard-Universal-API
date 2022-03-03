@@ -53,7 +53,10 @@ class Layer:
 
     ## Checks whether a tile on this layer is occluded by another layer
     def is_occluded(self, x, y):
-        return any(layer.occludes(x, y) for layer in self.occluded_by)
+        for layer in self.occluded_by:
+            if layer.occludes(x, y):
+                return True
+        return False
 
     def __getattr__(self, attribute):
         # Redirect accesses to 
@@ -182,7 +185,10 @@ class LayerTiles (Layer):
         return super().is_occluded(x, y)
 
     def is_partially_occluded(self, x, y):
-        return any(layer.occludes(x, y) for layer in self.partially_occluded_by)
+        for layer in self.partially_occluded_by:
+            if layer.occludes(x, y):
+                return True
+        return False
 
     def occludes(self, x, y):
         return (x, y) in self.occlusion
