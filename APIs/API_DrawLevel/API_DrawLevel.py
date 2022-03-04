@@ -206,7 +206,14 @@ class LayerTiles (Layer):
     def is_occluded(self, x, y, tile=None):
         if tile and not tile.is_chasm and LAYER_UNITS.occludes(x,y): # Tiles are also occluded by units if they're not chasmas
             return True
-        return super().is_occluded(x, y)
+        
+        # this used to be: return super().is_occluded(x, y)
+        # i'm shocked that this matters that much but it saves a full
+        # millisecond per frame on average
+        for layer in self.occluded_by:
+            if layer.occludes(x, y):
+                return True
+        return False
 
     def is_partially_occluded(self, x, y):
         for layer in self.partially_occluded_by:
