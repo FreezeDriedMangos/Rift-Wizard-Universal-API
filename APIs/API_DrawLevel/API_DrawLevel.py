@@ -167,13 +167,37 @@ class LayerTiles (Layer):
         self.occlusion.add((tile.x, tile.y))
 
     def draw_layer(self):
+        # much faster to batch the blits together
+        draw_tiles = []
+
         for tile in self.tiles:
             should_draw_tile = True
             if self.is_occluded(tile.x, tile.y, tile=tile):
                 should_draw_tile = False
             if should_draw_tile:
                 partial_occulde = self.is_partially_occluded(tile.x, tile.y)
-                self.draw_tile(tile, partial_occulde=partial_occulde)
+                draw_tiles.append(self.build_draw_tile(tile, partial_occulde=partial_occulde))
+
+        self.level_display.blits(draw_tiles)
+    
+    def build_draw_tile(self, tile, partial_occulde=False):
+        x = tile.x * RiftWizard.SPRITE_SIZE
+        y = tile.y * RiftWizard.SPRITE_SIZE
+        
+        if not tile.sprites:
+            tile.sprites = [None, None]
+
+        if not partial_occulde:
+            if not tile.sprites[0]:
+                tile.sprites[0] = self.make_tile_sprite(tile, 0)
+            image = tile.sprites[0]
+        else:
+            if not tile.sprites[1]:
+                tile.sprites[1] = self.make_tile_sprite(tile, 1)
+            image = tile.sprites[1]
+        
+        return (image, (x,y))
+
 
     def reset(self):
         self.tiles.clear()
