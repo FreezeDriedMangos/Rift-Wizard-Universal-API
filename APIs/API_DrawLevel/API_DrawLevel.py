@@ -1,4 +1,5 @@
 import Level
+import LevelGen
 import CommonContent
 #import RiftWizard
 import Spells
@@ -154,17 +155,20 @@ class LayerEffects (Layer):
     def occludes(self, x, y):
         return (x, y) in self.occlusion
 
+TILE_TABLE_WIDTH = LevelGen.LEVEL_SIZE
+TILE_TABLE_SIZE = TILE_TABLE_WIDTH * TILE_TABLE_WIDTH
 class LayerTiles (Layer):
 
     def __init__(self):
         super().__init__(100)
-        self.tiles: List[Level.Tile] = []
+        self.tiles: List[Level.Tile] = [None] * TILE_TABLE_SIZE
         self.partially_occluded_by: List[Layer] = []
-        self.occlusion: Set = set()
+        self.occlusion : List[bool] = [False] * TILE_TABLE_SIZE
 
     def accept_tile(self, tile):
-        self.tiles.append(tile)
-        self.occlusion.add((tile.x, tile.y))
+        index = tile.x + tile.y * TILE_TABLE_WIDTH
+        self.tiles[index] = tile
+        self.occlusion[index] = True
 
     def draw_layer(self):
         # much faster to batch the blits together
@@ -200,8 +204,9 @@ class LayerTiles (Layer):
 
 
     def reset(self):
-        self.tiles.clear()
-        self.occlusion.clear()
+        for index in range(TILE_TABLE_SIZE):
+            self.occlusion[index] = False
+            self.tiles[index] = None
 
     def is_occluded(self, x, y, tile=None):
         if tile and not tile.is_chasm and LAYER_UNITS.occludes(x,y): # Tiles are also occluded by units if they're not chasmas
@@ -222,7 +227,7 @@ class LayerTiles (Layer):
         return False
 
     def occludes(self, x, y):
-        return (x, y) in self.occlusion
+        return self.occlusion[tile.x + tile.y * TILE_TABLE_WIDTH]
 
 class LayerProps (Layer):
 
