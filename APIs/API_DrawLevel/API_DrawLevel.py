@@ -26,6 +26,9 @@ RiftWizard = get_RiftWizard() #                    |
 #                                                  |
 ####################################################
 
+TILE_TABLE_WIDTH = LevelGen.LEVEL_SIZE
+TILE_TABLE_SIZE = TILE_TABLE_WIDTH * TILE_TABLE_WIDTH
+
 class Layer:
     def __init__(self, order):
         self.order = order
@@ -58,6 +61,15 @@ class Layer:
             if layer.occludes(x, y):
                 return True
         return False
+    
+    ## Returns the entire set of occluding tiles. You should hand-implement a faster version probably in subclasses.
+    def get_occluding_set(self):
+        occlusion : Set = set()
+        for x in range(TILE_TABLE_WIDTH):
+            for y in range(TILE_TABLE_WIDTH):
+                occlusion = self.occludes(x,y)
+        
+        return occlusion
 
     def __getattr__(self, attribute):
         # Redirect accesses to 
@@ -73,6 +85,9 @@ class LayerLOS (Layer):
 
     def draw_layer(self):
         self.draw_los()
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerThreat (Layer):
     def __init__(self):
@@ -84,6 +99,9 @@ class LayerThreat (Layer):
 
     def draw_layer(self):
         self.draw_threat()
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerSpellTarget (Layer):
     def __init__(self):
@@ -92,8 +110,11 @@ class LayerSpellTarget (Layer):
     def should_draw(self):
         return self.cur_spell
 
-    def draw_layer(self):	
+    def draw_layer(self):
         self.draw_targeting()
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerOrbTarget (Layer):
     def __init__(self):
@@ -106,6 +127,9 @@ class LayerOrbTarget (Layer):
                 dest = buff.dest
                 rect = (dest.x * RiftWizard.SPRITE_SIZE, dest.y * RiftWizard.SPRITE_SIZE, RiftWizard.SPRITE_SIZE, RiftWizard.SPRITE_SIZE)
                 self.level_display.blit(self.hostile_los_image, (dest.x * RiftWizard.SPRITE_SIZE, dest.y * RiftWizard.SPRITE_SIZE))
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerChannelTarget (Layer):
     def __init__(self):
@@ -121,6 +145,9 @@ class LayerChannelTarget (Layer):
                     # TODO- red target circle(or green if ally) instead of grey background block
                     # TODO- all impacted tiles of target
                     pygame.draw.rect(self.level_display, color, rect)
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerSoulbound (Layer):
     def __init__(self):
@@ -135,6 +162,9 @@ class LayerSoulbound (Layer):
                     rect = (b.guardian.x * RiftWizard.SPRITE_SIZE, b.guardian.y * RiftWizard.SPRITE_SIZE, RiftWizard.SPRITE_SIZE, RiftWizard.SPRITE_SIZE)
                     color = (60, 0, 0)
                     pygame.draw.rect(self.level_display, color, rect)
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerEffects (Layer):
 
@@ -154,9 +184,10 @@ class LayerEffects (Layer):
 
     def occludes(self, x, y):
         return (x, y) in self.occlusion
+    
+    def get_occluding_set(self):
+        return self.occlusion
 
-TILE_TABLE_WIDTH = LevelGen.LEVEL_SIZE
-TILE_TABLE_SIZE = TILE_TABLE_WIDTH * TILE_TABLE_WIDTH
 class LayerTiles (Layer):
 
     def __init__(self):
@@ -164,34 +195,46 @@ class LayerTiles (Layer):
         self.tiles: List[Level.Tile] = [None] * TILE_TABLE_SIZE
         self.partially_occluded_by: List[Layer] = []
         self.occlusion : List[bool] = [False] * TILE_TABLE_SIZE
+        self.non_chasms : Set = set()
 
     def accept_tile(self, tile):
         index = tile.x + tile.y * TILE_TABLE_WIDTH
         self.tiles[index] = tile
         self.occlusion[index] = True
+        
+        if not tile.is_chasm:
+            self.non_chasms.add((tile.x, tile.y))
 
     def draw_layer(self):
         # much faster to batch the blits together
         draw_tiles = []
+        
+        # ask the layers for the sets and then merge them ourselves here
+        # for efficiency reasons
+        occluded = self.non_chasms & LAYER_UNITS.get_occluding_set()
+        
+        partially_occluded = set()
+        
+        for layer in self.occluded_by:
+            occluded |= layer.get_occluding_set()
+        
+        for layer in self.partially_occluded_by:
+            partially_occluded |= layer.get_occluding_set()
 
         for tile in self.tiles:
-            should_draw_tile = True
-            if self.is_occluded(tile.x, tile.y, tile=tile):
-                should_draw_tile = False
-            if should_draw_tile:
-                partial_occulde = self.is_partially_occluded(tile.x, tile.y)
-                draw_tiles.append(self.build_draw_tile(tile, partial_occulde=partial_occulde))
+            if not (tile.x, tile.y) in occluded:
+                draw_tiles.append(self.build_draw_tile(tile, partial_occlude=(tile.x, tile.y) in partially_occluded))
 
         self.level_display.blits(draw_tiles)
     
-    def build_draw_tile(self, tile, partial_occulde=False):
+    def build_draw_tile(self, tile, partial_occlude=False):
         x = tile.x * RiftWizard.SPRITE_SIZE
         y = tile.y * RiftWizard.SPRITE_SIZE
         
         if not tile.sprites:
             tile.sprites = [None, None]
 
-        if not partial_occulde:
+        if not partial_occlude:
             if not tile.sprites[0]:
                 tile.sprites[0] = self.make_tile_sprite(tile, 0)
             image = tile.sprites[0]
@@ -204,6 +247,7 @@ class LayerTiles (Layer):
 
 
     def reset(self):
+        self.non_chasms.clear()
         for index in range(TILE_TABLE_SIZE):
             self.occlusion[index] = False
             self.tiles[index] = None
@@ -252,6 +296,9 @@ class LayerProps (Layer):
 
     def occludes(self, x, y):
         return (x, y) in self.occlusion
+    
+    def get_occluding_set(self):
+        return self.occlusion
 
 class LayerUnits (Layer):
 
@@ -276,6 +323,9 @@ class LayerUnits (Layer):
 
     def occludes(self, x, y):
         return (x, y) in self.occlusion
+    
+    def get_occluding_set(self):
+        return self.occlusion
 
 class LayerClouds (Layer):
 
@@ -301,6 +351,9 @@ class LayerClouds (Layer):
     def occludes(self, x, y):
         return (x, y) in self.occlusion
     
+    def get_occluding_set(self):
+        return self.occlusion
+    
 class LayerDeploy (Layer):
 
     def __init__(self):
@@ -315,6 +368,9 @@ class LayerDeploy (Layer):
 
     def should_draw(self):
         return self.game.deploying and self.deploy_target
+    
+    def get_occluding_set(self):
+        return None
 
 class LayerSelection (Layer):
 
@@ -336,6 +392,9 @@ class LayerSelection (Layer):
 
     def reset(self):
         self.selection = None
+    
+    def get_occluding_set(self):
+        return None
 
 LAYER_SOULBOUND = LayerSoulbound()
 LAYER_SPELL_TARGET = LayerSpellTarget()
@@ -448,7 +507,7 @@ def draw_level(self):
     for layer in layers:
         if layer.should_draw():
             layer.draw_layer()
-
+    
     for e in self.effects:
         if e.finished:
             if hasattr(e, 'level_effect'):
