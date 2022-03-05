@@ -300,12 +300,59 @@ class LayerProps (Layer):
     def get_occluding_set(self):
         return self.occlusion
 
+
+def unit_build_blit(self, x, y):
+    to_blit = []
+    self.advance()
+
+    if self.slide_frames:
+        oldx = RiftWizard.SPRITE_SIZE * self.old_pos.x
+        oldy = RiftWizard.SPRITE_SIZE * self.old_pos.y
+        tween = self.slide_frames / float(RiftWizard.SLIDE_FRAMES)
+        xdiff = oldx - x
+        ydiff = oldy - y
+        x += tween * xdiff
+        y += tween * ydiff
+
+    if self.hit_flash_colors and self.hit_flash_sub_frame < RiftWizard.HIT_FLASH_SUBFRAMES:
+        flash_image = self.sheet.get_glow_frame(self.anim, self.anim_frame, self.hit_flash_colors[0], self.unit.sprite.face_left)
+        to_blit.append((flash_image, (x, y)))
+    elif self.unit.is_alive():
+        frame_dict = self.sheet.anim_frames_flipped if self.unit.sprite.face_left else self.sheet.anim_frames
+
+        frame = frame_dict[self.anim]
+        if self.anim_frame >= len(frame):
+            assert False, "Trying to render frame %d of anim %d on %s, impossible" % (self.anim_frame, self.anim, self.unit.name)
+        to_draw = frame[self.anim_frame]
+        to_blit.append((to_draw, (x, y)))
+    
+    if self.boss_glow:
+        glow_image = self.sheet.get_glow_frame(self.anim, self.anim_frame, Color(255, 80, 0), self.unit.sprite.face_left, outline=True)
+        to_blit.append((glow_image, (x, y)))
+    
+    if self.hit_flash_colors:
+        self.hit_flash_sub_frame += 1
+        if self.hit_flash_sub_frame >= RiftWizard.HIT_FLASH_SUBFRAMES * 2:
+            self.hit_flashes_shown += 1
+            self.hit_flash_sub_frame = 0
+            if self.hit_flashes_shown == RiftWizard.HIT_FLASH_FLASHES:
+                self.hit_flash_colors = self.hit_flash_colors[1:]
+                self.hit_flashes_shown = 0
+                if not self.hit_flash_colors:
+                    self.finished = self.is_death_flash
+    
+    return to_blit
+
 class LayerUnits (Layer):
 
     def __init__(self):
         super().__init__(150)
         self.units: List[Level.Unit] = []
         self.occlusion: Set = set()
+        self.friendly_image = RiftWizard.get_image(['friendly'])
+        
+        # used in build_draw_unit, but not reinitialized every time
+        self.seen_types = set()
 
     def accept_tile(self, tile):
         if tile.unit:
@@ -313,9 +360,107 @@ class LayerUnits (Layer):
             self.occlusion.add((tile.x, tile.y))
 
     def draw_layer(self):
-        for unit in self.units:
-            if not self.is_occluded(unit.x, unit.y):
-                self.draw_unit(unit)
+        draw_units = []
+        # healthbars mainly
+        rects = []
+        
+        # ask the layers for the sets and then merge them ourselves here
+        # for efficiency reasons
+        if len(self.occluded_by) <= 0:
+            for unit in self.units:
+                new_units, new_rects = self.build_draw_unit(unit)
+                draw_units += new_units
+                rects += new_rects
+        else:
+            occluded = set()
+        
+            for layer in self.occluded_by:
+                occluded |= layer.get_occluding_set()
+        
+            for unit in self.units:
+                if not (unit.x, unit.y) in occluded:
+                    new_units, new_rects = self.build_draw_unit(unit)
+                    draw_units += new_units
+                    rects += new_rects
+        
+        self.view.level_display.blits(draw_units)
+        
+        for color,rect in rects:
+            pygame.draw.rect(self.view.level_display, color, rect)
+        # TODO DRAW RECTS HERE FIXME
+
+    def build_draw_unit(self, u):
+        x = u.x * RiftWizard.SPRITE_SIZE
+        y = u.y * RiftWizard.SPRITE_SIZE
+        rects = []
+
+        if u.transform_asset_name:
+            if not u.Transform_Anim:
+                u.Transform_Anim = self.get_anim(u, forced_name=u.transform_asset_name)
+            to_blit = unit_build_blit(u.Transform_Anim,x,y)
+        else:
+            if not u.Anim:
+                u.Anim = self.get_anim(u)
+            to_blit = unit_build_blit(u.Anim, x,y)
+
+        # Friendlyness icon
+        if not u.is_player_controlled and not Level.are_hostile(u, self.view.game.p1):
+            image = self.friendly_image
+            
+            frame_num = 0
+            num_frames = image.get_width() // RiftWizard.STATUS_ICON_SIZE
+            frame_num = RiftWizard.cloud_frame_clock // RiftWizard.STATUS_SUBFRAMES % num_frames 
+            source_rect = (RiftWizard.STATUS_ICON_SIZE*frame_num, 0, RiftWizard.STATUS_ICON_SIZE, RiftWizard.STATUS_ICON_SIZE)
+            
+            to_blit.append((image, (x + RiftWizard.SPRITE_SIZE - 4, y+1), source_rect))
+        
+        # Lifebar
+        if u.cur_hp != u.max_hp:
+            hp_percent = u.cur_hp / float(u.max_hp)
+            max_bar = RiftWizard.SPRITE_SIZE - 2
+            bar_pixels = int(hp_percent * max_bar)
+            margin = (max_bar - bar_pixels) // 2
+            rects.append(((255, 0, 0, 128), (x + 1 + margin, y+RiftWizard.SPRITE_SIZE-2, bar_pixels, 1)))
+
+        # Draw Buffs
+        status_effects = []
+        
+        self.seen_types.clear()
+        for b in u.buffs:
+            # Do not display icons for passives- aka, passive regeneration
+            if b.buff_type == RiftWizard.BUFF_TYPE_PASSIVE:
+                continue
+            if b.asset == None:
+                continue
+            if type(b) in self.seen_types:
+                continue
+            self.seen_types.add(type(b))
+            status_effects.append(b)
+
+        if not status_effects:
+            return (to_blit, rects)
+
+        buff_x = x+1
+        buff_index = RiftWizard.cloud_frame_clock // (RiftWizard.STATUS_SUBFRAMES * 4) % len(status_effects)
+        
+        b = status_effects[buff_index]
+
+        if not b.asset:
+            color = b.color if b.color else Color(255, 255, 255)
+            rects.append((color.to_tup(), (buff_x, y+1, 3, 3)))
+        else:
+            # cache the image instead of doing all the stuff get_image does every time
+            if not hasattr(b, 'image'):
+                b.image = RiftWizard.get_image(b.asset)
+            
+            num_frames = b.image.get_width() // RiftWizard.STATUS_ICON_SIZE
+
+            frame_num = RiftWizard.cloud_frame_clock // RiftWizard.STATUS_SUBFRAMES % num_frames 
+            source_rect = (RiftWizard.STATUS_ICON_SIZE*frame_num, 0, RiftWizard.STATUS_ICON_SIZE, RiftWizard.STATUS_ICON_SIZE)
+            
+            to_blit.append((b.image, (buff_x, y+1), source_rect))
+        
+        return (to_blit, rects)
 
     def reset(self):
         self.units.clear()
