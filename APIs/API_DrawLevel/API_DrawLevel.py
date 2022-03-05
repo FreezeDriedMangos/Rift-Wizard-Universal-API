@@ -225,7 +225,7 @@ class LayerTiles (Layer):
             if not (tile.x, tile.y) in occluded:
                 draw_tiles.append(self.build_draw_tile(tile, partial_occlude=(tile.x, tile.y) in partially_occluded))
 
-        self.level_display.blits(draw_tiles)
+        self.view.level_display.blits(draw_tiles)
     
     def build_draw_tile(self, tile, partial_occlude=False):
         x = tile.x * RiftWizard.SPRITE_SIZE
