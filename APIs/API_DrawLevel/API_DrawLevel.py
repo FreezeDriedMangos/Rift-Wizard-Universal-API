@@ -387,7 +387,6 @@ class LayerUnits (Layer):
         
         for color,rect in rects:
             pygame.draw.rect(self.view.level_display, color, rect)
-        # TODO DRAW RECTS HERE FIXME
 
     def build_draw_unit(self, u):
         x = u.x * RiftWizard.SPRITE_SIZE
