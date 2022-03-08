@@ -444,18 +444,20 @@ class LayerUnits (Layer):
         
         b = status_effects[buff_index]
 
+        image = None
         if not b.asset:
-            color = b.color if b.color else Color(255, 255, 255)
-            rects.append((color.to_tup(), (buff_x, y+1, 3, 3)))
-        else:
             image = RiftWizard.get_image(b.asset)
-            
+        
+        if image:
             num_frames = image.get_width() // RiftWizard.STATUS_ICON_SIZE
 
             frame_num = RiftWizard.cloud_frame_clock // RiftWizard.STATUS_SUBFRAMES % num_frames 
             source_rect = (RiftWizard.STATUS_ICON_SIZE*frame_num, 0, RiftWizard.STATUS_ICON_SIZE, RiftWizard.STATUS_ICON_SIZE)
-            
+        
             to_blit.append((image, (buff_x, y+1), source_rect))
+        else:
+            color = b.color if b.color else Color(255, 255, 255)
+            rects.append((color.to_tup(), (buff_x, y+1, 3, 3)))
         
         return (to_blit, rects)
 
