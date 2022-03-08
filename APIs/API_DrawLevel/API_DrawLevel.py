@@ -327,7 +327,7 @@ def unit_build_blit(self, x, y):
         to_blit.append((to_draw, (x, y)))
     
     if self.boss_glow:
-        glow_image = self.sheet.get_glow_frame(self.anim, self.anim_frame, Color(255, 80, 0), self.unit.sprite.face_left, outline=True)
+        glow_image = self.sheet.get_glow_frame(self.anim, self.anim_frame, RiftWizard.Color(255, 80, 0), self.unit.sprite.face_left, outline=True)
         to_blit.append((glow_image, (x, y)))
     
     if self.hit_flash_colors:
@@ -456,7 +456,7 @@ class LayerUnits (Layer):
         
             to_blit.append((image, (buff_x, y+1), source_rect))
         else:
-            color = b.color if b.color else Color(255, 255, 255)
+            color = b.color if b.color else RiftWizard.Color(255, 255, 255)
             rects.append((color.to_tup(), (buff_x, y+1, 3, 3)))
         
         return (to_blit, rects)
