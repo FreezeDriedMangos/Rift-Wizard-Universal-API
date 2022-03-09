@@ -444,9 +444,7 @@ class LayerUnits (Layer):
         
         b = status_effects[buff_index]
 
-        image = None
-        if not b.asset:
-            image = RiftWizard.get_image(b.asset)
+        image = RiftWizard.get_image(b.asset)
         
         if image:
             num_frames = image.get_width() // RiftWizard.STATUS_ICON_SIZE
